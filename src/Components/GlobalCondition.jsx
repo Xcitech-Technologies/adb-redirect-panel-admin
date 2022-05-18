@@ -4,13 +4,14 @@ import { FaAngleDown } from "react-icons/fa";
 import Button from "../Controls/Button";
 
 const GlobalCondition = () => {
-  const [referers, setReferers] = React.useState(true);
-  const [ips, setIps] = React.useState(true);
-  const [macros, setMacros] = React.useState(true);
-  const [asn, setAsn] = React.useState(true);
-  const [isp, setIsp] = React.useState(true);
-  const [organization, setOrganization] = React.useState(true);
-  const [userAgent, setUserAgent] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState({referers: true, ips1: true, macros:true, asn: true, isp2: true, organization:true, userAgent:true});
+  // const [referers, setReferers] = React.useState(true);
+  // const [ips, setIps] = React.useState(true);
+  // const [macros, setMacros] = React.useState(true);
+  // const [asn, setAsn] = React.useState(true);
+  // const [isp, setIsp] = React.useState(true);
+  // const [organization, setOrganization] = React.useState(true);
+  // const [userAgent, setUserAgent] = React.useState(true);
 
   const [add, setAdd] = React.useState(false);
 
@@ -28,13 +29,13 @@ const GlobalCondition = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setReferers(!referers)}>
+            <div className="card-header" onClick={() => setIsOpen({...isOpen,referers:!isOpen.referers})}>
               <div className="collapes_btn">
                 <p className="card-title"> Referers </p>
-                {referers ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen.referers ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {referers && (
+            {isOpen.referers && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -92,13 +93,13 @@ const GlobalCondition = () => {
 
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIps(!ips)}>
+            <div className="card-header" onClick={() => setIsOpen({...isOpen,ips1:!isOpen.ips1})}>
               <div className="collapes_btn">
                 <p className="card-title"> IPs </p>
-                {ips ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen.ips1 ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {ips && (
+            {isOpen.ips1 && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -118,13 +119,13 @@ const GlobalCondition = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setMacros(!macros)}>
+            <div className="card-header" onClick={() => setIsOpen({...isOpen,macros:!isOpen.macros})}>
               <div className="collapes_btn">
                 <p className="card-title"> Macros </p>
-                {macros ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen.macros ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {macros && (
+            {isOpen.macros && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -151,13 +152,13 @@ const GlobalCondition = () => {
 
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setAsn(!asn)}>
+            <div className="card-header" onClick={() => setIsOpen({...isOpen,asn:!isOpen.asn})}>
               <div className="collapes_btn">
                 <p className="card-title"> ASN </p>
-                {asn ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {asn && (
+            {isOpen && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -186,13 +187,13 @@ const GlobalCondition = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIsp(!isp)}>
+            <div className="card-header" onClick={() => setIsOpen({...isOpen,ips2:!isOpen.ips2})}>
               <div className="collapes_btn">
                 <p className="card-title"> ISP </p>
-                {isp ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen.isp2 ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {isp && (
+            {isOpen.isp2 && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -221,14 +222,14 @@ const GlobalCondition = () => {
           <div className="card">
             <div
               className="card-header"
-              onClick={() => setOrganization(!organization)}
+              onClick={() => setIsOpen({...isOpen,organization:!isOpen.organization})}
             >
               <div className="collapes_btn">
                 <p className="card-title"> Organization </p>
-                {organization ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen.organization ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {organization && (
+            {isOpen.organization && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -259,14 +260,14 @@ const GlobalCondition = () => {
           <div className="card">
             <div
               className="card-header"
-              onClick={() => setUserAgent(!userAgent)}
+              onClick={() => setIsOpen({...isOpen,userAgent:!isOpen.userAgent})}
             >
               <div className="collapes_btn">
                 <p className="card-title"> User Agent </p>
-                {userAgent ? <FaAngleUp /> : <FaAngleDown />}
+                {isOpen.userAgent ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {userAgent && (
+            {isOpen.userAgent && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
