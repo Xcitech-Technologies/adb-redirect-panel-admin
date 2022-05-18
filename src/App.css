@@ -3,10 +3,11 @@
 } */
 
 .wrapper{
-  padding: 25px 20px;
+  padding: 15px 20px;
 }
 
 .row{
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   margin-right: -7px;
@@ -27,6 +28,7 @@
   background: #5c6bc0;
   padding: 1rem 1.25rem;
   margin-bottom: 0;
+  display: flex;
 }
 
 .collapes_btn{
@@ -51,9 +53,8 @@
 }
 
 .inputs{
-  width: 500px;
+  width: 80%;
   display: flex;
-  flex-direction: column;
   padding-top: 20px;
 }
 
@@ -65,7 +66,7 @@
 }
 
 .input{
-  width: 100%;
+  width: 80%;
   padding: 7px;
   margin-top: 10px;
   border: none;
@@ -76,29 +77,56 @@
 }
 
 .button{
-  width: 100px;
-  height: 20px;
+  width: 50px;
+  height: 35px;
   padding: 7px;
   border: none;
   border-radius: 5px;
   background: #5c6bc0;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.display{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.d-button{
+  width: 60px;
+  height: 35px;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background: #DC143C;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+.update-cls{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.update-btn{
+  width: 200px;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background: #5c6bc0;
+  color: #fff;
   outline: none;
   cursor: pointer;
 }
 
-/* .main-wrapper{
+.flex-container{
+  width: 100%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-
-.card-header{
-  border: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #5C6BC0;
-  padding: 15px;
-}
-
-.card-body{
-  background-color: #222437;
-  padding: 15px;
-} */
