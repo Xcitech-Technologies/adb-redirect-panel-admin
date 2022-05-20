@@ -2,18 +2,20 @@ import React from "react";
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import Button from "../Controls/Button";
+import GlobalData from "../GlobalData.json";
 
 const GlobalCondition = () => {
-  const [isOpen, setIsOpen] = React.useState({referers: true, ips1: true, macros:true, asn: true, isp2: true, organization:true, userAgent:true});
-  // const [referers, setReferers] = React.useState(true);
-  // const [ips, setIps] = React.useState(true);
-  // const [macros, setMacros] = React.useState(true);
-  // const [asn, setAsn] = React.useState(true);
-  // const [isp, setIsp] = React.useState(true);
-  // const [organization, setOrganization] = React.useState(true);
-  // const [userAgent, setUserAgent] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState({
+    referers: true,
+    ips1: true,
+    macros: true,
+    asn: true,
+    isp2: true,
+    organization: true,
+    userAgent: true,
+  });
 
-  const [add, setAdd] = React.useState(false);
+  const [isvisible, setIsvisible] = React.useState(true);
 
   const [data, setData] = React.useState("");
 
@@ -21,7 +23,6 @@ const GlobalCondition = () => {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData.approvRaf);
   }
 
   return (
@@ -29,7 +30,12 @@ const GlobalCondition = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIsOpen({...isOpen,referers:!isOpen.referers})}>
+            <div
+              className="card-header"
+              onClick={() =>
+                setIsOpen({ ...isOpen, referers: !isOpen.referers })
+              }
+            >
               <div className="collapes_btn">
                 <p className="card-title"> Referers </p>
                 {isOpen.referers ? <FaAngleUp /> : <FaAngleDown />}
@@ -45,26 +51,29 @@ const GlobalCondition = () => {
                     className="input"
                     onChange={(e) => handle(e)}
                     id="approvRaf"
-                    value={data.approvRaf}
                     type="text"
                   ></input>
                   <button
                     className="button"
                     type="button"
-                    onClick={() => {
-                      console.log("clicked");
-                      console.log(data.approvRaf);
-                      setAdd(true);
-                    }}
                   >
                     Add
                   </button>
-                  {add && (
-                    <div className="display">
-                      <Button type="button">Clear</Button>
-                      <div className="apidata">{data.approvRaf}</div>
+                  <div className="display">
+                    <Button>Clear</Button>
+                    <div className="display-data">
+                      {GlobalData[0].data[0].approved_referrers.map(
+                        (data, index) => {
+                          return (
+                            <span className="api-item" key={index}>
+                              <span className="x">x</span>
+                              {data}
+                            </span>
+                          );
+                        }
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
                 <div className="card-content">
                   <div className="inputs">
@@ -74,17 +83,26 @@ const GlobalCondition = () => {
                   <button
                     className="button"
                     type="button"
-                    onClick={() => {
-                      console.log("clicked");
-                      setAdd(true);
-                    }}
                   >
                     Add
                   </button>
-                  {add && (<div className="display">
-                      <Button type="button">Clear</Button>
-                      <div className="apidata"></div>
-                    </div>)}
+                  {isvisible && (<div className="display">
+                    <Button onClick={() => {
+                      setIsvisible(false);
+                    }}>Clear</Button>
+                    <div className="display-data">
+                      {GlobalData[0].data[0].blocked_referrers.map(
+                        (data, index) => {
+                          return (
+                            <span className="api-item" key={index}>
+                              <span className="x">x</span>
+                              {data}
+                            </span>
+                          );
+                        }
+                      )}
+                    </div>
+                  </div>)}
                 </div>
               </div>
             )}
@@ -93,7 +111,10 @@ const GlobalCondition = () => {
 
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIsOpen({...isOpen,ips1:!isOpen.ips1})}>
+            <div
+              className="card-header"
+              onClick={() => setIsOpen({ ...isOpen, ips1: !isOpen.ips1 })}
+            >
               <div className="collapes_btn">
                 <p className="card-title"> IPs </p>
                 {isOpen.ips1 ? <FaAngleUp /> : <FaAngleDown />}
@@ -109,6 +130,19 @@ const GlobalCondition = () => {
                   <button className="button" type="button">
                     Add
                   </button>
+                  <div className="display">
+                    <Button>Clear</Button>
+                    <div className="display-data">
+                      {GlobalData[0].data[0].blocked_IPs.map((data, index) => {
+                        return (
+                          <span className="api-item" key={index}>
+                            <span className="x">x</span>
+                            {data}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -119,7 +153,10 @@ const GlobalCondition = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIsOpen({...isOpen,macros:!isOpen.macros})}>
+            <div
+              className="card-header"
+              onClick={() => setIsOpen({ ...isOpen, macros: !isOpen.macros })}
+            >
               <div className="collapes_btn">
                 <p className="card-title"> Macros </p>
                 {isOpen.macros ? <FaAngleUp /> : <FaAngleDown />}
@@ -131,19 +168,59 @@ const GlobalCondition = () => {
                   <div className="inputs">
                     <label className="label">Meta Alternative:</label>
                   </div>
-                  <input className="input" type="text"></input>
+                  {GlobalData.map((data, index) => {
+                    return (
+                      <input
+                        className="input"
+                        type="text"
+                        key={index}
+                        value={data.data[0].meta_alternative}
+                        onChange={(e) => handle(e)}
+                      ></input>
+                    );
+                  })}
                   <div className="inputs">
                     <label className="label">Desktop Approved:</label>
                   </div>
-                  <input className="input" type="text"></input>
+                  {GlobalData.map((data, index) => {
+                    return (
+                      <input
+                        className="input"
+                        type="text"
+                        key={index}
+                        value={data.data[0].desktop_approved}
+                        onChange={(e) => handle(e)}
+                      ></input>
+                    );
+                  })}
                   <div className="inputs">
                     <label className="label">Mobile Approved:</label>
                   </div>
-                  <input className="input" type="text"></input>
+                  {GlobalData.map((data, index) => {
+                    return (
+                      <input
+                        className="input"
+                        type="text"
+                        key={index}
+                        value={data.data[0].mobile_approved}
+                        onChange={(e) => handle(e)}
+                      ></input>
+                    );
+                  })}
                   <div className="inputs">
                     <label className="label">Intermediary Rejected:</label>
                   </div>
-                  <input className="input" type="text"></input>
+                  {GlobalData.map((data, index) => {
+                    return (
+                      <input
+                        className="input"
+                        type="text"
+                        key={index}
+                        value={data.data[0].intermediary_rejected}
+                        onChange={(e) => handle(e)}
+                      ></input>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -152,7 +229,10 @@ const GlobalCondition = () => {
 
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIsOpen({...isOpen,asn:!isOpen.asn})}>
+            <div
+              className="card-header"
+              onClick={() => setIsOpen({ ...isOpen, asn: !isOpen.asn })}
+            >
               <div className="collapes_btn">
                 <p className="card-title"> ASN </p>
                 {isOpen ? <FaAngleUp /> : <FaAngleDown />}
@@ -187,7 +267,10 @@ const GlobalCondition = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-header" onClick={() => setIsOpen({...isOpen,ips2:!isOpen.ips2})}>
+            <div
+              className="card-header"
+              onClick={() => setIsOpen({ ...isOpen, ips2: !isOpen.ips2 })}
+            >
               <div className="collapes_btn">
                 <p className="card-title"> ISP </p>
                 {isOpen.isp2 ? <FaAngleUp /> : <FaAngleDown />}
@@ -222,7 +305,9 @@ const GlobalCondition = () => {
           <div className="card">
             <div
               className="card-header"
-              onClick={() => setIsOpen({...isOpen,organization:!isOpen.organization})}
+              onClick={() =>
+                setIsOpen({ ...isOpen, organization: !isOpen.organization })
+              }
             >
               <div className="collapes_btn">
                 <p className="card-title"> Organization </p>
@@ -260,7 +345,9 @@ const GlobalCondition = () => {
           <div className="card">
             <div
               className="card-header"
-              onClick={() => setIsOpen({...isOpen,userAgent:!isOpen.userAgent})}
+              onClick={() =>
+                setIsOpen({ ...isOpen, userAgent: !isOpen.userAgent })
+              }
             >
               <div className="collapes_btn">
                 <p className="card-title"> User Agent </p>
@@ -293,7 +380,9 @@ const GlobalCondition = () => {
         </div>
       </div>
       <div className="update-cls">
-        <button className="update-btn" type="button">Update</button>
+        <button className="update-btn" type="button">
+          Update
+        </button>
       </div>
     </div>
   );

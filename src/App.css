@@ -94,6 +94,47 @@
   padding-right: 10px;
 }
 
+.display-data{
+  margin-bottom: 112px;
+  width: 100%;
+  float: left;
+  padding: 5px;
+  margin-bottom: 20px;
+  padding-top: 0;
+  margin-top: 0.5rem;
+}
+
+.api-item{
+  margin-right: 5px;
+    cursor: pointer;
+    padding: 6px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 5px;
+    background-color: #66bb6a;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.x{
+  background-color: #fff;
+    text-shadow: none;
+    opacity: 1;
+    font-size: 11px;
+    padding: 0;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    margin-top: 2px;
+    text-align: center;
+    color: black;
+    float: left;
+    margin-top: 0;
+    margin-right: 5px;
+    margin-left: 0;
+}
+
 .d-button{
   width: 60px;
   height: 35px;
@@ -124,9 +165,99 @@
   cursor: pointer;
 }
 
+/* offer page css */
+
 .flex-container{
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.form-control{
+  background-color: #252B50;
+  border: none;
+}
+
+.search-btn{
+  width: 100px;
+  height: 35px;
+  padding: 7px;
+  border: none;
+  position: relative;
+  border-radius: 5px;
+  background: #0cce6b;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-offer-btn{
+  width: 120px;
+  height: 35px;
+  padding: 7px;
+  border: none;
+  position: relative;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.export-btn{
+  width: 120px;
+  height: 35px;
+  padding: 7px;
+  border: none;
+  color: #0d6efd;
+  position: relative;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+}
+:hover{
+  color: #fff;
+}
+
+#status{
+  background-color: #252B50;
+  border: none;
+  color: #fff;
+  width: 100px;
+}
+
+#type{
+  background-color: #252B50;
+  border: none;
+  color: #fff;
+}
+
+.fixed-side{
+  color: #fff;
+}
+/* add offer page css */
+
+.nav-wrapper{
+  width: 100%;
+}
+
+.tabs-style{
+  z-index: 99;
+  background-color: #5c6bc0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+
+.navbar-nav a{
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.align-end{
+  text-align: end;
 }

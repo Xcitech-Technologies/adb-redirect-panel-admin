@@ -1,0 +1,5028 @@
+﻿[
+  {
+    "MasterData": [
+      {
+        "CountryCode": "CN",
+        "Pop": " 1,439,323,776.00 ",
+        "CountryName": "China",
+        "Timezones": "Asia/Shanghai,Asia/Urumqi",
+        "Language": "Chinese,Sichuan Yi,Tibetan,Uyghur",
+        "CountryLanguagecode": "zh,zh-CN,ii,ii-CN,bo,bo-CN,ug,ug-CN",
+        "Domain": "https://www.google.cn/"
+      },
+      {
+        "CountryCode": "IN",
+        "Pop": " 1,380,004,385.00 ",
+        "CountryName": "India",
+        "Timezones": "Asia/Kolkata,Asia/Calcutta",
+        "Language": "English",
+        "CountryLanguagecode": "en-IN",
+        "Domain": "https://www.google.co.in/"
+      },
+      {
+        "CountryCode": "US",
+        "Pop": " 331,002,651.00 ",
+        "CountryName": "United States",
+        "Timezones": "America/Adak,America/Anchorage,America/Boise,America/Chicago,America/Denver,America/Detroit,America/Indiana/Indianapolis,America/Indiana/Knox,America/Indiana/Marengo,America/Indiana/Petersburg,America/Indiana/Tell_City,America/Indiana/Vevay,America/Indiana/Vincennes,America/Indiana/Winamac,America/Juneau,America/Kentucky/Louisville,America/Kentucky/Monticello,America/Los_Angeles,America/Menominee,America/Metlakatla,America/New_York,America/Nome,America/North_Dakota/Beulah,America/North_Dakota/Center,America/North_Dakota/New_Salem,America/Phoenix,America/Sitka,America/Yakutat,Pacific/Honolulu",
+        "Language": "English,Spanish",
+        "CountryLanguagecode": "en-US,es,es-US",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "ID",
+        "Pop": " 273,523,615.00 ",
+        "CountryName": "Indonesia",
+        "Timezones": "Asia/Jakarta,Asia/Jayapura,Asia/Makassar,Asia/Pontianak",
+        "Language": "Indonesian",
+        "CountryLanguagecode": "id,id-ID",
+        "Domain": "https://www.google.co.id/"
+      },
+      {
+        "CountryCode": "PK",
+        "Pop": " 220,892,340.00 ",
+        "CountryName": "Pakistan",
+        "Timezones": "Asia/Karachi",
+        "Language": "English,Punjabi,Urdu",
+        "CountryLanguagecode": "en-PK,pa,pa-PK,ur,ur-PK",
+        "Domain": "https://www.google.com.pk/"
+      },
+      {
+        "CountryCode": "BR",
+        "Pop": " 212,559,417.00 ",
+        "CountryName": "Brazil",
+        "Timezones": "America/Araguaina,America/Bahia,America/Belem,America/Boa_Vista,America/Campo_Grande,America/Cuiaba,America/Eirunepe,America/Fortaleza,America/Maceio,America/Manaus,America/Noronha,America/Porto_Velho,America/Recife,America/Rio_Branco,America/Santarem,America/Sao_Paulo",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-BR",
+        "Domain": "https://www.google.com.br/"
+      },
+      {
+        "CountryCode": "NG",
+        "Pop": " 206,139,589.00 ",
+        "CountryName": "Nigeria",
+        "Timezones": "Africa/Lagos",
+        "Language": "English,Hausa,Igbo,Yoruba",
+        "CountryLanguagecode": "en-NG,ha,ha-NG,ig,ig-NG,yo,yo-NG",
+        "Domain": "https://www.google.com.ng/"
+      },
+      {
+        "CountryCode": "NA",
+        "Pop": " 2,540,905.00 ",
+        "CountryName": "Namibia",
+        "Timezones": "Africa/Windhoek",
+        "Language": "Afrikaans,English",
+        "CountryLanguagecode": "af,af-NA,en,en-NA",
+        "Domain": "https://www.google.com.na/"
+      },
+      {
+        "CountryCode": "RU",
+        "Pop": " 145,934,462.00 ",
+        "CountryName": "Russia",
+        "Timezones": "Asia/Anadyr,Asia/Barnaul,Asia/Chita,Asia/Irkutsk,Asia/Kamchatka,Asia/Khandyga,Asia/Krasnoyarsk,Asia/Magadan,Asia/Novokuznetsk,Asia/Novosibirsk,Asia/Omsk,Asia/Sakhalin,Asia/Srednekolymsk,Asia/Tomsk,Asia/Ust-Nera,Asia/Vladivostok,Asia/Yakutsk,Asia/Yekaterinburg,Europe/Astrakhan,Europe/Kaliningrad,Europe/Kirov,Europe/Moscow,Europe/Samara,Europe/Saratov,Europe/Ulyanovsk,Europe/Volgograd",
+        "Language": "Ossetic,Russian",
+        "CountryLanguagecode": "os,os-RU,ru,ru-RU",
+        "Domain": "https://www.google.ru/"
+      },
+      {
+        "CountryCode": "MX",
+        "Pop": " 128,932,753.00 ",
+        "CountryName": "Mexico",
+        "Timezones": "America/Bahia_Banderas,America/Cancun,America/Chihuahua,America/Hermosillo,America/Matamoros,America/Mazatlan,America/Merida,America/Mexico_City,America/Monterrey,America/Ojinaga,America/Tijuana",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-MX",
+        "Domain": "https://www.google.com.mx/"
+      },
+      {
+        "CountryCode": "JP",
+        "Pop": " 126,476,461.00 ",
+        "CountryName": "Japan",
+        "Timezones": "Asia/Tokyo",
+        "Language": "Japanese",
+        "CountryLanguagecode": "ja,ja-JP",
+        "Domain": "https://www.google.co.jp/"
+      },
+      {
+        "CountryCode": "ET",
+        "Pop": " 114,963,588.00 ",
+        "CountryName": "Ethiopia",
+        "Timezones": "Africa/Addis_Ababa",
+        "Language": "Amharic,Oromo,Somali,Tigrinya",
+        "CountryLanguagecode": "am,am-ET,om,om-ET,so,so-ET,ti,ti-ET",
+        "Domain": "https://www.google.com.et/"
+      },
+      {
+        "CountryCode": "PH",
+        "Pop": " 109,581,078.00 ",
+        "CountryName": "Philippines",
+        "Timezones": "Asia/Manila",
+        "Language": "English,Spanish,Tagalog",
+        "CountryLanguagecode": "en-PH,es,es-PH,tl,tl-PH",
+        "Domain": "https://www.google.com.ph/"
+      },
+      {
+        "CountryCode": "EG",
+        "Pop": " 102,334,404.00 ",
+        "CountryName": "Egypt",
+        "Timezones": "Africa/Cairo",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-EG",
+        "Domain": "https://www.google.com.eg/"
+      },
+      {
+        "CountryCode": "VN",
+        "Pop": " 97,338,579.00 ",
+        "CountryName": "Vietnam",
+        "Timezones": "Asia/Ho_Chi_Minh",
+        "Language": "Vietnamese",
+        "CountryLanguagecode": "vi,vi-VN",
+        "Domain": "https://www.google.com.vn/"
+      },
+      {
+        "CountryCode": "BD",
+        "Pop": " 164,689,383.00 ",
+        "CountryName": "Bangladesh",
+        "Timezones": "Asia/Dhaka",
+        "Language": "Bengali",
+        "CountryLanguagecode": "bn,bn-BD",
+        "Domain": "https://www.google.com.bd/"
+      },
+      {
+        "CountryCode": "TR",
+        "Pop": " 84,339,067.00 ",
+        "CountryName": "Turkey",
+        "Timezones": "Europe/Istanbul",
+        "Language": "Turkish",
+        "CountryLanguagecode": "tr,tr-TR",
+        "Domain": "https://www.google.com.tr/"
+      },
+      {
+        "CountryCode": "IR",
+        "Pop": " 83,992,949.00 ",
+        "CountryName": "Iran",
+        "Timezones": "Asia/Tehran",
+        "Language": "Persian",
+        "CountryLanguagecode": "fa,fa-IR",
+        "Domain": "https://www.google.ru/"
+      },
+      {
+        "CountryCode": "DE",
+        "Pop": " 83,783,942.00 ",
+        "CountryName": "Germany",
+        "Timezones": "Europe/Berlin,Europe/Busingen",
+        "Language": "German",
+        "CountryLanguagecode": "de,de-DE",
+        "Domain": "https://www.google.de/"
+      },
+      {
+        "CountryCode": "TH",
+        "Pop": " 69,799,978.00 ",
+        "CountryName": "Thailand",
+        "Timezones": "Asia/Bangkok",
+        "Language": "Thai",
+        "CountryLanguagecode": "th,th-TH",
+        "Domain": "https://www.google.co.th/"
+      },
+      {
+        "CountryCode": "GB",
+        "Pop": " 67,886,011.00 ",
+        "CountryName": "United Kingdom",
+        "Timezones": "Europe/London",
+        "Language": "Cornish,English,Scottish Gaelic,Welsh",
+        "CountryLanguagecode": "kw,kw-GB,en,en-GB,gd,gd-GB,cy,cy-GB",
+        "Domain": "https://www.google.co.uk/"
+      },
+      {
+        "CountryCode": "FR",
+        "Pop": " 65,273,511.00 ",
+        "CountryName": "France",
+        "Timezones": "Europe/Paris",
+        "Language": "Breton,Catalan,French",
+        "CountryLanguagecode": "br,br-FR,ca,ca-FR,fr,fr-FR",
+        "Domain": "https://www.google.fr/"
+      },
+      {
+        "CountryCode": "IT",
+        "Pop": " 60,461,826.00 ",
+        "CountryName": "Italy",
+        "Timezones": "Europe/Rome",
+        "Language": "Catalan,Italian",
+        "CountryLanguagecode": "ca,ca-IT,it,it-IT",
+        "Domain": "https://www.google.it/"
+      },
+      {
+        "CountryCode": "AD",
+        "Pop": " 77,265.00 ",
+        "CountryName": "Andorra",
+        "Timezones": "Europe/Andorra",
+        "Language": "Catalan",
+        "CountryLanguagecode": "ca,ca-AD",
+        "Domain": "https://www.google.ad/"
+      },
+      {
+        "CountryCode": "ZA",
+        "Pop": " 59,308,690.00 ",
+        "CountryName": "South Africa",
+        "Timezones": "Africa/Johannesburg",
+        "Language": "Afrikaans,English,Zulu",
+        "CountryLanguagecode": "af,af-ZA,en,en-ZA,zu,zu-ZA",
+        "Domain": "https://www.google.co.za/"
+      },
+      {
+        "CountryCode": "KE",
+        "Pop": " 53,771,296.00 ",
+        "CountryName": "Kenya",
+        "Timezones": "Africa/Nairobi",
+        "Language": "English,Kikuyu,Oromo,Somali,Swahili",
+        "CountryLanguagecode": "en-KE,ki,ki-KE,om,om-KE,so,so-KE,sw,sw-KE",
+        "Domain": "https://www.google.co.ke/"
+      },
+      {
+        "CountryCode": "KR",
+        "Pop": " 51,269,185.00 ",
+        "CountryName": "South Korea",
+        "Timezones": "Asia/Seoul",
+        "Language": "Korean",
+        "CountryLanguagecode": "ko,ko-KR",
+        "Domain": "https://www.google.co.kr/"
+      },
+      {
+        "CountryCode": "CO",
+        "Pop": " 50,882,891.00 ",
+        "CountryName": "Colombia",
+        "Timezones": "America/Bogota",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-CO",
+        "Domain": "https://www.google.com.co/"
+      },
+      {
+        "CountryCode": "ES",
+        "Pop": " 46,754,778.00 ",
+        "CountryName": "Spain",
+        "Timezones": "Africa/Ceuta,Atlantic/Canary,Europe/Madrid",
+        "Language": "Basque,Catalan,Galician,Spanish",
+        "CountryLanguagecode": "eu,eu-ES,ca,ca-ES,gl,gl-ES,es,es-ES",
+        "Domain": "https://www.google.es/"
+      },
+      {
+        "CountryCode": "MW",
+        "Pop": " 19,129,952.00 ",
+        "CountryName": "Malawi",
+        "Timezones": "Africa/Blantyre",
+        "Language": "English",
+        "CountryLanguagecode": "en-MW",
+        "Domain": "https://www.google.mw/"
+      },
+      {
+        "CountryCode": "AR",
+        "Pop": " 45,195,774.00 ",
+        "CountryName": "Argentina",
+        "Timezones": "America/Argentina/Buenos_Aires,America/Argentina/Catamarca,America/Argentina/Cordoba,America/Argentina/Jujuy,America/Argentina/La_Rioja,America/Argentina/Mendoza,America/Argentina/Rio_Gallegos,America/Argentina/Salta,America/Argentina/San_Juan,America/Argentina/San_Luis,America/Argentina/Tucuman,America/Argentina/Ushuaia",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-AR",
+        "Domain": "https://www.google.com.ar/"
+      },
+      {
+        "CountryCode": "DZ",
+        "Pop": " 43,851,044.00 ",
+        "CountryName": "Algeria",
+        "Timezones": "Africa/Algiers",
+        "Language": "Arabic,French",
+        "CountryLanguagecode": "ar,ar-DZ,fr,fr-DZ",
+        "Domain": "https://www.google.dz/"
+      },
+      {
+        "CountryCode": "UA",
+        "Pop": " 43,733,762.00 ",
+        "CountryName": "Ukraine",
+        "Timezones": "Europe/Kiev,Europe/Simferopol,Europe/Uzhgorod,Europe/Zaporozhye",
+        "Language": "Russian,Ukrainian",
+        "CountryLanguagecode": "ru,ru-UA,uk,uk-UA",
+        "Domain": "https://www.google.com.ua/"
+      },
+      {
+        "CountryCode": "IQ",
+        "Pop": " 40,222,493.00 ",
+        "CountryName": "Iraq",
+        "Timezones": "Asia/Baghdad",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-IQ",
+        "Domain": "https://www.google.iq/"
+      },
+      {
+        "CountryCode": "AF",
+        "Pop": " 38,928,346.00 ",
+        "CountryName": "Afghanistan",
+        "Timezones": "Asia/Kabul",
+        "Language": "Pashto,Persian,Uzbek",
+        "CountryLanguagecode": "ps,ps-AF,fa,fa-AF,uz,uz-AF",
+        "Domain": "https://www.google.com.af/"
+      },
+      {
+        "CountryCode": "PL",
+        "Pop": " 37,846,611.00 ",
+        "CountryName": "Poland",
+        "Timezones": "Europe/Warsaw",
+        "Language": "Polish",
+        "CountryLanguagecode": "pl,pl-PL",
+        "Domain": "https://www.google.pl/"
+      },
+      {
+        "CountryCode": "CA",
+        "Pop": " 37,742,154.00 ",
+        "CountryName": "Canada",
+        "Timezones": "America/Atikokan,America/Blanc-Sablon,America/Cambridge_Bay,America/Creston,America/Dawson,America/Dawson_Creek,America/Edmonton,America/Fort_Nelson,America/Glace_Bay,America/Goose_Bay,America/Halifax,America/Inuvik,America/Iqaluit,America/Moncton,America/Nipigon,America/Pangnirtung,America/Rainy_River,America/Rankin_Inlet,America/Regina,America/Resolute,America/St_Johns,America/Swift_Current,America/Thunder_Bay,America/Toronto,America/Vancouver,America/Whitehorse,America/Winnipeg,America/Yellowknife",
+        "Language": "English,French",
+        "CountryLanguagecode": "en-CA,fr,fr-CA",
+        "Domain": "https://www.google.ca/"
+      },
+      {
+        "CountryCode": "MA",
+        "Pop": " 36,910,560.00 ",
+        "CountryName": "Morocco",
+        "Timezones": "Africa/Casablanca",
+        "Language": "Arabic,French",
+        "CountryLanguagecode": "ar,ar-MA,fr,fr-MA",
+        "Domain": "https://www.google.co.ma/"
+      },
+      {
+        "CountryCode": "SA",
+        "Pop": " 34,813,871.00 ",
+        "CountryName": "Saudi Arabia",
+        "Timezones": "Asia/Riyadh",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-SA",
+        "Domain": "https://www.google.com.sa/"
+      },
+      {
+        "CountryCode": "UZ",
+        "Pop": " 33,469,203.00 ",
+        "CountryName": "Uzbekistan",
+        "Timezones": "Asia/Samarkand,Asia/Tashkent",
+        "Language": "Uzbek",
+        "CountryLanguagecode": "uz,uz-UZ",
+        "Domain": "https://www.google.co.uz/"
+      },
+      {
+        "CountryCode": "PE",
+        "Pop": " 32,971,854.00 ",
+        "CountryName": "Peru",
+        "Timezones": "America/Lima",
+        "Language": "Quechua,Spanish",
+        "CountryLanguagecode": "qu,qu-PE,es,es-PE",
+        "Domain": "https://www.google.com.pe/"
+      },
+      {
+        "CountryCode": "AO",
+        "Pop": " 32,866,271.10 ",
+        "CountryName": "Angola",
+        "Timezones": "Africa/Luanda",
+        "Language": "Lingala,Portuguese",
+        "CountryLanguagecode": "ln,ln-AO,pt,pt-AO",
+        "Domain": "https://www.google.co.ao/"
+      },
+      {
+        "CountryCode": "MY",
+        "Pop": " 32,365,999.00 ",
+        "CountryName": "Malaysia",
+        "Timezones": "Asia/Kuala_Lumpur,Asia/Kuching",
+        "Language": "English,Malay,Tamil",
+        "CountryLanguagecode": "en-MY,ms,ms-MY,ta,ta-MY",
+        "Domain": "https://www.google.com.my/"
+      },
+      {
+        "CountryCode": "MU",
+        "Pop": " 1,271,768.00 ",
+        "CountryName": "Mauritius",
+        "Timezones": "Indian/Mauritius",
+        "Language": "English,French",
+        "CountryLanguagecode": "en-MU,fr,fr-MU",
+        "Domain": "https://www.google.mu/"
+      },
+      {
+        "CountryCode": "SR",
+        "Pop": " 586,632.00 ",
+        "CountryName": "Suriname",
+        "Timezones": "America/Paramaribo",
+        "Language": "Dutch",
+        "CountryLanguagecode": "nl,nl-SR",
+        "Domain": "https://www.google.sr/"
+      },
+      {
+        "CountryCode": "YE",
+        "Pop": " 29,825,964.00 ",
+        "CountryName": "Yemen",
+        "Timezones": "Asia/Aden",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-YE",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "CW",
+        "Pop": " 164,093.00 ",
+        "CountryName": "Curacao",
+        "Timezones": "America/Curacao",
+        "Language": "Dutch",
+        "CountryLanguagecode": "nl,nl-CW",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "VE",
+        "Pop": " 28,435,940.00 ",
+        "CountryName": "Venezuela",
+        "Timezones": "America/Caracas",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-VE",
+        "Domain": "https://www.google.co.ve/"
+      },
+      {
+        "CountryCode": "AW",
+        "Pop": " 106,766.00 ",
+        "CountryName": "Aruba",
+        "Timezones": "America/Aruba",
+        "Language": "Dutch",
+        "CountryLanguagecode": "nl,nl-AW",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "TZ",
+        "Pop": " 59,734,218.00 ",
+        "CountryName": "Tanzania",
+        "Timezones": "Africa/Dar_es_Salaam",
+        "Language": "English,Swahili",
+        "CountryLanguagecode": "en-TZ,sw,sw-TZ",
+        "Domain": "https://www.google.co.tz/"
+      },
+      {
+        "CountryCode": "UG",
+        "Pop": " 45,741,007.00 ",
+        "CountryName": "Uganda",
+        "Timezones": "Africa/Kampala",
+        "Language": "English,Ganda,Swahili",
+        "CountryLanguagecode": "en-UG,lg,lg-UG,sw,sw-UG",
+        "Domain": "https://www.google.co.ug/"
+      },
+      {
+        "CountryCode": "GH",
+        "Pop": " 31,072,940.00 ",
+        "CountryName": "Ghana",
+        "Timezones": "Africa/Accra",
+        "Language": "Akan,English,Ewe,Hausa",
+        "CountryLanguagecode": "ak,ak-GH,en,en-GH,ee,ee-GH,ha,ha-GH",
+        "Domain": "https://www.google.com.gh/"
+      },
+      {
+        "CountryCode": "AU",
+        "Pop": " 25,499,884.00 ",
+        "CountryName": "Australia",
+        "Timezones": "Australia/Macquarie,Australia/Adelaide,Australia/Brisbane,Australia/Broken_Hill,Australia/Currie,Australia/Darwin,Australia/Eucla,Australia/Hobart,Australia/Lindeman,Australia/Lord_Howe,Australia/Melbourne,Australia/Perth,Australia/Sydney",
+        "Language": "English",
+        "CountryLanguagecode": "en-AU",
+        "Domain": "https://www.google.com.au/"
+      },
+      {
+        "CountryCode": "ZM",
+        "Pop": " 18,383,955.00 ",
+        "CountryName": "Zambia",
+        "Timezones": "Africa/Lusaka",
+        "Language": "English",
+        "CountryLanguagecode": "en-ZM",
+        "Domain": "https://www.google.co.zm/"
+      },
+      {
+        "CountryCode": "TW",
+        "Pop": " 23,816,775.00 ",
+        "CountryName": "Taiwan",
+        "Timezones": "Asia/Taipei",
+        "Language": "Chinese",
+        "CountryLanguagecode": "zh,zh-TW",
+        "Domain": "https://www.google.com.tw/"
+      },
+      {
+        "CountryCode": "ZW",
+        "Pop": " 14,862,924.00 ",
+        "CountryName": "Zimbabwe",
+        "Timezones": "Africa/Harare",
+        "Language": "English,North Ndebele,Shona",
+        "CountryLanguagecode": "en-ZW,nd,nd-ZW,sn,sn-ZW",
+        "Domain": "https://www.google.co.zw/"
+      },
+      {
+        "CountryCode": "RW",
+        "Pop": " 12,952,218.00 ",
+        "CountryName": "Rwanda",
+        "Timezones": "Africa/Kigali",
+        "Language": "English,French,Kinyarwanda",
+        "CountryLanguagecode": "en-RW,fr,fr-RW,rw,rw-RW",
+        "Domain": "https://www.google.rw/"
+      },
+      {
+        "CountryCode": "SS",
+        "Pop": " 11,193,725.00 ",
+        "CountryName": "South Sudan",
+        "Timezones": "Africa/Juba",
+        "Language": "Arabic,English",
+        "CountryLanguagecode": "ar,ar-SS,en,en-SS",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "RO",
+        "Pop": " 19,237,691.00 ",
+        "CountryName": "Romania",
+        "Timezones": "Europe/Bucharest",
+        "Language": "Romanian",
+        "CountryLanguagecode": "ro,ro-RO",
+        "Domain": "https://www.google.ro/"
+      },
+      {
+        "CountryCode": "LR",
+        "Pop": " 5,057,681.00 ",
+        "CountryName": "Liberia",
+        "Timezones": "Africa/Monrovia",
+        "Language": "English",
+        "CountryLanguagecode": "en-LR",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "CL",
+        "Pop": " 19,116,201.00 ",
+        "CountryName": "Chile",
+        "Timezones": "America/Punta_Arenas,America/Santiago,Pacific/Easter",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-CL",
+        "Domain": "https://www.google.cl/"
+      },
+      {
+        "CountryCode": "KZ",
+        "Pop": " 18,776,707.00 ",
+        "CountryName": "Kazakhstan",
+        "Timezones": "Asia/Almaty,Asia/Aqtau,Asia/Aqtobe,Asia/Atyrau,Asia/Oral,Asia/Qostanay,Asia/Qyzylorda",
+        "Language": "Kazakh,Russian",
+        "CountryLanguagecode": "kk,kk-KZ,ru,ru-KZ",
+        "Domain": "https://www.google.kz/"
+      },
+      {
+        "CountryCode": "ER",
+        "Pop": " 3,546,421.00 ",
+        "CountryName": "Eritrea",
+        "Timezones": "Africa/Asmara",
+        "Language": "Arabic,English,Tigrinya",
+        "CountryLanguagecode": "ar,ar-ER,en,en-ER,ti,ti-ER",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "GT",
+        "Pop": " 17,915,568.00 ",
+        "CountryName": "Guatemala",
+        "Timezones": "America/Guatemala",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-GT",
+        "Domain": "https://www.google.com.gt/"
+      },
+      {
+        "CountryCode": "EC",
+        "Pop": " 17,643,054.00 ",
+        "CountryName": "Ecuador",
+        "Timezones": "America/Guayaquil,Pacific/Galapagos",
+        "Language": "Quechua,Spanish",
+        "CountryLanguagecode": "qu,qu-EC,es,es-EC",
+        "Domain": "https://www.google.com.ec/"
+      },
+      {
+        "CountryCode": "SY",
+        "Pop": " 17,500,658.00 ",
+        "CountryName": "Syria",
+        "Timezones": "Asia/Damascus",
+        "Language": "Arabic,French",
+        "CountryLanguagecode": "ar,ar-SY,fr,fr-SY",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "NL",
+        "Pop": " 17,134,872.00 ",
+        "CountryName": "Netherlands",
+        "Timezones": "Europe/Amsterdam",
+        "Language": "Dutch,Western Frisian",
+        "CountryLanguagecode": "nl,nl-NL,fy,fy-NL",
+        "Domain": "https://www.google.nl/"
+      },
+      {
+        "CountryCode": "GM",
+        "Pop": " 2,416,668.00 ",
+        "CountryName": "Gambia",
+        "Timezones": "Africa/Banjul",
+        "Language": "English",
+        "CountryLanguagecode": "en-GM",
+        "Domain": "https://www.google.gm/"
+      },
+      {
+        "CountryCode": "LS",
+        "Pop": " 2,142,249.00 ",
+        "CountryName": "Lesotho",
+        "Timezones": "Africa/Maseru",
+        "Language": "English",
+        "CountryLanguagecode": "en-LS",
+        "Domain": "https://www.google.co.ls/"
+      },
+      {
+        "CountryCode": "SZ",
+        "Pop": " 1,160,164.00 ",
+        "CountryName": "Swaziland",
+        "Timezones": "Africa/Mbabane",
+        "Language": "English",
+        "CountryLanguagecode": "en-SZ",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "FJ",
+        "Pop": " 896,445.00 ",
+        "CountryName": "Fiji",
+        "Timezones": "Pacific/Fiji",
+        "Language": "English",
+        "CountryLanguagecode": "en-FJ",
+        "Domain": "https://www.google.com.fj/"
+      },
+      {
+        "CountryCode": "GY",
+        "Pop": " 786,552.00 ",
+        "CountryName": "Guyana",
+        "Timezones": "America/Guyana",
+        "Language": "English",
+        "CountryLanguagecode": "en-GY",
+        "Domain": "https://www.google.gy/"
+      },
+      {
+        "CountryCode": "BS",
+        "Pop": " 393,244.00 ",
+        "CountryName": "Bahamas",
+        "Timezones": "America/Nassau",
+        "Language": "English",
+        "CountryLanguagecode": "en-BS",
+        "Domain": "https://www.google.bs/"
+      },
+      {
+        "CountryCode": "BB",
+        "Pop": " 287,375.00 ",
+        "CountryName": "Barbados",
+        "Timezones": "America/Barbados",
+        "Language": "English",
+        "CountryLanguagecode": "en-BB",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "LC",
+        "Pop": " 183,627.00 ",
+        "CountryName": "Saint Lucia",
+        "Timezones": "America/St_Lucia",
+        "Language": "English",
+        "CountryLanguagecode": "en-LC",
+        "Domain": "https://www.google.com.lc/"
+      },
+      {
+        "CountryCode": "KI",
+        "Pop": " 119,449.00 ",
+        "CountryName": "Kiribati",
+        "Timezones": "Pacific/Enderbury,Pacific/Kiritimati,Pacific/Tarawa",
+        "Language": "English",
+        "CountryLanguagecode": "en-KI",
+        "Domain": "https://www.google.ki/"
+      },
+      {
+        "CountryCode": "TN",
+        "Pop": " 11,818,619.00 ",
+        "CountryName": "Tunisia",
+        "Timezones": "Africa/Tunis",
+        "Language": "Arabic,French",
+        "CountryLanguagecode": "ar,ar-TN,fr,fr-TN",
+        "Domain": "https://www.google.tn/"
+      },
+      {
+        "CountryCode": "BO",
+        "Pop": " 11,673,021.00 ",
+        "CountryName": "Bolivia",
+        "Timezones": "America/La_Paz",
+        "Language": "Quechua,Spanish",
+        "CountryLanguagecode": "qu,qu-BO,es,es-BO",
+        "Domain": "https://www.google.com.bo/"
+      },
+      {
+        "CountryCode": "BE",
+        "Pop": " 11,589,623.00 ",
+        "CountryName": "Belgium",
+        "Timezones": "Europe/Brussels",
+        "Language": "Dutch,English,French,German",
+        "CountryLanguagecode": "nl,nl-BE,en,en-BE,fr,fr-BE,de,de-BE",
+        "Domain": "https://www.google.be/"
+      },
+      {
+        "CountryCode": "FM",
+        "Pop": " 115,023.00 ",
+        "CountryName": "Micronesia",
+        "Timezones": "Pacific/Chuuk,Pacific/Kosrae,Pacific/Pohnpei",
+        "Language": "English",
+        "CountryLanguagecode": "en-FM",
+        "Domain": "https://www.google.fm/"
+      },
+      {
+        "CountryCode": "GD",
+        "Pop": " 112,523.00 ",
+        "CountryName": "Grenada",
+        "Timezones": "America/Grenada",
+        "Language": "English",
+        "CountryLanguagecode": "en-GD",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "VC",
+        "Pop": " 110,940.00 ",
+        "CountryName": "Saint Vincent and the Grenadines",
+        "Timezones": "America/St_Vincent",
+        "Language": "English",
+        "CountryLanguagecode": "en-VC",
+        "Domain": "https://www.google.com.vc/"
+      },
+      {
+        "CountryCode": "DO",
+        "Pop": " 10,847,910.00 ",
+        "CountryName": "Dominican Republic",
+        "Timezones": "America/Santo_Domingo",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-DO",
+        "Domain": "https://www.google.com.do/"
+      },
+      {
+        "CountryCode": "CZ",
+        "Pop": " 10,708,981.00 ",
+        "CountryName": "Czech Republic",
+        "Timezones": "Europe/Prague",
+        "Language": "Czech",
+        "CountryLanguagecode": "cs,cs-CZ",
+        "Domain": "https://www.google.cz/"
+      },
+      {
+        "CountryCode": "AG",
+        "Pop": " 97,929.00 ",
+        "CountryName": "Antigua and Barbuda",
+        "Timezones": "America/Antigua",
+        "Language": "English",
+        "CountryLanguagecode": "en-AG",
+        "Domain": "https://www.google.com.ag/"
+      },
+      {
+        "CountryCode": "JO",
+        "Pop": " 10,203,134.00 ",
+        "CountryName": "Jordan",
+        "Timezones": "Asia/Amman",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-JO",
+        "Domain": "https://www.google.jo/"
+      },
+      {
+        "CountryCode": "PT",
+        "Pop": " 10,196,709.00 ",
+        "CountryName": "Portugal",
+        "Timezones": "Atlantic/Azores,Atlantic/Madeira,Europe/Lisbon",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-PT",
+        "Domain": "https://www.google.pt/"
+      },
+      {
+        "CountryCode": "AZ",
+        "Pop": " 10,139,177.00 ",
+        "CountryName": "Azerbaijan",
+        "Timezones": "Asia/Baku",
+        "Language": "Azerbaijani",
+        "CountryLanguagecode": "az,az-AZ",
+        "Domain": "https://www.google.az/"
+      },
+      {
+        "CountryCode": "SE",
+        "Pop": " 10,099,265.00 ",
+        "CountryName": "Sweden",
+        "Timezones": "Europe/Stockholm",
+        "Language": "Northern Sami,Swedish",
+        "CountryLanguagecode": "se,se-SE,sv,sv-SE",
+        "Domain": "https://www.google.se/"
+      },
+      {
+        "CountryCode": "HN",
+        "Pop": " 9,904,607.00 ",
+        "CountryName": "Honduras",
+        "Timezones": "America/Tegucigalpa",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-HN",
+        "Domain": "https://www.google.hn/"
+      },
+      {
+        "CountryCode": "AE",
+        "Pop": " 9,890,402.00 ",
+        "CountryName": "United Arab Emirates",
+        "Timezones": "Asia/Dubai",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-AE",
+        "Domain": "https://www.google.ae/"
+      },
+      {
+        "CountryCode": "HU",
+        "Pop": " 9,660,351.00 ",
+        "CountryName": "Hungary",
+        "Timezones": "Europe/Budapest",
+        "Language": "Hungarian",
+        "CountryLanguagecode": "hu,hu-HU",
+        "Domain": "https://www.google.hu/"
+      },
+      {
+        "CountryCode": "DM",
+        "Pop": " 71,986.00 ",
+        "CountryName": "Dominica",
+        "Timezones": "America/Dominica",
+        "Language": "English",
+        "CountryLanguagecode": "en-DM",
+        "Domain": "https://www.google.dm/"
+      },
+      {
+        "CountryCode": "BY",
+        "Pop": " 9,449,323.00 ",
+        "CountryName": "Belarus",
+        "Timezones": "Europe/Minsk",
+        "Language": "Belarusian,Russian",
+        "CountryLanguagecode": "be,be-BY,ru,ru-BY",
+        "Domain": "https://www.google.by/"
+      },
+      {
+        "CountryCode": "AT",
+        "Pop": " 9,006,398.00 ",
+        "CountryName": "Austria",
+        "Timezones": "Europe/Vienna",
+        "Language": "German",
+        "CountryLanguagecode": "de,de-AT",
+        "Domain": "https://www.google.at/"
+      },
+      {
+        "CountryCode": "BM",
+        "Pop": " 62,278.00 ",
+        "CountryName": "Bermuda",
+        "Timezones": "Atlantic/Bermuda",
+        "Language": "English",
+        "CountryLanguagecode": "en-BM",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "RS",
+        "Pop": " 8,737,371.00 ",
+        "CountryName": "Serbia",
+        "Timezones": "Europe/Belgrade",
+        "Language": "Serbian",
+        "CountryLanguagecode": "sr,sr-RS",
+        "Domain": "https://www.google.rs/"
+      },
+      {
+        "CountryCode": "IL",
+        "Pop": " 8,655,535.00 ",
+        "CountryName": "Israel",
+        "Timezones": "Asia/Jerusalem",
+        "Language": "Arabic,Hebrew",
+        "CountryLanguagecode": "ar,ar-IL,he,he-IL",
+        "Domain": "https://www.google.co.il/"
+      },
+      {
+        "CountryCode": "CH",
+        "Pop": " 8,654,622.00 ",
+        "CountryName": "Switzerland",
+        "Timezones": "Europe/Zurich",
+        "Language": "French,German,Italian,Romansh",
+        "CountryLanguagecode": "fr,fr-CH,de,de-CH,it,it-CH,rm,rm-CH",
+        "Domain": "https://www.google.ch/"
+      },
+      {
+        "CountryCode": "MP",
+        "Pop": " 57,559.00 ",
+        "CountryName": "Northern Mariana Islands",
+        "Timezones": "Pacific/Saipan",
+        "Language": "English",
+        "CountryLanguagecode": "en-MP",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "SL",
+        "Pop": " 7,976,983.00 ",
+        "CountryName": "Sierra Leone",
+        "Timezones": "Africa/Freetown",
+        "Language": "English",
+        "CountryLanguagecode": "en-SL",
+        "Domain": "https://www.google.com.sl/"
+      },
+      {
+        "CountryCode": "HK",
+        "Pop": " 7,496,981.00 ",
+        "CountryName": "Hong Kong",
+        "Timezones": "Asia/Hong_Kong",
+        "Language": "Chinese,English",
+        "CountryLanguagecode": "zh,zh-HK,en,en-HK",
+        "Domain": "https://www.google.com.hk/"
+      },
+      {
+        "CountryCode": "KN",
+        "Pop": " 53,199.00 ",
+        "CountryName": "Saint Kitts and Nevis",
+        "Timezones": "America/St_Kitts",
+        "Language": "English",
+        "CountryLanguagecode": "en-KN",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "PY",
+        "Pop": " 7,132,538.00 ",
+        "CountryName": "Paraguay",
+        "Timezones": "America/Asuncion",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-PY",
+        "Domain": "https://www.google.com.py/"
+      },
+      {
+        "CountryCode": "BG",
+        "Pop": " 6,948,445.00 ",
+        "CountryName": "Bulgaria",
+        "Timezones": "Europe/Sofia",
+        "Language": "Bulgarian",
+        "CountryLanguagecode": "bg,bg-BG",
+        "Domain": "https://www.google.bg/"
+      },
+      {
+        "CountryCode": "LY",
+        "Pop": " 6,871,292.00 ",
+        "CountryName": "Libya",
+        "Timezones": "Africa/Tripoli",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-LY",
+        "Domain": "https://www.google.com.ly/"
+      },
+      {
+        "CountryCode": "LB",
+        "Pop": " 6,825,445.00 ",
+        "CountryName": "Lebanon",
+        "Timezones": "Asia/Beirut",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-LB",
+        "Domain": "https://www.google.com.lb/"
+      },
+      {
+        "CountryCode": "NI",
+        "Pop": " 6,624,554.00 ",
+        "CountryName": "Nicaragua",
+        "Timezones": "America/Managua",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-NI",
+        "Domain": "https://www.google.com.ni/"
+      },
+      {
+        "CountryCode": "KG",
+        "Pop": " 6,524,195.00 ",
+        "CountryName": "Kyrgyzstan",
+        "Timezones": "Asia/Bishkek",
+        "Language": "Kyrgyz,Russian",
+        "CountryLanguagecode": "ky,ky-KG,ru,ru-KG",
+        "Domain": "https://www.google.kg/"
+      },
+      {
+        "CountryCode": "SV",
+        "Pop": " 6,486,205.00 ",
+        "CountryName": "El Salvador",
+        "Timezones": "America/El_Salvador",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-SV",
+        "Domain": "https://www.google.com.sv/"
+      },
+      {
+        "CountryCode": "TC",
+        "Pop": " 38,717.00 ",
+        "CountryName": "Turks and Caicos Islands",
+        "Timezones": "America/Grand_Turk",
+        "Language": "English",
+        "CountryLanguagecode": "en-TC",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "SG",
+        "Pop": " 5,850,342.00 ",
+        "CountryName": "Singapore",
+        "Timezones": "Asia/Singapore",
+        "Language": "Chinese,English,Malay,Tamil",
+        "CountryLanguagecode": "zh,zh-SG,en,en-SG,ms,ms-SG,ta,ta-SG",
+        "Domain": "https://www.google.com.sg/"
+      },
+      {
+        "CountryCode": "DK",
+        "Pop": " 5,792,202.00 ",
+        "CountryName": "Denmark",
+        "Timezones": "Europe/Copenhagen",
+        "Language": "Danish",
+        "CountryLanguagecode": "da,da-DK",
+        "Domain": "https://www.google.dk/"
+      },
+      {
+        "CountryCode": "FI",
+        "Pop": " 5,540,720.00 ",
+        "CountryName": "Finland",
+        "Timezones": "Europe/Helsinki",
+        "Language": "Finnish,Northern Sami,Swedish",
+        "CountryLanguagecode": "fi,fi-FI,se,se-FI,sv,sv-FI",
+        "Domain": "https://www.google.fi/"
+      },
+      {
+        "CountryCode": "SK",
+        "Pop": " 5,459,642.00 ",
+        "CountryName": "Slovakia",
+        "Timezones": "Europe/Bratislava",
+        "Language": "Slovak",
+        "CountryLanguagecode": "sk,sk-SK",
+        "Domain": "https://www.google.sk/"
+      },
+      {
+        "CountryCode": "NO",
+        "Pop": " 5,421,241.00 ",
+        "CountryName": "Norway",
+        "Timezones": "Europe/Oslo",
+        "Language": "Northern Sami,Norwegian,Norwegian Bokmål,Norwegian Nynorsk",
+        "CountryLanguagecode": "se,se-NO,no,no-NO,nb,nb-NO,nn,nn-NO",
+        "Domain": "https://www.google.no/"
+      },
+      {
+        "CountryCode": "OM",
+        "Pop": " 5,106,626.00 ",
+        "CountryName": "Oman",
+        "Timezones": "Asia/Muscat",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-OM",
+        "Domain": "https://www.google.com.om/"
+      },
+      {
+        "CountryCode": "PS",
+        "Pop": " 5,101,414.00 ",
+        "CountryName": "Palestine",
+        "Timezones": "Asia/Gaza,Asia/Hebron",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-PS",
+        "Domain": "https://www.google.ps/"
+      },
+      {
+        "CountryCode": "CR",
+        "Pop": " 5,094,118.00 ",
+        "CountryName": "Costa Rica",
+        "Timezones": "America/Costa_Rica",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-CR",
+        "Domain": "https://www.google.co.cr/"
+      },
+      {
+        "CountryCode": "GI",
+        "Pop": " 33,691.00 ",
+        "CountryName": "Gibraltar",
+        "Timezones": "Europe/Gibraltar",
+        "Language": "English",
+        "CountryLanguagecode": "en-GI",
+        "Domain": "https://www.google.com.gi/"
+      },
+      {
+        "CountryCode": "IE",
+        "Pop": " 4,937,786.00 ",
+        "CountryName": "Ireland",
+        "Timezones": "Europe/Dublin",
+        "Language": "English,Irish",
+        "CountryLanguagecode": "en-IE,ga,ga-IE",
+        "Domain": "https://www.google.ie/"
+      },
+      {
+        "CountryCode": "VG",
+        "Pop": " 30,231.00 ",
+        "CountryName": "British Virgin Islands",
+        "Timezones": "America/Tortola",
+        "Language": "English",
+        "CountryLanguagecode": "en-VG",
+        "Domain": "https://www.google.vg/"
+      },
+      {
+        "CountryCode": "NZ",
+        "Pop": " 4,822,233.00 ",
+        "CountryName": "New Zealand",
+        "Timezones": "Pacific/Auckland,Pacific/Chatham",
+        "Language": "English",
+        "CountryLanguagecode": "en-NZ",
+        "Domain": "https://www.google.co.nz/"
+      },
+      {
+        "CountryCode": "MR",
+        "Pop": " 4,649,658.00 ",
+        "CountryName": "Mauritania",
+        "Timezones": "Africa/Nouakchott",
+        "Language": "Arabic,French,Fulah",
+        "CountryLanguagecode": "ar,ar-MR,fr,fr-MR,ff,ff-MR",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "PA",
+        "Pop": " 4,314,767.00 ",
+        "CountryName": "Panama",
+        "Timezones": "America/Panama",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-PA",
+        "Domain": "https://www.google.com.pa/"
+      },
+      {
+        "CountryCode": "KW",
+        "Pop": " 4,270,571.00 ",
+        "CountryName": "Kuwait",
+        "Timezones": "Asia/Kuwait",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-KW",
+        "Domain": "https://www.google.com.kw/"
+      },
+      {
+        "CountryCode": "HR",
+        "Pop": " 4,105,267.00 ",
+        "CountryName": "Croatia",
+        "Timezones": "Europe/Zagreb",
+        "Language": "Croatian",
+        "CountryLanguagecode": "hr,hr-HR",
+        "Domain": "https://www.google.hr/"
+      },
+      {
+        "CountryCode": "AI",
+        "Pop": " 15,003.00 ",
+        "CountryName": "Anguilla",
+        "Timezones": "America/Anguilla",
+        "Language": "English",
+        "CountryLanguagecode": "en-AI",
+        "Domain": "https://www.google.com.ai/"
+      },
+      {
+        "CountryCode": "GE",
+        "Pop": " 3,989,167.00 ",
+        "CountryName": "Georgia",
+        "Timezones": "Asia/Tbilisi",
+        "Language": "Georgian,Ossetic",
+        "CountryLanguagecode": "ka,ka-GE,os,os-GE",
+        "Domain": "https://www.google.ge/"
+      },
+      {
+        "CountryCode": "CD",
+        "Pop": " 89,561,403.00 ",
+        "CountryName": "DR Congo",
+        "Timezones": "Africa/Brazzaville,Africa/Kinshasa,Africa/Lubumbashi",
+        "Language": "French,Lingala,Luba-Katanga",
+        "CountryLanguagecode": "fr,fr-CD,ln,ln-CD,lu,lu-CD",
+        "Domain": "https://www.google.cd/"
+      },
+      {
+        "CountryCode": "UY",
+        "Pop": " 3,473,730.00 ",
+        "CountryName": "Uruguay",
+        "Timezones": "America/Montevideo",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-UY",
+        "Domain": "https://www.google.com.uy/"
+      },
+      {
+        "CountryCode": "BA",
+        "Pop": " 3,280,819.00 ",
+        "CountryName": "Bosnia and Herzegovina",
+        "Timezones": "Europe/Sarajevo",
+        "Language": "Bosnian,Croatian,Serbian,Serbo-Croatian",
+        "CountryLanguagecode": "bs,bs-BA,hr,hr-BA,sr,sr-BA,sh,sh-BA",
+        "Domain": "https://www.google.ba/"
+      },
+      {
+        "CountryCode": "MN",
+        "Pop": " 3,278,290.00 ",
+        "CountryName": "Mongolia",
+        "Timezones": "Asia/Choibalsan,Asia/Hovd,Asia/Ulaanbaatar",
+        "Language": "Mongolian",
+        "CountryLanguagecode": "mn,mn-MN",
+        "Domain": "https://www.google.mn/"
+      },
+      {
+        "CountryCode": "AM",
+        "Pop": " 2,963,243.00 ",
+        "CountryName": "Armenia",
+        "Timezones": "Asia/Yerevan",
+        "Language": "Armenian",
+        "CountryLanguagecode": "hy,hy-AM",
+        "Domain": "https://www.google.am/"
+      },
+      {
+        "CountryCode": "JM",
+        "Pop": " 2,961,167.00 ",
+        "CountryName": "Jamaica",
+        "Timezones": "America/Jamaica",
+        "Language": "English",
+        "CountryLanguagecode": "en-JM",
+        "Domain": "https://www.google.com.jm/"
+      },
+      {
+        "CountryCode": "QA",
+        "Pop": " 2,881,053.00 ",
+        "CountryName": "Qatar",
+        "Timezones": "Asia/Qatar",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-QA",
+        "Domain": "https://www.google.com.qa/"
+      },
+      {
+        "CountryCode": "AL",
+        "Pop": " 2,877,797.00 ",
+        "CountryName": "Albania",
+        "Timezones": "Europe/Tirane",
+        "Language": "Albanian",
+        "CountryLanguagecode": "sq,sq-AL",
+        "Domain": "https://www.google.al/"
+      },
+      {
+        "CountryCode": "PR",
+        "Pop": " 2,860,853.00 ",
+        "CountryName": "Puerto Rico",
+        "Timezones": "America/Puerto_Rico",
+        "Language": "English,Spanish",
+        "CountryLanguagecode": "en-PR,es,es-PR",
+        "Domain": "https://www.google.com.pr/"
+      },
+      {
+        "CountryCode": "LT",
+        "Pop": " 2,722,289.00 ",
+        "CountryName": "Lithuania",
+        "Timezones": "Europe/Vilnius",
+        "Language": "Lithuanian",
+        "CountryLanguagecode": "lt,lt-LT",
+        "Domain": "https://www.google.lt/"
+      },
+      {
+        "CountryCode": "MG",
+        "Pop": " 27,691,018.00 ",
+        "CountryName": "Madagascar",
+        "Timezones": "Indian/Antananarivo",
+        "Language": "English,French,Malagasy",
+        "CountryLanguagecode": "en-MG,fr,fr-MG,mg,mg-MG",
+        "Domain": "https://www.google.mg/"
+      },
+      {
+        "CountryCode": "CM",
+        "Pop": " 26,545,863.00 ",
+        "CountryName": "Cameroon",
+        "Timezones": "Africa/Douala",
+        "Language": "English,French,Fulah",
+        "CountryLanguagecode": "en-CM,fr,fr-CM,ff,ff-CM",
+        "Domain": "https://www.google.cm/"
+      },
+      {
+        "CountryCode": "CI",
+        "Pop": " 26,378,274.00 ",
+        "CountryName": "Ivory Coast",
+        "Timezones": "Africa/Abidjan",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-CI",
+        "Domain": "https://www.google.ci/"
+      },
+      {
+        "CountryCode": "NE",
+        "Pop": " 24,206,644.00 ",
+        "CountryName": "Niger",
+        "Timezones": "Africa/Niamey",
+        "Language": "French,Hausa",
+        "CountryLanguagecode": "fr,fr-NE,ha,ha-NE",
+        "Domain": "https://www.google.ne/"
+      },
+      {
+        "CountryCode": "BF",
+        "Pop": " 20,903,273.00 ",
+        "CountryName": "Burkina Faso",
+        "Timezones": "Africa/Ouagadougou",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-BF",
+        "Domain": "https://www.google.bf/"
+      },
+      {
+        "CountryCode": "MK",
+        "Pop": " 2,083,373.10 ",
+        "CountryName": "Macedonia",
+        "Timezones": "Europe/Skopje",
+        "Language": "Albanian,Macedonian",
+        "CountryLanguagecode": "sq,sq-MK,mk,mk-MK",
+        "Domain": "https://www.google.mk/"
+      },
+      {
+        "CountryCode": "SI",
+        "Pop": " 2,078,938.00 ",
+        "CountryName": "Slovenia",
+        "Timezones": "Europe/Ljubljana",
+        "Language": "Slovenian",
+        "CountryLanguagecode": "sl,sl-SI",
+        "Domain": "https://www.google.si/"
+      },
+      {
+        "CountryCode": "ML",
+        "Pop": " 20,250,833.00 ",
+        "CountryName": "Mali",
+        "Timezones": "Africa/Bamako",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-ML",
+        "Domain": "https://www.google.ml/"
+      },
+      {
+        "CountryCode": "LV",
+        "Pop": " 1,886,198.00 ",
+        "CountryName": "Latvia",
+        "Timezones": "Europe/Riga",
+        "Language": "Latvian",
+        "CountryLanguagecode": "lv,lv-LV",
+        "Domain": "https://www.google.lv/"
+      },
+      {
+        "CountryCode": "BH",
+        "Pop": " 1,701,575.00 ",
+        "CountryName": "Bahrain",
+        "Timezones": "Asia/Bahrain",
+        "Language": "Arabic",
+        "CountryLanguagecode": "ar,ar-BH",
+        "Domain": "https://www.google.com.bh/"
+      },
+      {
+        "CountryCode": "SN",
+        "Pop": " 16,743,927.00 ",
+        "CountryName": "Senegal",
+        "Timezones": "Africa/Dakar",
+        "Language": "French,Fulah",
+        "CountryLanguagecode": "fr,fr-SN,ff,ff-SN",
+        "Domain": "https://www.google.sn/"
+      },
+      {
+        "CountryCode": "TT",
+        "Pop": " 1,399,488.00 ",
+        "CountryName": "Trinidad and Tobago",
+        "Timezones": "America/Port_of_Spain",
+        "Language": "English",
+        "CountryLanguagecode": "en-TT",
+        "Domain": "https://www.google.tt/"
+      },
+      {
+        "CountryCode": "EE",
+        "Pop": " 1,326,535.00 ",
+        "CountryName": "Estonia",
+        "Timezones": "Europe/Tallinn",
+        "Language": "Estonian",
+        "CountryLanguagecode": "et,et-EE",
+        "Domain": "https://www.google.ee/"
+      },
+      {
+        "CountryCode": "TL",
+        "Pop": " 1,318,445.00 ",
+        "CountryName": "Timor-Leste",
+        "Timezones": "Asia/Dili",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-TL",
+        "Domain": "https://www.google.tl/"
+      },
+      {
+        "CountryCode": "TD",
+        "Pop": " 16,425,864.00 ",
+        "CountryName": "Chad",
+        "Timezones": "Africa/Ndjamena",
+        "Language": "Arabic,French",
+        "CountryLanguagecode": "ar,ar-TD,fr,fr-TD",
+        "Domain": "https://www.google.td/"
+      },
+      {
+        "CountryCode": "CY",
+        "Pop": " 1,207,359.00 ",
+        "CountryName": "Cyprus",
+        "Timezones": "Asia/Famagusta,Asia/Nicosia",
+        "Language": "Greek,Turkish",
+        "CountryLanguagecode": "el,el-CY,tr,tr-CY",
+        "Domain": "https://www.google.com.cy/"
+      },
+      {
+        "CountryCode": "GN",
+        "Pop": " 13,132,795.00 ",
+        "CountryName": "Guinea",
+        "Timezones": "Africa/Conakry",
+        "Language": "French,Fulah",
+        "CountryLanguagecode": "fr,fr-GN,ff,ff-GN",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "BJ",
+        "Pop": " 12,123,200.00 ",
+        "CountryName": "Benin",
+        "Timezones": "Africa/Porto-Novo",
+        "Language": "French,Yoruba",
+        "CountryLanguagecode": "fr,fr-BJ,yo,yo-BJ",
+        "Domain": "https://www.google.bj/"
+      },
+      {
+        "CountryCode": "BI",
+        "Pop": " 11,890,784.00 ",
+        "CountryName": "Burundi",
+        "Timezones": "Africa/Bujumbura",
+        "Language": "French,Rundi",
+        "CountryLanguagecode": "fr,fr-BI,rn,rn-BI",
+        "Domain": "https://www.google.bi/"
+      },
+      {
+        "CountryCode": "HT",
+        "Pop": " 11,402,528.00 ",
+        "CountryName": "Haiti",
+        "Timezones": "America/Port-au-Prince",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-HT",
+        "Domain": "https://www.google.ht/"
+      },
+      {
+        "CountryCode": "TG",
+        "Pop": " 8,278,724.00 ",
+        "CountryName": "Togo",
+        "Timezones": "Africa/Lome",
+        "Language": "Ewe,French",
+        "CountryLanguagecode": "ee,ee-TG,fr,fr-TG",
+        "Domain": "https://www.google.tg/"
+      },
+      {
+        "CountryCode": "CF",
+        "Pop": " 4,829,767.00 ",
+        "CountryName": "Central African Republic",
+        "Timezones": "Africa/Bangui",
+        "Language": "French,Lingala,Sango",
+        "CountryLanguagecode": "fr,fr-CF,ln,ln-CF,sg,sg-CF",
+        "Domain": "https://www.google.cf/"
+      },
+      {
+        "CountryCode": "BT",
+        "Pop": " 771,608.00 ",
+        "CountryName": "Bhutan",
+        "Timezones": "Asia/Thimphu",
+        "Language": "Dzongkha",
+        "CountryLanguagecode": "dz,dz-BT",
+        "Domain": "https://www.google.bt/"
+      },
+      {
+        "CountryCode": "MO",
+        "Pop": " 649,335.00 ",
+        "CountryName": "Macau",
+        "Timezones": "Asia/Macau",
+        "Language": "Chinese,English,Portuguese",
+        "CountryLanguagecode": "zh,zh-MO,en,en-MO,pt,pt-MO",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "LU",
+        "Pop": " 625,978.00 ",
+        "CountryName": "Luxembourg",
+        "Timezones": "Europe/Luxembourg",
+        "Language": "French,German,Luxembourgish",
+        "CountryLanguagecode": "fr,fr-LU,de,de-LU,lb,lb-LU",
+        "Domain": "https://www.google.lu/"
+      },
+      {
+        "CountryCode": "GA",
+        "Pop": " 2,225,734.00 ",
+        "CountryName": "Gabon",
+        "Timezones": "Africa/Libreville",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-GA",
+        "Domain": "https://www.google.ga/"
+      },
+      {
+        "CountryCode": "DJ",
+        "Pop": " 988,000.00 ",
+        "CountryName": "Djibouti",
+        "Timezones": "Africa/Djibouti",
+        "Language": "Arabic,French,Somali",
+        "CountryLanguagecode": "ar,ar-DJ,fr,fr-DJ,so,so-DJ",
+        "Domain": "https://www.google.dj/"
+      },
+      {
+        "CountryCode": "MV",
+        "Pop": " 540,544.00 ",
+        "CountryName": "Maldives",
+        "Timezones": "Indian/Maldives",
+        "Language": "English",
+        "CountryLanguagecode": "dv,dv-MV,",
+        "Domain": "https://www.google.mv/"
+      },
+      {
+        "CountryCode": "MT",
+        "Pop": " 441,543.00 ",
+        "CountryName": "Malta",
+        "Timezones": "Europe/Malta",
+        "Language": "English,Maltese",
+        "CountryLanguagecode": "en-MT,mt,mt-MT",
+        "Domain": "https://www.google.com.mt/"
+      },
+      {
+        "CountryCode": "BN",
+        "Pop": " 437,479.00 ",
+        "CountryName": "Brunei",
+        "Timezones": "Asia/Brunei",
+        "Language": "Malay",
+        "CountryLanguagecode": "ms,ms-BN",
+        "Domain": "https://www.google.com.bn/"
+      },
+      {
+        "CountryCode": "RE",
+        "Pop": " 895,312.00 ",
+        "CountryName": "Reunion",
+        "Timezones": "Indian/Reunion",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-RE",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "BZ",
+        "Pop": " 397,628.00 ",
+        "CountryName": "Belize",
+        "Timezones": "America/Belize",
+        "Language": "English",
+        "CountryLanguagecode": "en-BZ",
+        "Domain": "https://www.google.com.bz/"
+      },
+      {
+        "CountryCode": "KM",
+        "Pop": " 869,601.00 ",
+        "CountryName": "Comoros",
+        "Timezones": "Indian/Comoro",
+        "Language": "Arabic,French",
+        "CountryLanguagecode": "ar,ar-KM,fr,fr-KM",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "GP",
+        "Pop": " 400,124.00 ",
+        "CountryName": "Guadeloupe",
+        "Timezones": "America/Guadeloupe",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-GP",
+        "Domain": "https://www.google.gp/"
+      },
+      {
+        "CountryCode": "IS",
+        "Pop": " 341,243.00 ",
+        "CountryName": "Iceland",
+        "Timezones": "Atlantic/Reykjavik",
+        "Language": "Icelandic",
+        "CountryLanguagecode": "is,is-IS",
+        "Domain": "https://www.google.is/"
+      },
+      {
+        "CountryCode": "MQ",
+        "Pop": " 375,265.00 ",
+        "CountryName": "Martinique",
+        "Timezones": "America/Martinique",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-MQ",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "GF",
+        "Pop": " 298,682.00 ",
+        "CountryName": "French Guiana",
+        "Timezones": "America/Cayenne",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-GF",
+        "Domain": "https://www.google.gf/"
+      },
+      {
+        "CountryCode": "NC",
+        "Pop": " 285,498.00 ",
+        "CountryName": "New Caledonia",
+        "Timezones": "Pacific/Noumea",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-NC",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "PF",
+        "Pop": " 280,908.00 ",
+        "CountryName": "French Polynesia",
+        "Timezones": "Pacific/Gambier,Pacific/Marquesas,Pacific/Tahiti",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-PF",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "YT",
+        "Pop": " 272,815.00 ",
+        "CountryName": "Mayotte",
+        "Timezones": "Indian/Mayotte",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-YT",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "WF",
+        "Pop": " 11,239.00 ",
+        "CountryName": "Wallis and Futuna",
+        "Timezones": "Pacific/Wallis",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-WF",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "PM",
+        "Pop": " 5,794.00 ",
+        "CountryName": "Saint Pierre and Miquelon",
+        "Timezones": "America/Miquelon",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-PM",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "GU",
+        "Pop": " 168,775.00 ",
+        "CountryName": "Guam",
+        "Timezones": "Pacific/Guam",
+        "Language": "English",
+        "CountryLanguagecode": "en-GU",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "GR",
+        "Pop": " 10,423,054.00 ",
+        "CountryName": "Greece",
+        "Timezones": "Europe/Athens",
+        "Language": "Greek",
+        "CountryLanguagecode": "el,el-GR",
+        "Domain": "https://www.google.gr/"
+      },
+      {
+        "CountryCode": "SM",
+        "Pop": " 33,931.00 ",
+        "CountryName": "San Marino",
+        "Timezones": "Europe/San_Marino",
+        "Language": "Italian",
+        "CountryLanguagecode": "it,it-SM",
+        "Domain": "https://www.google.sm/"
+      },
+      {
+        "CountryCode": "KH",
+        "Pop": " 16,718,965.00 ",
+        "CountryName": "Cambodia",
+        "Timezones": "Asia/Phnom_Penh",
+        "Language": "Khmer",
+        "CountryLanguagecode": "km,km-KH",
+        "Domain": "https://www.google.com.kh/"
+      },
+      {
+        "CountryCode": "KP",
+        "Pop": " 25,778,816.00 ",
+        "CountryName": "North Korea",
+        "Timezones": "Asia/Pyongyang",
+        "Language": "Korean",
+        "CountryLanguagecode": "ko,ko-KP",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "LA",
+        "Pop": " 7,275,560.00 ",
+        "CountryName": "Laos",
+        "Timezones": "Asia/Vientiane",
+        "Language": "Lao",
+        "CountryLanguagecode": "lo,lo-LA",
+        "Domain": "https://www.google.la/"
+      },
+      {
+        "CountryCode": "NP",
+        "Pop": " 29,136,808.00 ",
+        "CountryName": "Nepal",
+        "Timezones": "Asia/Kathmandu",
+        "Language": "Nepali",
+        "CountryLanguagecode": "ne,ne-NP",
+        "Domain": "https://www.google.com.np/"
+      },
+      {
+        "CountryCode": "VI",
+        "Pop": " 104,425.00 ",
+        "CountryName": "United States Virgin Islands",
+        "Timezones": "America/St_Thomas",
+        "Language": "English",
+        "CountryLanguagecode": "en-VI",
+        "Domain": "https://www.google.co.vi/"
+      },
+      {
+        "CountryCode": "MZ",
+        "Pop": " 31,255,435.00 ",
+        "CountryName": "Mozambique",
+        "Timezones": "Africa/Maputo",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-MZ",
+        "Domain": "https://www.google.co.mz/"
+      },
+      {
+        "CountryCode": "GW",
+        "Pop": " 1,968,001.00 ",
+        "CountryName": "Guinea-Bissau",
+        "Timezones": "Africa/Bissau",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-GW",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "CV",
+        "Pop": " 555,987.00 ",
+        "CountryName": "Cape Verde",
+        "Timezones": "Atlantic/Cape_Verde",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-CV",
+        "Domain": "https://www.google.cv/"
+      },
+      {
+        "CountryCode": "KY",
+        "Pop": " 65,722.00 ",
+        "CountryName": "Cayman Islands",
+        "Timezones": "America/Cayman",
+        "Language": "English",
+        "CountryLanguagecode": "en-KY",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "ST",
+        "Pop": " 219,159.00 ",
+        "CountryName": "Sao Tome and Principe",
+        "Timezones": "Africa/Sao_Tome",
+        "Language": "Portuguese",
+        "CountryLanguagecode": "pt,pt-ST",
+        "Domain": "https://www.google.st/"
+      },
+      {
+        "CountryCode": "MD",
+        "Pop": " 4,033,963.00 ",
+        "CountryName": "Moldova",
+        "Timezones": "Europe/Chisinau",
+        "Language": "Romanian,Russian",
+        "CountryLanguagecode": "ro,ro-MD,ru,ru-MD",
+        "Domain": "https://www.google.md/"
+      },
+      {
+        "CountryCode": "GL",
+        "Pop": " 56,770.00 ",
+        "CountryName": "Greenland",
+        "Timezones": "America/Danmarkshavn,America/Nuuk,America/Scoresbysund,America/Thule",
+        "Language": "Danish,Kalaallisut",
+        "CountryLanguagecode": "da,da-GL,kl,kl-GL",
+        "Domain": "https://www.google.gl/"
+      },
+      {
+        "CountryCode": "TJ",
+        "Pop": " 9,537,645.00 ",
+        "CountryName": "Tajikistan",
+        "Timezones": "Asia/Dushanbe",
+        "Language": "Russian",
+        "CountryLanguagecode": "ru,ru-TJ",
+        "Domain": "https://www.google.com.tj/"
+      },
+      {
+        "CountryCode": "FO",
+        "Pop": " 48,863.00 ",
+        "CountryName": "Faroe Islands",
+        "Timezones": "Atlantic/Faroe",
+        "Language": "Faroese",
+        "CountryLanguagecode": "fo,fo-FO",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "MC",
+        "Pop": " 39,242.00 ",
+        "CountryName": "Monaco",
+        "Timezones": "Europe/Monaco",
+        "Language": "French",
+        "CountryLanguagecode": "fr,fr-MC",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "TM",
+        "Pop": " 6,031,200.00 ",
+        "CountryName": "Turkmenistan",
+        "Timezones": "Asia/Ashgabat",
+        "Language": "Russian",
+        "CountryLanguagecode": "ru,ru-TM",
+        "Domain": "https://www.google.tm/"
+      },
+      {
+        "CountryCode": "LI",
+        "Pop": " 38,128.00 ",
+        "CountryName": "Liechtenstein",
+        "Timezones": "Europe/Vaduz",
+        "Language": "German",
+        "CountryLanguagecode": "de,de-LI",
+        "Domain": "https://www.google.li/"
+      },
+      {
+        "CountryCode": "BW",
+        "Pop": " 2,351,627.00 ",
+        "CountryName": "Botswana",
+        "Timezones": "Africa/Gaborone",
+        "Language": "English",
+        "CountryLanguagecode": "en-BW",
+        "Domain": "https://www.google.co.bw/"
+      },
+      {
+        "CountryCode": "LK",
+        "Pop": " 21,413,249.00 ",
+        "CountryName": "Sri Lanka",
+        "Timezones": "Asia/Colombo",
+        "Language": "Sinhala,Tamil",
+        "CountryLanguagecode": "si,si-LK,ta,ta-LK",
+        "Domain": "https://www.google.lk/"
+      },
+      {
+        "CountryCode": "SO",
+        "Pop": " 15,893,222.00 ",
+        "CountryName": "Somalia",
+        "Timezones": "Africa/Mogadishu",
+        "Language": "Arabic,Somali",
+        "CountryLanguagecode": "ar,ar-SO,so,so-SO",
+        "Domain": "https://www.google.so/"
+      },
+      {
+        "CountryCode": "CU",
+        "Pop": " 11,326,616.00 ",
+        "CountryName": "Cuba",
+        "Timezones": "America/Havana",
+        "Language": "Spanish",
+        "CountryLanguagecode": "es,es-CU",
+        "Domain": "https://www.google.com.cu/"
+      },
+      {
+        "CountryCode": "GQ",
+        "Pop": " 1,402,985.00 ",
+        "CountryName": "Equatorial Guinea",
+        "Timezones": "Africa/Malabo",
+        "Language": "French,Spanish",
+        "CountryLanguagecode": "fr,fr-GQ,es,es-GQ",
+        "Domain": "https://www.google.com/"
+      },
+      {
+        "CountryCode": "PG",
+        "Pop": " 8,947,024.00 ",
+        "CountryName": "Papua New Guinea",
+        "Timezones": "Pacific/Bougainville,Pacific/Port_Moresby",
+        "Language": "English",
+        "CountryLanguagecode": "en-PG",
+        "Domain": "https://www.google.com.pg/"
+      },
+      {
+        "CountryCode": "MS",
+        "Pop": " 4,992.00 ",
+        "CountryName": "Montserrat",
+        "Timezones": "America/Montserrat",
+        "Language": "English",
+        "CountryLanguagecode": "en-MS",
+        "Domain": "https://www.google.ms/"
+      }
+    ],
+    "Language Name Specific": [
+      {
+        "CountryCode": "AF",
+        "Country": "Afghanistan",
+        "Language": "Pashto,Persian,Uzbek"
+      },
+      {
+        "CountryCode": "AX",
+        "Country": "Åland Islands",
+        "Language": "Swedish"
+      },
+      {
+        "CountryCode": "AL",
+        "Country": "Albania",
+        "Language": "Albanian"
+      },
+      {
+        "CountryCode": "DZ",
+        "Country": "Algeria",
+        "Language": "Arabic,French"
+      },
+      {
+        "CountryCode": "AS",
+        "Country": "American Samoa",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "AD",
+        "Country": "Andorra",
+        "Language": "Catalan"
+      },
+      {
+        "CountryCode": "AO",
+        "Country": "Angola",
+        "Language": "Lingala,Portuguese"
+      },
+      {
+        "CountryCode": "AI",
+        "Country": "Anguilla",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "AG",
+        "Country": "Antigua & Barbuda",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "AR",
+        "Country": "Argentina",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "AM",
+        "Country": "Armenia",
+        "Language": "Armenian"
+      },
+      {
+        "CountryCode": "AW",
+        "Country": "Aruba",
+        "Language": "Dutch"
+      },
+      {
+        "CountryCode": "AU",
+        "Country": "Australia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "AT",
+        "Country": "Austria",
+        "Language": "German"
+      },
+      {
+        "CountryCode": "AZ",
+        "Country": "Azerbaijan",
+        "Language": "Azerbaijani"
+      },
+      {
+        "CountryCode": "BS",
+        "Country": "Bahamas",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "BH",
+        "Country": "Bahrain",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "BD",
+        "Country": "Bangladesh",
+        "Language": "Bengali"
+      },
+      {
+        "CountryCode": "BB",
+        "Country": "Barbados",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "BY",
+        "Country": "Belarus",
+        "Language": "Belarusian,Russian"
+      },
+      {
+        "CountryCode": "BE",
+        "Country": "Belgium",
+        "Language": "Dutch,English,French,German"
+      },
+      {
+        "CountryCode": "BZ",
+        "Country": "Belize",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "BJ",
+        "Country": "Benin",
+        "Language": "French,Yoruba"
+      },
+      {
+        "CountryCode": "BM",
+        "Country": "Bermuda",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "BT",
+        "Country": "Bhutan",
+        "Language": "Dzongkha"
+      },
+      {
+        "CountryCode": "BO",
+        "Country": "Bolivia",
+        "Language": "Quechua,Spanish"
+      },
+      {
+        "CountryCode": "BA",
+        "Country": "Bosnia & Herzegovina",
+        "Language": "Bosnian,Croatian,Serbian,Serbo-Croatian"
+      },
+      {
+        "CountryCode": "BW",
+        "Country": "Botswana",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "BR",
+        "Country": "Brazil",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "IO",
+        "Country": "British Indian Ocean Territory",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "VG",
+        "Country": "British Virgin Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "BN",
+        "Country": "Brunei",
+        "Language": "Malay"
+      },
+      {
+        "CountryCode": "BG",
+        "Country": "Bulgaria",
+        "Language": "Bulgarian"
+      },
+      {
+        "CountryCode": "BF",
+        "Country": "Burkina Faso",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "BI",
+        "Country": "Burundi",
+        "Language": "French,Rundi"
+      },
+      {
+        "CountryCode": "KH",
+        "Country": "Cambodia",
+        "Language": "Khmer"
+      },
+      {
+        "CountryCode": "CM",
+        "Country": "Cameroon",
+        "Language": "English,French,Fulah"
+      },
+      {
+        "CountryCode": "CA",
+        "Country": "Canada",
+        "Language": "English,French"
+      },
+      {
+        "CountryCode": "IC",
+        "Country": "Canary Islands",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "CV",
+        "Country": "Cape Verde",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "BQ",
+        "Country": "Caribbean Netherlands",
+        "Language": "Dutch"
+      },
+      {
+        "CountryCode": "KY",
+        "Country": "Cayman Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "CF",
+        "Country": "Central African Republic",
+        "Language": "French,Lingala,Sango"
+      },
+      {
+        "CountryCode": "EA",
+        "Country": "Ceuta & Melilla",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "TD",
+        "Country": "Chad",
+        "Language": "Arabic,French"
+      },
+      {
+        "CountryCode": "CL",
+        "Country": "Chile",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "CN",
+        "Country": "China",
+        "Language": "Chinese,Sichuan Yi,Tibetan,Uyghur"
+      },
+      {
+        "CountryCode": "CX",
+        "Country": "Christmas Island",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "CC",
+        "Country": "Cocos (Keeling Islands)",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "CO",
+        "Country": "Colombia",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "KM",
+        "Country": "Comoros",
+        "Language": "Arabic,French"
+      },
+      {
+        "CountryCode": "CG",
+        "Country": "Congo - Brazzaville",
+        "Language": "French,Lingala"
+      },
+      {
+        "CountryCode": "CD",
+        "Country": "Congo - Kinshasa",
+        "Language": "French,Lingala,Luba-Katanga"
+      },
+      {
+        "CountryCode": "CK",
+        "Country": "Cook Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "CR",
+        "Country": "Costa Rica",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "CI",
+        "Country": "Côte d’Ivoire",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "HR",
+        "Country": "Croatia",
+        "Language": "Croatian"
+      },
+      {
+        "CountryCode": "CU",
+        "Country": "Cuba",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "CW",
+        "Country": "Curaçao",
+        "Language": "Dutch"
+      },
+      {
+        "CountryCode": "CY",
+        "Country": "Cyprus",
+        "Language": "Greek,Turkish"
+      },
+      {
+        "CountryCode": "CZ",
+        "Country": "Czech Republic",
+        "Language": "Czech"
+      },
+      {
+        "CountryCode": "DK",
+        "Country": "Denmark",
+        "Language": "Danish"
+      },
+      {
+        "CountryCode": "DG",
+        "Country": "Diego Garcia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "DJ",
+        "Country": "Djibouti",
+        "Language": "Arabic,French,Somali"
+      },
+      {
+        "CountryCode": "DM",
+        "Country": "Dominica",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "DO",
+        "Country": "Dominican Republic",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "EC",
+        "Country": "Ecuador",
+        "Language": "Quechua,Spanish"
+      },
+      {
+        "CountryCode": "EG",
+        "Country": "Egypt",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "SV",
+        "Country": "El Salvador",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "GQ",
+        "Country": "Equatorial Guinea",
+        "Language": "French,Spanish"
+      },
+      {
+        "CountryCode": "ER",
+        "Country": "Eritrea",
+        "Language": "Arabic,English,Tigrinya"
+      },
+      {
+        "CountryCode": "EE",
+        "Country": "Estonia",
+        "Language": "Estonian"
+      },
+      {
+        "CountryCode": "ET",
+        "Country": "Ethiopia",
+        "Language": "Amharic,Oromo,Somali,Tigrinya"
+      },
+      {
+        "CountryCode": "FK",
+        "Country": "Falkland Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "FO",
+        "Country": "Faroe Islands",
+        "Language": "Faroese"
+      },
+      {
+        "CountryCode": "FJ",
+        "Country": "Fiji",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "FI",
+        "Country": "Finland",
+        "Language": "Finnish,Northern Sami,Swedish"
+      },
+      {
+        "CountryCode": "FR",
+        "Country": "France",
+        "Language": "Breton,Catalan,French"
+      },
+      {
+        "CountryCode": "GF",
+        "Country": "French Guiana",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "PF",
+        "Country": "French Polynesia",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "GA",
+        "Country": "Gabon",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "GM",
+        "Country": "Gambia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "GE",
+        "Country": "Georgia",
+        "Language": "Georgian,Ossetic"
+      },
+      {
+        "CountryCode": "DE",
+        "Country": "Germany",
+        "Language": "German"
+      },
+      {
+        "CountryCode": "GH",
+        "Country": "Ghana",
+        "Language": "Akan,English,Ewe,Hausa"
+      },
+      {
+        "CountryCode": "GI",
+        "Country": "Gibraltar",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "GR",
+        "Country": "Greece",
+        "Language": "Greek"
+      },
+      {
+        "CountryCode": "GL",
+        "Country": "Greenland",
+        "Language": "Danish,Kalaallisut"
+      },
+      {
+        "CountryCode": "GD",
+        "Country": "Grenada",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "GP",
+        "Country": "Guadeloupe",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "GU",
+        "Country": "Guam",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "GT",
+        "Country": "Guatemala",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "GG",
+        "Country": "Guernsey",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "GN",
+        "Country": "Guinea",
+        "Language": "French,Fulah"
+      },
+      {
+        "CountryCode": "GW",
+        "Country": "Guinea-Bissau",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "GY",
+        "Country": "Guyana",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "HT",
+        "Country": "Haiti",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "HN",
+        "Country": "Honduras",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "HK",
+        "Country": "Hong Kong SAR China",
+        "Language": "Chinese,English"
+      },
+      {
+        "CountryCode": "HU",
+        "Country": "Hungary",
+        "Language": "Hungarian"
+      },
+      {
+        "CountryCode": "IS",
+        "Country": "Iceland",
+        "Language": "Icelandic"
+      },
+      {
+        "CountryCode": "IN",
+        "Country": "India",
+        "Language": "Assamese,Bengali,English,Gujarati,Hindi,Kannada,Kashmiri,Malayalam,Marathi,Nepali,Oriya,Punjabi,Tamil,Telugu,Tibetan,Urdu"
+      },
+      {
+        "CountryCode": "ID",
+        "Country": "Indonesia",
+        "Language": "Indonesian"
+      },
+      {
+        "CountryCode": "IR",
+        "Country": "Iran",
+        "Language": "Persian"
+      },
+      {
+        "CountryCode": "IQ",
+        "Country": "Iraq",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "IE",
+        "Country": "Ireland",
+        "Language": "English,Irish"
+      },
+      {
+        "CountryCode": "IM",
+        "Country": "Isle of Man",
+        "Language": "English,Manx"
+      },
+      {
+        "CountryCode": "IL",
+        "Country": "Israel",
+        "Language": "Arabic,Hebrew"
+      },
+      {
+        "CountryCode": "IT",
+        "Country": "Italy",
+        "Language": "Catalan,Italian"
+      },
+      {
+        "CountryCode": "JM",
+        "Country": "Jamaica",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "JP",
+        "Country": "Japan",
+        "Language": "Japanese"
+      },
+      {
+        "CountryCode": "JE",
+        "Country": "Jersey",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "JO",
+        "Country": "Jordan",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "KZ",
+        "Country": "Kazakhstan",
+        "Language": "Kazakh,Russian"
+      },
+      {
+        "CountryCode": "KE",
+        "Country": "Kenya",
+        "Language": "English,Kikuyu,Oromo,Somali,Swahili"
+      },
+      {
+        "CountryCode": "KI",
+        "Country": "Kiribati",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "XK",
+        "Country": "Kosovo",
+        "Language": "Albanian,Serbian"
+      },
+      {
+        "CountryCode": "KW",
+        "Country": "Kuwait",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "KG",
+        "Country": "Kyrgyzstan",
+        "Language": "Kyrgyz,Russian"
+      },
+      {
+        "CountryCode": "LA",
+        "Country": "Laos",
+        "Language": "Lao"
+      },
+      {
+        "CountryCode": "LV",
+        "Country": "Latvia",
+        "Language": "Latvian"
+      },
+      {
+        "CountryCode": "LB",
+        "Country": "Lebanon",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "LS",
+        "Country": "Lesotho",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "LR",
+        "Country": "Liberia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "LY",
+        "Country": "Libya",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "LI",
+        "Country": "Liechtenstein",
+        "Language": "German"
+      },
+      {
+        "CountryCode": "LT",
+        "Country": "Lithuania",
+        "Language": "Lithuanian"
+      },
+      {
+        "CountryCode": "LU",
+        "Country": "Luxembourg",
+        "Language": "French,German,Luxembourgish"
+      },
+      {
+        "CountryCode": "MO",
+        "Country": "Macau SAR China",
+        "Language": "Chinese,English,Portuguese"
+      },
+      {
+        "CountryCode": "MK",
+        "Country": "Macedonia",
+        "Language": "Albanian,Macedonian"
+      },
+      {
+        "CountryCode": "MG",
+        "Country": "Madagascar",
+        "Language": "English,French,Malagasy"
+      },
+      {
+        "CountryCode": "MW",
+        "Country": "Malawi",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "MY",
+        "Country": "Malaysia",
+        "Language": "English,Malay,Tamil"
+      },
+      {
+        "CountryCode": "ML",
+        "Country": "Mali",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "MT",
+        "Country": "Malta",
+        "Language": "English,Maltese"
+      },
+      {
+        "CountryCode": "MH",
+        "Country": "Marshall Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "MQ",
+        "Country": "Martinique",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "MR",
+        "Country": "Mauritania",
+        "Language": "Arabic,French,Fulah"
+      },
+      {
+        "CountryCode": "MU",
+        "Country": "Mauritius",
+        "Language": "English,French"
+      },
+      {
+        "CountryCode": "YT",
+        "Country": "Mayotte",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "MX",
+        "Country": "Mexico",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "FM",
+        "Country": "Micronesia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "MD",
+        "Country": "Moldova",
+        "Language": "Romanian,Russian"
+      },
+      {
+        "CountryCode": "MC",
+        "Country": "Monaco",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "MN",
+        "Country": "Mongolia",
+        "Language": "Mongolian"
+      },
+      {
+        "CountryCode": "ME",
+        "Country": "Montenegro",
+        "Language": "Serbian"
+      },
+      {
+        "CountryCode": "MS",
+        "Country": "Montserrat",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "MA",
+        "Country": "Morocco",
+        "Language": "Arabic,French"
+      },
+      {
+        "CountryCode": "MZ",
+        "Country": "Mozambique",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "MM",
+        "Country": "Myanmar",
+        "Language": "Burmese"
+      },
+      {
+        "CountryCode": "NA",
+        "Country": "Namibia",
+        "Language": "Afrikaans,English"
+      },
+      {
+        "CountryCode": "NR",
+        "Country": "Nauru",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "NP",
+        "Country": "Nepal",
+        "Language": "Nepali"
+      },
+      {
+        "CountryCode": "NL",
+        "Country": "Netherlands",
+        "Language": "Dutch,Western Frisian"
+      },
+      {
+        "CountryCode": "NC",
+        "Country": "New Caledonia",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "NZ",
+        "Country": "New Zealand",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "NI",
+        "Country": "Nicaragua",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "NE",
+        "Country": "Niger",
+        "Language": "French,Hausa"
+      },
+      {
+        "CountryCode": "NG",
+        "Country": "Nigeria",
+        "Language": "English,Hausa,Igbo,Yoruba"
+      },
+      {
+        "CountryCode": "NU",
+        "Country": "Niue",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "NF",
+        "Country": "Norfolk Island",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "KP",
+        "Country": "North Korea",
+        "Language": "Korean"
+      },
+      {
+        "CountryCode": "MP",
+        "Country": "Northern Mariana Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "NO",
+        "Country": "Norway",
+        "Language": "Northern Sami,Norwegian,Norwegian Bokmål,Norwegian Nynorsk"
+      },
+      {
+        "CountryCode": "OM",
+        "Country": "Oman",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "PK",
+        "Country": "Pakistan",
+        "Language": "English,Punjabi,Urdu"
+      },
+      {
+        "CountryCode": "PW",
+        "Country": "Palau",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "PS",
+        "Country": "Palestinian Territories",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "PA",
+        "Country": "Panama",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "PG",
+        "Country": "Papua New Guinea",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "PY",
+        "Country": "Paraguay",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "PE",
+        "Country": "Peru",
+        "Language": "Quechua,Spanish"
+      },
+      {
+        "CountryCode": "PH",
+        "Country": "Philippines",
+        "Language": "English,Spanish,Tagalog"
+      },
+      {
+        "CountryCode": "PN",
+        "Country": "Pitcairn Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "PL",
+        "Country": "Poland",
+        "Language": "Polish"
+      },
+      {
+        "CountryCode": "PT",
+        "Country": "Portugal",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "PR",
+        "Country": "Puerto Rico",
+        "Language": "English,Spanish"
+      },
+      {
+        "CountryCode": "QA",
+        "Country": "Qatar",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "RE",
+        "Country": "Réunion",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "RO",
+        "Country": "Romania",
+        "Language": "Romanian"
+      },
+      {
+        "CountryCode": "RU",
+        "Country": "Russia",
+        "Language": "Ossetic,Russian"
+      },
+      {
+        "CountryCode": "RW",
+        "Country": "Rwanda",
+        "Language": "English,French,Kinyarwanda"
+      },
+      {
+        "CountryCode": "WS",
+        "Country": "Samoa",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "SM",
+        "Country": "San Marino",
+        "Language": "Italian"
+      },
+      {
+        "CountryCode": "ST",
+        "Country": "São Tomé & Príncipe",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "SA",
+        "Country": "Saudi Arabia",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "SN",
+        "Country": "Senegal",
+        "Language": "French,Fulah"
+      },
+      {
+        "CountryCode": "RS",
+        "Country": "Serbia",
+        "Language": "Serbian"
+      },
+      {
+        "CountryCode": "SC",
+        "Country": "Seychelles",
+        "Language": "English,French"
+      },
+      {
+        "CountryCode": "SL",
+        "Country": "Sierra Leone",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "SG",
+        "Country": "Singapore",
+        "Language": "Chinese,English,Malay,Tamil"
+      },
+      {
+        "CountryCode": "SX",
+        "Country": "Sint Maarten",
+        "Language": "Dutch,English"
+      },
+      {
+        "CountryCode": "SK",
+        "Country": "Slovakia",
+        "Language": "Slovak"
+      },
+      {
+        "CountryCode": "SI",
+        "Country": "Slovenia",
+        "Language": "Slovenian"
+      },
+      {
+        "CountryCode": "SB",
+        "Country": "Solomon Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "SO",
+        "Country": "Somalia",
+        "Language": "Arabic,Somali"
+      },
+      {
+        "CountryCode": "ZA",
+        "Country": "South Africa",
+        "Language": "Afrikaans,English,Zulu"
+      },
+      {
+        "CountryCode": "KR",
+        "Country": "South Korea",
+        "Language": "Korean"
+      },
+      {
+        "CountryCode": "SS",
+        "Country": "South Sudan",
+        "Language": "Arabic,English"
+      },
+      {
+        "CountryCode": "ES",
+        "Country": "Spain",
+        "Language": "Basque,Catalan,Galician,Spanish"
+      },
+      {
+        "CountryCode": "LK",
+        "Country": "Sri Lanka",
+        "Language": "Sinhala,Tamil"
+      },
+      {
+        "CountryCode": "BL",
+        "Country": "St. Barthélemy",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "SH",
+        "Country": "St. Helena",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "KN",
+        "Country": "St. Kitts & Nevis",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "LC",
+        "Country": "St. Lucia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "MF",
+        "Country": "St. Martin",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "PM",
+        "Country": "St. Pierre & Miquelon",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "VC",
+        "Country": "St. Vincent & Grenadines",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "SD",
+        "Country": "Sudan",
+        "Language": "Arabic,English"
+      },
+      {
+        "CountryCode": "SR",
+        "Country": "Suriname",
+        "Language": "Dutch"
+      },
+      {
+        "CountryCode": "SJ",
+        "Country": "Svalbard & Jan Mayen",
+        "Language": "Norwegian Bokmål"
+      },
+      {
+        "CountryCode": "SZ",
+        "Country": "Swaziland",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "SE",
+        "Country": "Sweden",
+        "Language": "Northern Sami,Swedish"
+      },
+      {
+        "CountryCode": "CH",
+        "Country": "Switzerland",
+        "Language": "French,German,Italian,Romansh"
+      },
+      {
+        "CountryCode": "SY",
+        "Country": "Syria",
+        "Language": "Arabic,French"
+      },
+      {
+        "CountryCode": "TW",
+        "Country": "Taiwan",
+        "Language": "Chinese"
+      },
+      {
+        "CountryCode": "TZ",
+        "Country": "Tanzania",
+        "Language": "English,Swahili"
+      },
+      {
+        "CountryCode": "TH",
+        "Country": "Thailand",
+        "Language": "Thai"
+      },
+      {
+        "CountryCode": "TL",
+        "Country": "Timor-Leste",
+        "Language": "Portuguese"
+      },
+      {
+        "CountryCode": "TG",
+        "Country": "Togo",
+        "Language": "Ewe,French"
+      },
+      {
+        "CountryCode": "TK",
+        "Country": "Tokelau",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "TO",
+        "Country": "Tonga",
+        "Language": "English,Tongan"
+      },
+      {
+        "CountryCode": "TT",
+        "Country": "Trinidad & Tobago",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "TN",
+        "Country": "Tunisia",
+        "Language": "Arabic,French"
+      },
+      {
+        "CountryCode": "TR",
+        "Country": "Turkey",
+        "Language": "Turkish"
+      },
+      {
+        "CountryCode": "TC",
+        "Country": "Turks & Caicos Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "TV",
+        "Country": "Tuvalu",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "UM",
+        "Country": "U.S. Outlying Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "VI",
+        "Country": "U.S. Virgin Islands",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "UG",
+        "Country": "Uganda",
+        "Language": "English,Ganda,Swahili"
+      },
+      {
+        "CountryCode": "UA",
+        "Country": "Ukraine",
+        "Language": "Russian,Ukrainian"
+      },
+      {
+        "CountryCode": "AE",
+        "Country": "United Arab Emirates",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "GB",
+        "Country": "United Kingdom",
+        "Language": "Cornish,English,Scottish Gaelic,Welsh"
+      },
+      {
+        "CountryCode": "US",
+        "Country": "United States",
+        "Language": "English,Spanish"
+      },
+      {
+        "CountryCode": "UY",
+        "Country": "Uruguay",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "UZ",
+        "Country": "Uzbekistan",
+        "Language": "Uzbek"
+      },
+      {
+        "CountryCode": "VU",
+        "Country": "Vanuatu",
+        "Language": "English,French"
+      },
+      {
+        "CountryCode": "VE",
+        "Country": "Venezuela",
+        "Language": "Spanish"
+      },
+      {
+        "CountryCode": "VN",
+        "Country": "Vietnam",
+        "Language": "Vietnamese"
+      },
+      {
+        "CountryCode": "WF",
+        "Country": "Wallis & Futuna",
+        "Language": "French"
+      },
+      {
+        "CountryCode": "EH",
+        "Country": "Western Sahara",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "YE",
+        "Country": "Yemen",
+        "Language": "Arabic"
+      },
+      {
+        "CountryCode": "ZM",
+        "Country": "Zambia",
+        "Language": "English"
+      },
+      {
+        "CountryCode": "ZW",
+        "Country": "Zimbabwe",
+        "Language": "English,North Ndebele,Shona"
+      }
+    ],
+    "Language Code Specific": [
+      {
+        "Country": "Afghanistan",
+        "Language": "Pashto ",
+        "Language Code": "ps,ps-AF"
+      },
+      {
+        "Country": "Afghanistan",
+        "Language": "Persian ",
+        "Language Code": "fa,fa-AF",
+        "undefined": "for example, Country = IN, language = English. In this case, we should get values of [en,en-IN]"
+      },
+      {
+        "Country": "Afghanistan",
+        "Language": "Uzbek ",
+        "Language Code": "uz,uz-AF"
+      },
+      {
+        "Country": "Åland Islands",
+        "Language": "Swedish ",
+        "Language Code": "sv,sv-AX"
+      },
+      {
+        "Country": "Albania",
+        "Language": "Albanian ",
+        "Language Code": "sq,sq-AL"
+      },
+      {
+        "Country": "Algeria",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-DZ"
+      },
+      {
+        "Country": "Algeria",
+        "Language": "French ",
+        "Language Code": "fr,fr-DZ"
+      },
+      {
+        "Country": "American Samoa",
+        "Language": "English ",
+        "Language Code": "en-AS"
+      },
+      {
+        "Country": "Andorra",
+        "Language": "Catalan ",
+        "Language Code": "ca,ca-AD"
+      },
+      {
+        "Country": "Angola",
+        "Language": "Lingala ",
+        "Language Code": "ln,ln-AO"
+      },
+      {
+        "Country": "Angola",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-AO"
+      },
+      {
+        "Country": "Anguilla",
+        "Language": "English ",
+        "Language Code": "en-AI"
+      },
+      {
+        "Country": "Antigua & Barbuda",
+        "Language": "English ",
+        "Language Code": "en-AG"
+      },
+      {
+        "Country": "Argentina",
+        "Language": "Spanish ",
+        "Language Code": "es,es-AR"
+      },
+      {
+        "Country": "Armenia",
+        "Language": "Armenian ",
+        "Language Code": "hy,hy-AM"
+      },
+      {
+        "Country": "Aruba",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-AW"
+      },
+      {
+        "Country": "Australia",
+        "Language": "English ",
+        "Language Code": "en-AU"
+      },
+      {
+        "Country": "Austria",
+        "Language": "German ",
+        "Language Code": "de,de-AT"
+      },
+      {
+        "Country": "Azerbaijan",
+        "Language": "Azerbaijani ",
+        "Language Code": "az,az-AZ"
+      },
+      {
+        "Country": "Bahamas",
+        "Language": "English ",
+        "Language Code": "en-BS"
+      },
+      {
+        "Country": "Bahrain",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-BH"
+      },
+      {
+        "Country": "Bangladesh",
+        "Language": "Bengali ",
+        "Language Code": "bn,bn-BD"
+      },
+      {
+        "Country": "Barbados",
+        "Language": "English ",
+        "Language Code": "en-BB"
+      },
+      {
+        "Country": "Belarus",
+        "Language": "Belarusian ",
+        "Language Code": "be,be-BY"
+      },
+      {
+        "Country": "Belarus",
+        "Language": "Russian ",
+        "Language Code": "ru,ru-BY"
+      },
+      {
+        "Country": "Belgium",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-BE"
+      },
+      {
+        "Country": "Belgium",
+        "Language": "English ",
+        "Language Code": "en-BE"
+      },
+      {
+        "Country": "Belgium",
+        "Language": "French ",
+        "Language Code": "fr,fr-BE"
+      },
+      {
+        "Country": "Belgium",
+        "Language": "German ",
+        "Language Code": "de,de-BE"
+      },
+      {
+        "Country": "Belize",
+        "Language": "English ",
+        "Language Code": "en-BZ"
+      },
+      {
+        "Country": "Benin",
+        "Language": "French ",
+        "Language Code": "fr,fr-BJ"
+      },
+      {
+        "Country": "Benin",
+        "Language": "Yoruba ",
+        "Language Code": "yo,yo-BJ"
+      },
+      {
+        "Country": "Bermuda",
+        "Language": "English ",
+        "Language Code": "en-BM"
+      },
+      {
+        "Country": "Bhutan",
+        "Language": "Dzongkha ",
+        "Language Code": "dz,dz-BT"
+      },
+      {
+        "Country": "Bolivia",
+        "Language": "Quechua ",
+        "Language Code": "qu,qu-BO"
+      },
+      {
+        "Country": "Bolivia",
+        "Language": "Spanish ",
+        "Language Code": "es,es-BO"
+      },
+      {
+        "Country": "Bosnia & Herzegovina",
+        "Language": "Bosnian ",
+        "Language Code": "bs,bs-BA"
+      },
+      {
+        "Country": "Bosnia & Herzegovina",
+        "Language": "Croatian ",
+        "Language Code": "hr,hr-BA"
+      },
+      {
+        "Country": "Bosnia & Herzegovina",
+        "Language": "Serbian ",
+        "Language Code": "sr,sr-BA"
+      },
+      {
+        "Country": "Bosnia & Herzegovina",
+        "Language": "Serbo-Croatian ",
+        "Language Code": "sh,sh-BA"
+      },
+      {
+        "Country": "Botswana",
+        "Language": "English ",
+        "Language Code": "en-BW"
+      },
+      {
+        "Country": "Brazil",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-BR"
+      },
+      {
+        "Country": "British Indian Ocean Territory",
+        "Language": "English ",
+        "Language Code": "en-IO"
+      },
+      {
+        "Country": "British Virgin Islands",
+        "Language": "English ",
+        "Language Code": "en-VG"
+      },
+      {
+        "Country": "Brunei",
+        "Language": "Malay ",
+        "Language Code": "ms,ms-BN"
+      },
+      {
+        "Country": "Bulgaria",
+        "Language": "Bulgarian ",
+        "Language Code": "bg,bg-BG"
+      },
+      {
+        "Country": "Burkina Faso",
+        "Language": "French ",
+        "Language Code": "fr,fr-BF"
+      },
+      {
+        "Country": "Burundi",
+        "Language": "French ",
+        "Language Code": "fr,fr-BI"
+      },
+      {
+        "Country": "Burundi",
+        "Language": "Rundi ",
+        "Language Code": "rn,rn-BI"
+      },
+      {
+        "Country": "Cambodia",
+        "Language": "Khmer ",
+        "Language Code": "km,km-KH"
+      },
+      {
+        "Country": "Cameroon",
+        "Language": "English ",
+        "Language Code": "en-CM"
+      },
+      {
+        "Country": "Cameroon",
+        "Language": "French ",
+        "Language Code": "fr,fr-CM"
+      },
+      {
+        "Country": "Cameroon",
+        "Language": "Fulah ",
+        "Language Code": "ff,ff-CM"
+      },
+      {
+        "Country": "Canada",
+        "Language": "English ",
+        "Language Code": "en-CA"
+      },
+      {
+        "Country": "Canada",
+        "Language": "French ",
+        "Language Code": "fr,fr-CA"
+      },
+      {
+        "Country": "Canary Islands",
+        "Language": "Spanish ",
+        "Language Code": "es,es-IC"
+      },
+      {
+        "Country": "Cape Verde",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-CV"
+      },
+      {
+        "Country": "Caribbean Netherlands",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-BQ"
+      },
+      {
+        "Country": "Cayman Islands",
+        "Language": "English ",
+        "Language Code": "en-KY"
+      },
+      {
+        "Country": "Central African Republic",
+        "Language": "French ",
+        "Language Code": "fr,fr-CF"
+      },
+      {
+        "Country": "Central African Republic",
+        "Language": "Lingala ",
+        "Language Code": "ln,ln-CF"
+      },
+      {
+        "Country": "Central African Republic",
+        "Language": "Sango ",
+        "Language Code": "sg,sg-CF"
+      },
+      {
+        "Country": "Ceuta & Melilla",
+        "Language": "Spanish ",
+        "Language Code": "es,es-EA"
+      },
+      {
+        "Country": "Chad",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-TD"
+      },
+      {
+        "Country": "Chad",
+        "Language": "French ",
+        "Language Code": "fr,fr-TD"
+      },
+      {
+        "Country": "Chile",
+        "Language": "Spanish ",
+        "Language Code": "es,es-CL"
+      },
+      {
+        "Country": "China",
+        "Language": "Chinese ",
+        "Language Code": "zh,zh-CN"
+      },
+      {
+        "Country": "China",
+        "Language": "Sichuan Yi ",
+        "Language Code": "ii,ii-CN"
+      },
+      {
+        "Country": "China",
+        "Language": "Tibetan ",
+        "Language Code": "bo,bo-CN"
+      },
+      {
+        "Country": "China",
+        "Language": "Uyghur ",
+        "Language Code": "ug,ug-CN"
+      },
+      {
+        "Country": "Christmas Island",
+        "Language": "English ",
+        "Language Code": "en-CX"
+      },
+      {
+        "Country": "Cocos (Keeling Islands)",
+        "Language": "English",
+        "Language Code": "en-CC"
+      },
+      {
+        "Country": "Colombia",
+        "Language": "Spanish ",
+        "Language Code": "es,es-CO"
+      },
+      {
+        "Country": "Comoros",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-KM"
+      },
+      {
+        "Country": "Comoros",
+        "Language": "French ",
+        "Language Code": "fr,fr-KM"
+      },
+      {
+        "Country": "Congo - Brazzaville",
+        "Language": "French ",
+        "Language Code": "fr,fr-CG"
+      },
+      {
+        "Country": "Congo - Brazzaville",
+        "Language": "Lingala ",
+        "Language Code": "ln,ln-CG"
+      },
+      {
+        "Country": "Congo - Kinshasa",
+        "Language": "French ",
+        "Language Code": "fr,fr-CD"
+      },
+      {
+        "Country": "Congo - Kinshasa",
+        "Language": "Lingala ",
+        "Language Code": "ln,ln-CD"
+      },
+      {
+        "Country": "Congo - Kinshasa",
+        "Language": "Luba-Katanga ",
+        "Language Code": "lu,lu-CD"
+      },
+      {
+        "Country": "Cook Islands",
+        "Language": "English ",
+        "Language Code": "en-CK"
+      },
+      {
+        "Country": "Costa Rica",
+        "Language": "Spanish ",
+        "Language Code": "es,es-CR"
+      },
+      {
+        "Country": "Côte d’Ivoire",
+        "Language": "French ",
+        "Language Code": "fr,fr-CI"
+      },
+      {
+        "Country": "Croatia",
+        "Language": "Croatian ",
+        "Language Code": "hr,hr-HR"
+      },
+      {
+        "Country": "Cuba",
+        "Language": "Spanish ",
+        "Language Code": "es,es-CU"
+      },
+      {
+        "Country": "Curaçao",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-CW"
+      },
+      {
+        "Country": "Cyprus",
+        "Language": "Greek ",
+        "Language Code": "el,el-CY"
+      },
+      {
+        "Country": "Cyprus",
+        "Language": "Turkish ",
+        "Language Code": "tr,tr-CY"
+      },
+      {
+        "Country": "Czech Republic",
+        "Language": "Czech ",
+        "Language Code": "cs,cs-CZ"
+      },
+      {
+        "Country": "Denmark",
+        "Language": "Danish ",
+        "Language Code": "da,da-DK"
+      },
+      {
+        "Country": "Diego Garcia",
+        "Language": "English ",
+        "Language Code": "en-DG"
+      },
+      {
+        "Country": "Djibouti",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-DJ"
+      },
+      {
+        "Country": "Djibouti",
+        "Language": "French ",
+        "Language Code": "fr,fr-DJ"
+      },
+      {
+        "Country": "Djibouti",
+        "Language": "Somali ",
+        "Language Code": "so,so-DJ"
+      },
+      {
+        "Country": "Dominica",
+        "Language": "English ",
+        "Language Code": "en-DM"
+      },
+      {
+        "Country": "Dominican Republic",
+        "Language": "Spanish ",
+        "Language Code": "es,es-DO"
+      },
+      {
+        "Country": "Ecuador",
+        "Language": "Quechua ",
+        "Language Code": "qu,qu-EC"
+      },
+      {
+        "Country": "Ecuador",
+        "Language": "Spanish ",
+        "Language Code": "es,es-EC"
+      },
+      {
+        "Country": "Egypt",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-EG"
+      },
+      {
+        "Country": "El Salvador",
+        "Language": "Spanish ",
+        "Language Code": "es,es-SV"
+      },
+      {
+        "Country": "Equatorial Guinea",
+        "Language": "French ",
+        "Language Code": "fr,fr-GQ"
+      },
+      {
+        "Country": "Equatorial Guinea",
+        "Language": "Spanish ",
+        "Language Code": "es,es-GQ"
+      },
+      {
+        "Country": "Eritrea",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-ER"
+      },
+      {
+        "Country": "Eritrea",
+        "Language": "English ",
+        "Language Code": "en-ER"
+      },
+      {
+        "Country": "Eritrea",
+        "Language": "Tigrinya ",
+        "Language Code": "ti,ti-ER"
+      },
+      {
+        "Country": "Estonia",
+        "Language": "Estonian ",
+        "Language Code": "et,et-EE"
+      },
+      {
+        "Country": "Ethiopia",
+        "Language": "Amharic ",
+        "Language Code": "am,am-ET"
+      },
+      {
+        "Country": "Ethiopia",
+        "Language": "Oromo ",
+        "Language Code": "om,om-ET"
+      },
+      {
+        "Country": "Ethiopia",
+        "Language": "Somali ",
+        "Language Code": "so,so-ET"
+      },
+      {
+        "Country": "Ethiopia",
+        "Language": "Tigrinya ",
+        "Language Code": "ti,ti-ET"
+      },
+      {
+        "Country": "Falkland Islands",
+        "Language": "English ",
+        "Language Code": "en-FK"
+      },
+      {
+        "Country": "Faroe Islands",
+        "Language": "Faroese ",
+        "Language Code": "fo,fo-FO"
+      },
+      {
+        "Country": "Fiji",
+        "Language": "English ",
+        "Language Code": "en-FJ"
+      },
+      {
+        "Country": "Finland",
+        "Language": "Finnish ",
+        "Language Code": "fi,fi-FI"
+      },
+      {
+        "Country": "Finland",
+        "Language": "Northern Sami ",
+        "Language Code": "se,se-FI"
+      },
+      {
+        "Country": "Finland",
+        "Language": "Swedish ",
+        "Language Code": "sv,sv-FI"
+      },
+      {
+        "Country": "France",
+        "Language": "Breton ",
+        "Language Code": "br,br-FR"
+      },
+      {
+        "Country": "France",
+        "Language": "Catalan ",
+        "Language Code": "ca,ca-FR"
+      },
+      {
+        "Country": "France",
+        "Language": "French ",
+        "Language Code": "fr,fr-FR"
+      },
+      {
+        "Country": "French Guiana",
+        "Language": "French ",
+        "Language Code": "fr,fr-GF"
+      },
+      {
+        "Country": "French Polynesia",
+        "Language": "French ",
+        "Language Code": "fr,fr-PF"
+      },
+      {
+        "Country": "Gabon",
+        "Language": "French ",
+        "Language Code": "fr,fr-GA"
+      },
+      {
+        "Country": "Gambia",
+        "Language": "English ",
+        "Language Code": "en-GM"
+      },
+      {
+        "Country": "Georgia",
+        "Language": "Georgian ",
+        "Language Code": "ka,ka-GE"
+      },
+      {
+        "Country": "Georgia",
+        "Language": "Ossetic ",
+        "Language Code": "os,os-GE"
+      },
+      {
+        "Country": "Germany",
+        "Language": "German ",
+        "Language Code": "de,de-DE"
+      },
+      {
+        "Country": "Ghana",
+        "Language": "Akan ",
+        "Language Code": "ak,ak-GH"
+      },
+      {
+        "Country": "Ghana",
+        "Language": "English ",
+        "Language Code": "en-GH"
+      },
+      {
+        "Country": "Ghana",
+        "Language": "Ewe ",
+        "Language Code": "ee,ee-GH"
+      },
+      {
+        "Country": "Ghana",
+        "Language": "Hausa ",
+        "Language Code": "ha,ha-GH"
+      },
+      {
+        "Country": "Gibraltar",
+        "Language": "English ",
+        "Language Code": "en-GI"
+      },
+      {
+        "Country": "Greece",
+        "Language": "Greek ",
+        "Language Code": "el,el-GR"
+      },
+      {
+        "Country": "Greenland",
+        "Language": "Danish ",
+        "Language Code": "da,da-GL"
+      },
+      {
+        "Country": "Greenland",
+        "Language": "Kalaallisut ",
+        "Language Code": "kl,kl-GL"
+      },
+      {
+        "Country": "Grenada",
+        "Language": "English ",
+        "Language Code": "en-GD"
+      },
+      {
+        "Country": "Guadeloupe",
+        "Language": "French ",
+        "Language Code": "fr,fr-GP"
+      },
+      {
+        "Country": "Guam",
+        "Language": "English ",
+        "Language Code": "en-GU"
+      },
+      {
+        "Country": "Guatemala",
+        "Language": "Spanish ",
+        "Language Code": "es,es-GT"
+      },
+      {
+        "Country": "Guernsey",
+        "Language": "English ",
+        "Language Code": "en-GG"
+      },
+      {
+        "Country": "Guinea",
+        "Language": "French ",
+        "Language Code": "fr,fr-GN"
+      },
+      {
+        "Country": "Guinea",
+        "Language": "Fulah ",
+        "Language Code": "ff,ff-GN"
+      },
+      {
+        "Country": "Guinea-Bissau",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-GW"
+      },
+      {
+        "Country": "Guyana",
+        "Language": "English ",
+        "Language Code": "en-GY"
+      },
+      {
+        "Country": "Haiti",
+        "Language": "French ",
+        "Language Code": "fr,fr-HT"
+      },
+      {
+        "Country": "Honduras",
+        "Language": "Spanish ",
+        "Language Code": "es,es-HN"
+      },
+      {
+        "Country": "Hong Kong SAR China",
+        "Language": "Chinese ",
+        "Language Code": "zh,zh-HK"
+      },
+      {
+        "Country": "Hong Kong SAR China",
+        "Language": "English ",
+        "Language Code": "en-HK"
+      },
+      {
+        "Country": "Hungary",
+        "Language": "Hungarian ",
+        "Language Code": "hu,hu-HU"
+      },
+      {
+        "Country": "Iceland",
+        "Language": "Icelandic ",
+        "Language Code": "is,is-IS"
+      },
+      {
+        "Country": "India",
+        "Language": "Assamese ",
+        "Language Code": "as,as-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Bengali ",
+        "Language Code": "bn,bn-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "English ",
+        "Language Code": "en-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Gujarati ",
+        "Language Code": "gu,gu-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Hindi ",
+        "Language Code": "hi,hi-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Kannada ",
+        "Language Code": "kn,kn-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Kashmiri ",
+        "Language Code": "ks,ks-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Malayalam ",
+        "Language Code": "ml,ml-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Marathi ",
+        "Language Code": "mr,mr-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Nepali ",
+        "Language Code": "ne,ne-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Oriya ",
+        "Language Code": "or,or-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Punjabi ",
+        "Language Code": "pa,pa-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Tamil ",
+        "Language Code": "ta,ta-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Telugu ",
+        "Language Code": "te,te-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Tibetan ",
+        "Language Code": "bo,bo-IN"
+      },
+      {
+        "Country": "India",
+        "Language": "Urdu ",
+        "Language Code": "ur,ur-IN"
+      },
+      {
+        "Country": "Indonesia",
+        "Language": "Indonesian ",
+        "Language Code": "id,id-ID"
+      },
+      {
+        "Country": "Iran",
+        "Language": "Persian ",
+        "Language Code": "fa,fa-IR"
+      },
+      {
+        "Country": "Iraq",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-IQ"
+      },
+      {
+        "Country": "Ireland",
+        "Language": "English ",
+        "Language Code": "en-IE"
+      },
+      {
+        "Country": "Ireland",
+        "Language": "Irish ",
+        "Language Code": "ga,ga-IE"
+      },
+      {
+        "Country": "Isle of Man",
+        "Language": "English ",
+        "Language Code": "en-IM"
+      },
+      {
+        "Country": "Isle of Man",
+        "Language": "Manx ",
+        "Language Code": "gv,gv-IM"
+      },
+      {
+        "Country": "Israel",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-IL"
+      },
+      {
+        "Country": "Israel",
+        "Language": "Hebrew ",
+        "Language Code": "he,he-IL"
+      },
+      {
+        "Country": "Italy",
+        "Language": "Catalan ",
+        "Language Code": "ca,ca-IT"
+      },
+      {
+        "Country": "Italy",
+        "Language": "Italian ",
+        "Language Code": "it,it-IT"
+      },
+      {
+        "Country": "Jamaica",
+        "Language": "English ",
+        "Language Code": "en-JM"
+      },
+      {
+        "Country": "Japan",
+        "Language": "Japanese ",
+        "Language Code": "ja,ja-JP"
+      },
+      {
+        "Country": "Jersey",
+        "Language": "English ",
+        "Language Code": "en-JE"
+      },
+      {
+        "Country": "Jordan",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-JO"
+      },
+      {
+        "Country": "Kazakhstan",
+        "Language": "Kazakh ",
+        "Language Code": "kk,kk-KZ"
+      },
+      {
+        "Country": "Kazakhstan",
+        "Language": "Russian ",
+        "Language Code": "ru,ru-KZ"
+      },
+      {
+        "Country": "Kenya",
+        "Language": "English ",
+        "Language Code": "en-KE"
+      },
+      {
+        "Country": "Kenya",
+        "Language": "Kikuyu ",
+        "Language Code": "ki,ki-KE"
+      },
+      {
+        "Country": "Kenya",
+        "Language": "Oromo ",
+        "Language Code": "om,om-KE"
+      },
+      {
+        "Country": "Kenya",
+        "Language": "Somali ",
+        "Language Code": "so,so-KE"
+      },
+      {
+        "Country": "Kenya",
+        "Language": "Swahili ",
+        "Language Code": "sw,sw-KE"
+      },
+      {
+        "Country": "Kiribati",
+        "Language": "English ",
+        "Language Code": "en-KI"
+      },
+      {
+        "Country": "Kosovo",
+        "Language": "Albanian ",
+        "Language Code": "sq,sq-XK"
+      },
+      {
+        "Country": "Kosovo",
+        "Language": "Serbian ",
+        "Language Code": "sr,sr-XK"
+      },
+      {
+        "Country": "Kuwait",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-KW"
+      },
+      {
+        "Country": "Kyrgyzstan",
+        "Language": "Kyrgyz ",
+        "Language Code": "ky,ky-KG"
+      },
+      {
+        "Country": "Kyrgyzstan",
+        "Language": "Russian ",
+        "Language Code": "ru,ru-KG"
+      },
+      {
+        "Country": "Laos",
+        "Language": "Lao ",
+        "Language Code": "lo,lo-LA"
+      },
+      {
+        "Country": "Latvia",
+        "Language": "Latvian ",
+        "Language Code": "lv,lv-LV"
+      },
+      {
+        "Country": "Lebanon",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-LB"
+      },
+      {
+        "Country": "Lesotho",
+        "Language": "English ",
+        "Language Code": "en-LS"
+      },
+      {
+        "Country": "Liberia",
+        "Language": "English ",
+        "Language Code": "en-LR"
+      },
+      {
+        "Country": "Libya",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-LY"
+      },
+      {
+        "Country": "Liechtenstein",
+        "Language": "German ",
+        "Language Code": "de,de-LI"
+      },
+      {
+        "Country": "Lithuania",
+        "Language": "Lithuanian ",
+        "Language Code": "lt,lt-LT"
+      },
+      {
+        "Country": "Luxembourg",
+        "Language": "French ",
+        "Language Code": "fr,fr-LU"
+      },
+      {
+        "Country": "Luxembourg",
+        "Language": "German ",
+        "Language Code": "de,de-LU"
+      },
+      {
+        "Country": "Luxembourg",
+        "Language": "Luxembourgish ",
+        "Language Code": "lb,lb-LU"
+      },
+      {
+        "Country": "Macau SAR China",
+        "Language": "Chinese ",
+        "Language Code": "zh,zh-MO"
+      },
+      {
+        "Country": "Macau SAR China",
+        "Language": "English ",
+        "Language Code": "en-MO"
+      },
+      {
+        "Country": "Macau SAR China",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-MO"
+      },
+      {
+        "Country": "Macedonia",
+        "Language": "Albanian ",
+        "Language Code": "sq,sq-MK"
+      },
+      {
+        "Country": "Macedonia",
+        "Language": "Macedonian ",
+        "Language Code": "mk,mk-MK"
+      },
+      {
+        "Country": "Madagascar",
+        "Language": "English ",
+        "Language Code": "en-MG"
+      },
+      {
+        "Country": "Madagascar",
+        "Language": "French ",
+        "Language Code": "fr,fr-MG"
+      },
+      {
+        "Country": "Madagascar",
+        "Language": "Malagasy ",
+        "Language Code": "mg,mg-MG"
+      },
+      {
+        "Country": "Malawi",
+        "Language": "English ",
+        "Language Code": "en-MW"
+      },
+      {
+        "Country": "Malaysia",
+        "Language": "English ",
+        "Language Code": "en-MY"
+      },
+      {
+        "Country": "Malaysia",
+        "Language": "Malay ",
+        "Language Code": "ms,ms-MY"
+      },
+      {
+        "Country": "Malaysia",
+        "Language": "Tamil ",
+        "Language Code": "ta,ta-MY"
+      },
+      {
+        "Country": "Mali",
+        "Language": "French ",
+        "Language Code": "fr,fr-ML"
+      },
+      {
+        "Country": "Malta",
+        "Language": "English ",
+        "Language Code": "en-MT"
+      },
+      {
+        "Country": "Malta",
+        "Language": "Maltese ",
+        "Language Code": "mt,mt-MT"
+      },
+      {
+        "Country": "Marshall Islands",
+        "Language": "English ",
+        "Language Code": "en-MH"
+      },
+      {
+        "Country": "Martinique",
+        "Language": "French ",
+        "Language Code": "fr,fr-MQ"
+      },
+      {
+        "Country": "Mauritania",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-MR"
+      },
+      {
+        "Country": "Mauritania",
+        "Language": "French ",
+        "Language Code": "fr,fr-MR"
+      },
+      {
+        "Country": "Mauritania",
+        "Language": "Fulah ",
+        "Language Code": "ff,ff-MR"
+      },
+      {
+        "Country": "Mauritius",
+        "Language": "English ",
+        "Language Code": "en-MU"
+      },
+      {
+        "Country": "Mauritius",
+        "Language": "French ",
+        "Language Code": "fr,fr-MU"
+      },
+      {
+        "Country": "Mayotte",
+        "Language": "French ",
+        "Language Code": "fr,fr-YT"
+      },
+      {
+        "Country": "Mexico",
+        "Language": "Spanish ",
+        "Language Code": "es,es-MX"
+      },
+      {
+        "Country": "Micronesia",
+        "Language": "English ",
+        "Language Code": "en-FM"
+      },
+      {
+        "Country": "Moldova",
+        "Language": "Romanian ",
+        "Language Code": "ro,ro-MD"
+      },
+      {
+        "Country": "Moldova",
+        "Language": "Russian ",
+        "Language Code": "ru,ru-MD"
+      },
+      {
+        "Country": "Monaco",
+        "Language": "French ",
+        "Language Code": "fr,fr-MC"
+      },
+      {
+        "Country": "Mongolia",
+        "Language": "Mongolian ",
+        "Language Code": "mn,mn-MN"
+      },
+      {
+        "Country": "Montenegro",
+        "Language": "Serbian ",
+        "Language Code": "sr,sr-ME"
+      },
+      {
+        "Country": "Montserrat",
+        "Language": "English ",
+        "Language Code": "en-MS"
+      },
+      {
+        "Country": "Morocco",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-MA"
+      },
+      {
+        "Country": "Morocco",
+        "Language": "French ",
+        "Language Code": "fr,fr-MA"
+      },
+      {
+        "Country": "Mozambique",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-MZ"
+      },
+      {
+        "Country": "Myanmar",
+        "Language": "Burmese",
+        "Language Code": "my,my-MM"
+      },
+      {
+        "Country": "Namibia",
+        "Language": "Afrikaans ",
+        "Language Code": "af,af-NA"
+      },
+      {
+        "Country": "Namibia",
+        "Language": "English ",
+        "Language Code": "en-NA"
+      },
+      {
+        "Country": "Nauru",
+        "Language": "English ",
+        "Language Code": "en-NR"
+      },
+      {
+        "Country": "Nepal",
+        "Language": "Nepali ",
+        "Language Code": "ne,ne-NP"
+      },
+      {
+        "Country": "Netherlands",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-NL"
+      },
+      {
+        "Country": "Netherlands",
+        "Language": "Western Frisian ",
+        "Language Code": "fy,fy-NL"
+      },
+      {
+        "Country": "New Caledonia",
+        "Language": "French ",
+        "Language Code": "fr,fr-NC"
+      },
+      {
+        "Country": "New Zealand",
+        "Language": "English ",
+        "Language Code": "en-NZ"
+      },
+      {
+        "Country": "Nicaragua",
+        "Language": "Spanish ",
+        "Language Code": "es,es-NI"
+      },
+      {
+        "Country": "Niger",
+        "Language": "French ",
+        "Language Code": "fr,fr-NE"
+      },
+      {
+        "Country": "Niger",
+        "Language": "Hausa ",
+        "Language Code": "ha,ha-NE"
+      },
+      {
+        "Country": "Nigeria",
+        "Language": "English ",
+        "Language Code": "en-NG"
+      },
+      {
+        "Country": "Nigeria",
+        "Language": "Hausa ",
+        "Language Code": "ha,ha-NG"
+      },
+      {
+        "Country": "Nigeria",
+        "Language": "Igbo ",
+        "Language Code": "ig,ig-NG"
+      },
+      {
+        "Country": "Nigeria",
+        "Language": "Yoruba ",
+        "Language Code": "yo,yo-NG"
+      },
+      {
+        "Country": "Niue",
+        "Language": "English ",
+        "Language Code": "en-NU"
+      },
+      {
+        "Country": "Norfolk Island",
+        "Language": "English ",
+        "Language Code": "en-NF"
+      },
+      {
+        "Country": "North Korea",
+        "Language": "Korean ",
+        "Language Code": "ko,ko-KP"
+      },
+      {
+        "Country": "Northern Mariana Islands",
+        "Language": "English ",
+        "Language Code": "en-MP"
+      },
+      {
+        "Country": "Norway",
+        "Language": "Northern Sami ",
+        "Language Code": "se,se-NO"
+      },
+      {
+        "Country": "Norway",
+        "Language": "Norwegian ",
+        "Language Code": "no,no-NO"
+      },
+      {
+        "Country": "Norway",
+        "Language": "Norwegian Bokmål ",
+        "Language Code": "nb,nb-NO"
+      },
+      {
+        "Country": "Norway",
+        "Language": "Norwegian Nynorsk ",
+        "Language Code": "nn,nn-NO"
+      },
+      {
+        "Country": "Oman",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-OM"
+      },
+      {
+        "Country": "Pakistan",
+        "Language": "English ",
+        "Language Code": "en-PK"
+      },
+      {
+        "Country": "Pakistan",
+        "Language": "Punjabi ",
+        "Language Code": "pa,pa-PK"
+      },
+      {
+        "Country": "Pakistan",
+        "Language": "Urdu ",
+        "Language Code": "ur,ur-PK"
+      },
+      {
+        "Country": "Palau",
+        "Language": "English ",
+        "Language Code": "en-PW"
+      },
+      {
+        "Country": "Palestinian Territories",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-PS"
+      },
+      {
+        "Country": "Panama",
+        "Language": "Spanish ",
+        "Language Code": "es,es-PA"
+      },
+      {
+        "Country": "Papua New Guinea",
+        "Language": "English ",
+        "Language Code": "en-PG"
+      },
+      {
+        "Country": "Paraguay",
+        "Language": "Spanish ",
+        "Language Code": "es,es-PY"
+      },
+      {
+        "Country": "Peru",
+        "Language": "Quechua ",
+        "Language Code": "qu,qu-PE"
+      },
+      {
+        "Country": "Peru",
+        "Language": "Spanish ",
+        "Language Code": "es,es-PE"
+      },
+      {
+        "Country": "Philippines",
+        "Language": "English ",
+        "Language Code": "en-PH"
+      },
+      {
+        "Country": "Philippines",
+        "Language": "Spanish ",
+        "Language Code": "es,es-PH"
+      },
+      {
+        "Country": "Philippines",
+        "Language": "Tagalog ",
+        "Language Code": "tl,tl-PH"
+      },
+      {
+        "Country": "Pitcairn Islands",
+        "Language": "English ",
+        "Language Code": "en-PN"
+      },
+      {
+        "Country": "Poland",
+        "Language": "Polish ",
+        "Language Code": "pl,pl-PL"
+      },
+      {
+        "Country": "Portugal",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-PT"
+      },
+      {
+        "Country": "Puerto Rico",
+        "Language": "English ",
+        "Language Code": "en-PR"
+      },
+      {
+        "Country": "Puerto Rico",
+        "Language": "Spanish ",
+        "Language Code": "es,es-PR"
+      },
+      {
+        "Country": "Qatar",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-QA"
+      },
+      {
+        "Country": "Réunion",
+        "Language": "French ",
+        "Language Code": "fr,fr-RE"
+      },
+      {
+        "Country": "Romania",
+        "Language": "Romanian ",
+        "Language Code": "ro,ro-RO"
+      },
+      {
+        "Country": "Russia",
+        "Language": "Ossetic ",
+        "Language Code": "os,os-RU"
+      },
+      {
+        "Country": "Russia",
+        "Language": "Russian ",
+        "Language Code": "ru,ru-RU"
+      },
+      {
+        "Country": "Rwanda",
+        "Language": "English ",
+        "Language Code": "en-RW"
+      },
+      {
+        "Country": "Rwanda",
+        "Language": "French ",
+        "Language Code": "fr,fr-RW"
+      },
+      {
+        "Country": "Rwanda",
+        "Language": "Kinyarwanda ",
+        "Language Code": "rw,rw-RW"
+      },
+      {
+        "Country": "Samoa",
+        "Language": "English ",
+        "Language Code": "en-WS"
+      },
+      {
+        "Country": "San Marino",
+        "Language": "Italian ",
+        "Language Code": "it,it-SM"
+      },
+      {
+        "Country": "São Tomé & Príncipe",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-ST"
+      },
+      {
+        "Country": "Saudi Arabia",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-SA"
+      },
+      {
+        "Country": "Senegal",
+        "Language": "French ",
+        "Language Code": "fr,fr-SN"
+      },
+      {
+        "Country": "Senegal",
+        "Language": "Fulah ",
+        "Language Code": "ff,ff-SN"
+      },
+      {
+        "Country": "Serbia",
+        "Language": "Serbian ",
+        "Language Code": "sr,sr-RS"
+      },
+      {
+        "Country": "Seychelles",
+        "Language": "English ",
+        "Language Code": "en-SC"
+      },
+      {
+        "Country": "Seychelles",
+        "Language": "French ",
+        "Language Code": "fr,fr-SC"
+      },
+      {
+        "Country": "Sierra Leone",
+        "Language": "English ",
+        "Language Code": "en-SL"
+      },
+      {
+        "Country": "Singapore",
+        "Language": "Chinese ",
+        "Language Code": "zh,zh-SG"
+      },
+      {
+        "Country": "Singapore",
+        "Language": "English ",
+        "Language Code": "en-SG"
+      },
+      {
+        "Country": "Singapore",
+        "Language": "Malay ",
+        "Language Code": "ms,ms-SG"
+      },
+      {
+        "Country": "Singapore",
+        "Language": "Tamil ",
+        "Language Code": "ta,ta-SG"
+      },
+      {
+        "Country": "Sint Maarten",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-SX"
+      },
+      {
+        "Country": "Sint Maarten",
+        "Language": "English ",
+        "Language Code": "en-SX"
+      },
+      {
+        "Country": "Slovakia",
+        "Language": "Slovak ",
+        "Language Code": "sk,sk-SK"
+      },
+      {
+        "Country": "Slovenia",
+        "Language": "Slovenian ",
+        "Language Code": "sl,sl-SI"
+      },
+      {
+        "Country": "Solomon Islands",
+        "Language": "English ",
+        "Language Code": "en-SB"
+      },
+      {
+        "Country": "Somalia",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-SO"
+      },
+      {
+        "Country": "Somalia",
+        "Language": "Somali ",
+        "Language Code": "so,so-SO"
+      },
+      {
+        "Country": "South Africa",
+        "Language": "Afrikaans ",
+        "Language Code": "af,af-ZA"
+      },
+      {
+        "Country": "South Africa",
+        "Language": "English ",
+        "Language Code": "en-ZA"
+      },
+      {
+        "Country": "South Africa",
+        "Language": "Zulu ",
+        "Language Code": "zu,zu-ZA"
+      },
+      {
+        "Country": "South Korea",
+        "Language": "Korean ",
+        "Language Code": "ko,ko-KR"
+      },
+      {
+        "Country": "South Sudan",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-SS"
+      },
+      {
+        "Country": "South Sudan",
+        "Language": "English ",
+        "Language Code": "en-SS"
+      },
+      {
+        "Country": "Spain",
+        "Language": "Basque ",
+        "Language Code": "eu,eu-ES"
+      },
+      {
+        "Country": "Spain",
+        "Language": "Catalan ",
+        "Language Code": "ca,ca-ES"
+      },
+      {
+        "Country": "Spain",
+        "Language": "Galician ",
+        "Language Code": "gl,gl-ES"
+      },
+      {
+        "Country": "Spain",
+        "Language": "Spanish ",
+        "Language Code": "es,es-ES"
+      },
+      {
+        "Country": "Sri Lanka",
+        "Language": "Sinhala ",
+        "Language Code": "si,si-LK"
+      },
+      {
+        "Country": "Sri Lanka",
+        "Language": "Tamil ",
+        "Language Code": "ta,ta-LK"
+      },
+      {
+        "Country": "St. Barthélemy",
+        "Language": "French ",
+        "Language Code": "fr,fr-BL"
+      },
+      {
+        "Country": "St. Helena",
+        "Language": "English ",
+        "Language Code": "en-SH"
+      },
+      {
+        "Country": "St. Kitts & Nevis",
+        "Language": "English ",
+        "Language Code": "en-KN"
+      },
+      {
+        "Country": "St. Lucia",
+        "Language": "English ",
+        "Language Code": "en-LC"
+      },
+      {
+        "Country": "St. Martin",
+        "Language": "French ",
+        "Language Code": "fr,fr-MF"
+      },
+      {
+        "Country": "St. Pierre & Miquelon",
+        "Language": "French ",
+        "Language Code": "fr,fr-PM"
+      },
+      {
+        "Country": "St. Vincent & Grenadines",
+        "Language": "English ",
+        "Language Code": "en-VC"
+      },
+      {
+        "Country": "Sudan",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-SD"
+      },
+      {
+        "Country": "Sudan",
+        "Language": "English ",
+        "Language Code": "en-SD"
+      },
+      {
+        "Country": "Suriname",
+        "Language": "Dutch ",
+        "Language Code": "nl,nl-SR"
+      },
+      {
+        "Country": "Svalbard & Jan Mayen",
+        "Language": "Norwegian Bokmål ",
+        "Language Code": "nb,nb-SJ"
+      },
+      {
+        "Country": "Swaziland",
+        "Language": "English ",
+        "Language Code": "en-SZ"
+      },
+      {
+        "Country": "Sweden",
+        "Language": "Northern Sami ",
+        "Language Code": "se,se-SE"
+      },
+      {
+        "Country": "Sweden",
+        "Language": "Swedish ",
+        "Language Code": "sv,sv-SE"
+      },
+      {
+        "Country": "Switzerland",
+        "Language": "French ",
+        "Language Code": "fr,fr-CH"
+      },
+      {
+        "Country": "Switzerland",
+        "Language": "German ",
+        "Language Code": "de,de-CH"
+      },
+      {
+        "Country": "Switzerland",
+        "Language": "Italian ",
+        "Language Code": "it,it-CH"
+      },
+      {
+        "Country": "Switzerland",
+        "Language": "Romansh ",
+        "Language Code": "rm,rm-CH"
+      },
+      {
+        "Country": "Syria",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-SY"
+      },
+      {
+        "Country": "Syria",
+        "Language": "French ",
+        "Language Code": "fr,fr-SY"
+      },
+      {
+        "Country": "Taiwan",
+        "Language": "Chinese ",
+        "Language Code": "zh,zh-TW"
+      },
+      {
+        "Country": "Tanzania",
+        "Language": "English ",
+        "Language Code": "en-TZ"
+      },
+      {
+        "Country": "Tanzania",
+        "Language": "Swahili ",
+        "Language Code": "sw,sw-TZ"
+      },
+      {
+        "Country": "Thailand",
+        "Language": "Thai ",
+        "Language Code": "th,th-TH"
+      },
+      {
+        "Country": "Timor-Leste",
+        "Language": "Portuguese ",
+        "Language Code": "pt,pt-TL"
+      },
+      {
+        "Country": "Togo",
+        "Language": "Ewe ",
+        "Language Code": "ee,ee-TG"
+      },
+      {
+        "Country": "Togo",
+        "Language": "French ",
+        "Language Code": "fr,fr-TG"
+      },
+      {
+        "Country": "Tokelau",
+        "Language": "English ",
+        "Language Code": "en-TK"
+      },
+      {
+        "Country": "Tonga",
+        "Language": "English ",
+        "Language Code": "en-TO"
+      },
+      {
+        "Country": "Tonga",
+        "Language": "Tongan ",
+        "Language Code": "to,to-TO"
+      },
+      {
+        "Country": "Trinidad & Tobago",
+        "Language": "English ",
+        "Language Code": "en-TT"
+      },
+      {
+        "Country": "Tunisia",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-TN"
+      },
+      {
+        "Country": "Tunisia",
+        "Language": "French ",
+        "Language Code": "fr,fr-TN"
+      },
+      {
+        "Country": "Turkey",
+        "Language": "Turkish ",
+        "Language Code": "tr,tr-TR"
+      },
+      {
+        "Country": "Turks & Caicos Islands",
+        "Language": "English ",
+        "Language Code": "en-TC"
+      },
+      {
+        "Country": "Tuvalu",
+        "Language": "English ",
+        "Language Code": "en-TV"
+      },
+      {
+        "Country": "U.S. Outlying Islands",
+        "Language": "English ",
+        "Language Code": "en-UM"
+      },
+      {
+        "Country": "U.S. Virgin Islands",
+        "Language": "English ",
+        "Language Code": "en-VI"
+      },
+      {
+        "Country": "Uganda",
+        "Language": "English ",
+        "Language Code": "en-UG"
+      },
+      {
+        "Country": "Uganda",
+        "Language": "Ganda ",
+        "Language Code": "lg,lg-UG"
+      },
+      {
+        "Country": "Uganda",
+        "Language": "Swahili ",
+        "Language Code": "sw,sw-UG"
+      },
+      {
+        "Country": "Ukraine",
+        "Language": "Russian ",
+        "Language Code": "ru,ru-UA"
+      },
+      {
+        "Country": "Ukraine",
+        "Language": "Ukrainian ",
+        "Language Code": "uk,uk-UA"
+      },
+      {
+        "Country": "United Arab Emirates",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-AE"
+      },
+      {
+        "Country": "United Kingdom",
+        "Language": "Cornish ",
+        "Language Code": "kw,kw-GB"
+      },
+      {
+        "Country": "United Kingdom",
+        "Language": "English ",
+        "Language Code": "en-GB"
+      },
+      {
+        "Country": "United Kingdom",
+        "Language": "Scottish Gaelic ",
+        "Language Code": "gd,gd-GB"
+      },
+      {
+        "Country": "United Kingdom",
+        "Language": "Welsh ",
+        "Language Code": "cy,cy-GB"
+      },
+      {
+        "Country": "United States",
+        "Language": "English ",
+        "Language Code": "en-US"
+      },
+      {
+        "Country": "United States",
+        "Language": "Spanish ",
+        "Language Code": "es,es-US"
+      },
+      {
+        "Country": "Uruguay",
+        "Language": "Spanish ",
+        "Language Code": "es,es-UY"
+      },
+      {
+        "Country": "Uzbekistan",
+        "Language": "Uzbek ",
+        "Language Code": "uz,uz-UZ"
+      },
+      {
+        "Country": "Vanuatu",
+        "Language": "English ",
+        "Language Code": "en-VU"
+      },
+      {
+        "Country": "Vanuatu",
+        "Language": "French ",
+        "Language Code": "fr,fr-VU"
+      },
+      {
+        "Country": "Venezuela",
+        "Language": "Spanish ",
+        "Language Code": "es,es-VE"
+      },
+      {
+        "Country": "Vietnam",
+        "Language": "Vietnamese ",
+        "Language Code": "vi,vi-VN"
+      },
+      {
+        "Country": "Wallis & Futuna",
+        "Language": "French ",
+        "Language Code": "fr,fr-WF"
+      },
+      {
+        "Country": "Western Sahara",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-EH"
+      },
+      {
+        "Country": "Yemen",
+        "Language": "Arabic ",
+        "Language Code": "ar,ar-YE"
+      },
+      {
+        "Country": "Zambia",
+        "Language": "English ",
+        "Language Code": "en-ZM"
+      },
+      {
+        "Country": "Zimbabwe",
+        "Language": "English ",
+        "Language Code": "en-ZW"
+      },
+      {
+        "Country": "Zimbabwe",
+        "Language": "North Ndebele ",
+        "Language Code": "nd,nd-ZW"
+      },
+      {
+        "Country": "Zimbabwe",
+        "Language": "Shona ",
+        "Language Code": "sn,sn-ZW"
+      }
+    ]
+  }
+]

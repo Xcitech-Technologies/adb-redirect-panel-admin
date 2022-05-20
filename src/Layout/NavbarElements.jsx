@@ -96,3 +96,20 @@ export const NavBtnLink = styled(Link)`
     color: #010606;
   }
 `;
+
+export const StyledLink = styled(Link)`
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
+`;
