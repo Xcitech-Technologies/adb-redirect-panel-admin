@@ -1,16 +1,71 @@
 import React from "react";
 import Button from "../../../Controls/Button";
 import jsonData from "../../../data.json";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const Locations = () => {
   // const [isapproved, setIsapproved] = React.useState({referers: false, countries: false, cities:false, region: false, language:false, timeZone: false});
-  const [data, setData] = React.useState("");
+  const [isOpen, setIsOpen] = React.useState({
+    approveCountries: false,
+    approveLanguage: false,
+    approveTimeZone: false,
+    blockCountries: false,
+    blockLanguage: false,
+    blockTimezone: false,
+  });
+  const [approveData, setApproveData] = React.useState("");
+  const [blockData, setBlockData] = React.useState("");
 
-  function handle(e) {
-    const newData = { ...data };
-    newData[e.target.id] = e.target.value;
-    setData(newData);
-  }
+  const arrayData = jsonData[0].MasterData.map((item) => ({
+    CountryCode: item.CountryCode,
+    Pop: item.Pop,
+    CountryName: item.CountryName,
+    Timezones: item.Timezones,
+    Language: item.Language,
+    CountryLanguagecode: item.CountryLanguagecode,
+    Domain: item.Domain,
+  }));
+  console.log(arrayData);
+
+  const handleOnSearch = (string, results) => {
+    console.log(string, results);
+  };
+
+  const blockHandleSearch = (string, results) => {
+    console.log(string, results);
+  };
+
+  const handleOnHover = (result) => {
+    console.log(result);
+  };
+
+  const blockHandleHover = (result) => {
+    console.log(result);
+  };
+
+  const handleOnSelect = (item) => {
+    console.log(item);
+    setApproveData(item);
+    setIsOpen({ approveCountries: true, 
+      approveLanguage: true,
+      approveTimeZone: true, });
+  };
+
+  const blockHandleSelect = (item) => {
+    console.log(item);
+    setBlockData(item);
+    setIsOpen({ blockCountries: true,
+      blockLanguage: true,
+      blockTimezone: true, });
+  };
+
+  const handleOnFocus = () => {
+    console.log("Focused");
+  };
+
+  const handleOnClear = () => {
+    console.log("Cleared");
+  };
 
   return (
     <div className="container-fluid">
@@ -72,41 +127,96 @@ const Locations = () => {
         <div className="col-md-6">
           <div className="card">
             <div className="card-header">Countries</div>
-            <div className="card-body">
+            <div className="cards-body">
               <div className="inputs">
                 <label className="label">Approve Country List :</label>
               </div>
-              {jsonData[0].MasterData.map((item, index) =>  (
-                    <div key={index}>
-                      <input
-                        className="input"
-                        id="approvRaf"
-                        type="text"
-                        placeholder="Search County"
-                        onChange={(e) => handle(e)}
-                        value={item.CountryName}
-                      ></input>
-                    </div>
-                  )
+              <div className="row">
+                <div className="col-md-10">
+                  <ReactSearchAutocomplete
+                    items={arrayData}
+                    onSearch={handleOnSearch}
+                    onHover={handleOnHover}
+                    onSelect={handleOnSelect}
+                    onFocus={handleOnFocus}
+                    onClear={handleOnClear}
+                    showIcon={false}
+                    styling={{
+                      height: "5px",
+                      backgroundColor: "#12141D",
+                      borderRadius: "5px",
+                      border: "none",
+                      padding: "-20px",
+                      color: "white",
+                      hoverBackgroundColor: "lightgreen",
+                      lineColor: "lightgreen",
+                    }}
+                    fuseOptions={{ keys: ["CountryCode", "CountryName"] }} // Search on both fields
+                    resultStringKeyName="CountryName" // String to display in the results
+                  />
+                </div>
+                <div className="col-md-2">
+                  <button className="add-button" type="button">
+                    Search
+                  </button>
+                </div>
+              </div>
+              {isOpen.approveCountries && (
+                <>
+                  <Button>Clear</Button>
+                  <div className="display-data">
+                    <span className="api-item">
+                      <span className="x">x</span>
+                      {approveData.CountryName}
+                    </span>
+                  </div>
+                </>
               )}
-
-              <button className="button" type="button">
-                Add
-              </button>
-              <Button>Clear</Button>
 
               <div className="inputs">
                 <label className="label">Block Country List :</label>
               </div>
-              <input
-                className="input"
-                id="approvRaf"
-                type="text"
-                placeholder="Search County"
-              ></input>
-              <button className="button" type="button">
-                Add
-              </button>
+              <div className="row">
+                <div className="col-md-10">
+                  <ReactSearchAutocomplete
+                    items={arrayData}
+                    onSearch={blockHandleSearch}
+                    onHover={blockHandleHover}
+                    onSelect={blockHandleSelect}
+                    onFocus={handleOnFocus}
+                    onClear={handleOnClear}
+                    showIcon={false}
+                    styling={{
+                      height: "5px",
+                      backgroundColor: "#12141D",
+                      borderRadius: "5px",
+                      border: "none",
+                      padding: "-20px",
+                      color: "white",
+                      hoverBackgroundColor: "lightgreen",
+                      lineColor: "lightgreen",
+                    }}
+                    fuseOptions={{ keys: ["CountryCode", "CountryName"] }} // Search on both fields
+                    resultStringKeyName="CountryName" // String to display in the results
+                  />
+                </div>
+                <div className="col-md-2">
+                  <button className="add-button" type="button">
+                    Search
+                  </button>
+                </div>
+              </div>
+              {isOpen.blockCountries && (
+                <>
+                  <Button>Clear</Button>
+                  <div className="display-data">
+                    <span className="api-item">
+                      <span className="x">x</span>
+                      {blockData.CountryName}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -190,6 +300,17 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
+              {isOpen.approveLanguage && (
+                <>
+                  <Button>Clear</Button>
+                  <div className="display-data">
+                    <span className="api-item">
+                      <span className="x">x</span>
+                      {approveData.Language}
+                    </span>
+                  </div>
+                </>
+              )}
               <div className="inputs">
                 <label className="label">Block Language :</label>
               </div>
@@ -197,6 +318,17 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
+              {isOpen.blockLanguage && (
+                <>
+                  <Button>Clear</Button>
+                  <div className="display-data">
+                    <span className="api-item">
+                      <span className="x">x</span>
+                      {blockData.Language}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -212,6 +344,17 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
+              {isOpen.approveTimeZone && (
+                <>
+                  <Button>Clear</Button>
+                  <div className="display-data">
+                    <span className="api-item">
+                      <span className="x">x</span>
+                      {approveData.Timezones}
+                    </span>
+                  </div>
+                </>
+              )}
               <div className="inputs">
                 <label className="label">Blocked TimeZone :</label>
               </div>
@@ -219,6 +362,17 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
+              {isOpen.blockTimezone && (
+                <>
+                  <Button>Clear</Button>
+                  <div className="display-data">
+                    <span className="api-item">
+                      <span className="x">x</span>
+                      {blockData.Timezones}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
