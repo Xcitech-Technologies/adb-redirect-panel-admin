@@ -5,7 +5,7 @@ import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const Locations = () => {
   // const [isapproved, setIsapproved] = React.useState({referers: false, countries: false, cities:false, region: false, language:false, timeZone: false});
-  const [isOpen, setIsOpen] = React.useState({
+  const [ApproveIsOpen, setApproveIsOpen] = React.useState({
     approveCountries: false,
     approveLanguage: false,
     approveTimeZone: false,
@@ -13,8 +13,14 @@ const Locations = () => {
     blockLanguage: false,
     blockTimezone: false,
   });
-  const [approveData, setApproveData] = React.useState("");
-  const [blockData, setBlockData] = React.useState("");
+
+  const [BlockIsOpen, setBlockIsOpen] = React.useState({
+    blockCountries: false,
+    blockLanguage: false,
+    blockTimezone: false,
+  });
+  const [approveData, setApproveData] = React.useState([]);
+  const [blockData, setBlockData] = React.useState([]);
 
   const arrayData = jsonData[0].MasterData.map((item) => ({
     CountryCode: item.CountryCode,
@@ -25,7 +31,7 @@ const Locations = () => {
     CountryLanguagecode: item.CountryLanguagecode,
     Domain: item.Domain,
   }));
-  console.log(arrayData);
+  console.log(approveData);
 
   const handleOnSearch = (string, results) => {
     console.log(string, results);
@@ -35,37 +41,27 @@ const Locations = () => {
     console.log(string, results);
   };
 
-  const handleOnHover = (result) => {
-    console.log(result);
-  };
-
-  const blockHandleHover = (result) => {
-    console.log(result);
-  };
-
   const handleOnSelect = (item) => {
     console.log(item);
-    setApproveData(item);
-    setIsOpen({ approveCountries: true, 
+    setApproveData([...approveData, item]);
+    setApproveIsOpen({
+      approveCountries: true,
       approveLanguage: true,
-      approveTimeZone: true, });
+      approveTimeZone: true,
+    });
   };
 
   const blockHandleSelect = (item) => {
     console.log(item);
-    setBlockData(item);
-    setIsOpen({ blockCountries: true,
+    setBlockData([...approveData, item]);
+    setBlockIsOpen({
+      blockCountries: true,
       blockLanguage: true,
-      blockTimezone: true, });
+      blockTimezone: true,
+    });
   };
 
-  const handleOnFocus = () => {
-    console.log("Focused");
-  };
-
-  const handleOnClear = () => {
-    console.log("Cleared");
-  };
+  // const arrayAllData = [];
 
   return (
     <div className="container-fluid">
@@ -136,10 +132,7 @@ const Locations = () => {
                   <ReactSearchAutocomplete
                     items={arrayData}
                     onSearch={handleOnSearch}
-                    onHover={handleOnHover}
                     onSelect={handleOnSelect}
-                    onFocus={handleOnFocus}
-                    onClear={handleOnClear}
                     showIcon={false}
                     styling={{
                       height: "5px",
@@ -161,14 +154,18 @@ const Locations = () => {
                   </button>
                 </div>
               </div>
-              {isOpen.approveCountries && (
+              {ApproveIsOpen.approveCountries && (
                 <>
                   <Button>Clear</Button>
                   <div className="display-data">
-                    <span className="api-item">
-                      <span className="x">x</span>
-                      {approveData.CountryName}
-                    </span>
+                    {approveData.map((item, index) => {
+                      return (
+                        <span className="api-item" key={index}>
+                          <span className="x">x</span>
+                          {item.CountryName}
+                        </span>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -181,10 +178,7 @@ const Locations = () => {
                   <ReactSearchAutocomplete
                     items={arrayData}
                     onSearch={blockHandleSearch}
-                    onHover={blockHandleHover}
                     onSelect={blockHandleSelect}
-                    onFocus={handleOnFocus}
-                    onClear={handleOnClear}
                     showIcon={false}
                     styling={{
                       height: "5px",
@@ -206,14 +200,18 @@ const Locations = () => {
                   </button>
                 </div>
               </div>
-              {isOpen.blockCountries && (
+              {BlockIsOpen.blockCountries && (
                 <>
                   <Button>Clear</Button>
                   <div className="display-data">
-                    <span className="api-item">
-                      <span className="x">x</span>
-                      {blockData.CountryName}
-                    </span>
+                    {blockData.map((item, index) => {
+                      return (
+                        <span className="api-item" key={index}>
+                          <span className="x">x</span>
+                          {item.CountryName}
+                        </span>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -300,14 +298,25 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
-              {isOpen.approveLanguage && (
+              {ApproveIsOpen.approveLanguage && (
                 <>
                   <Button>Clear</Button>
                   <div className="display-data">
-                    <span className="api-item">
-                      <span className="x">x</span>
-                      {approveData.Language}
-                    </span>
+                  {approveData.map(( item ) => {
+                      const approveLanguage = item.Language.split(",");
+                      return (
+                        <div>
+                          {approveLanguage.map((item, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x">x</span>
+                                  {item}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -318,14 +327,25 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
-              {isOpen.blockLanguage && (
+              {BlockIsOpen.blockLanguage && (
                 <>
                   <Button>Clear</Button>
                   <div className="display-data">
-                    <span className="api-item">
-                      <span className="x">x</span>
-                      {blockData.Language}
-                    </span>
+                  {blockData.map(( item ) => {
+                      const BlockLanguage = item.Language.split(",");
+                      return (
+                        <div>
+                          {BlockLanguage.map((item, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x">x</span>
+                                  {item}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -344,14 +364,25 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
-              {isOpen.approveTimeZone && (
+              {ApproveIsOpen.approveTimeZone && (
                 <>
                   <Button>Clear</Button>
                   <div className="display-data">
-                    <span className="api-item">
-                      <span className="x">x</span>
-                      {approveData.Timezones}
-                    </span>
+                    {approveData.map(( item ) => {
+                      const approveTimezone = item.Timezones.split(",");
+                      return (
+                        <div>
+                          {approveTimezone.map((item, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x">x</span>
+                                  {item}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
                   </div>
                 </>
               )}
@@ -362,14 +393,25 @@ const Locations = () => {
               <button className="button" type="button">
                 Add
               </button>
-              {isOpen.blockTimezone && (
+              {BlockIsOpen.blockTimezone && (
                 <>
                   <Button>Clear</Button>
                   <div className="display-data">
-                    <span className="api-item">
-                      <span className="x">x</span>
-                      {blockData.Timezones}
-                    </span>
+                  {blockData.map(( item ) => {
+                      const blockTimezone = item.Timezones.split(",");
+                      return (
+                        <div>
+                          {blockTimezone.map((item, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x">x</span>
+                                  {item}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
                   </div>
                 </>
               )}
