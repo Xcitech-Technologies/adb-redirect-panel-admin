@@ -59,6 +59,8 @@
 }
 
 .label{
+  padding-top: 20px;
+  width: 80%;
   font-size: 14px;
   font-weight: 500;
   color: #fff;
@@ -282,4 +284,29 @@
   padding: 10px;
   padding-bottom: 0;
   margin-bottom: 100px;
+}
+
+ /* tracking page css */
+
+.freq-inputs{
+  width: 100%;
+  padding: 7px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #12141D;
+  outline: none;
+  color: #fff;
+}
+
+.freq-due-input{
+  width: 45%;
+  padding: 7px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #12141D;
+  outline: none;
+  color: #fff;
+  margin-right: 15px;  
 }

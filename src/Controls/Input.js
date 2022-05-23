@@ -9,7 +9,8 @@ function Input(props) {
   };
 
   return (
-    <div className="inputs">
+    // <div className="inputs">
+    <>
       <label className='label'>{label}</label>
       <input
         className='input'
@@ -17,7 +18,8 @@ function Input(props) {
         value={value}
         onChange={onChange}
       />
-    </div>
+      </>
+    // </div>
   )
 }
 

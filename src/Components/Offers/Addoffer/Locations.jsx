@@ -9,9 +9,6 @@ const Locations = () => {
     approveCountries: false,
     approveLanguage: false,
     approveTimeZone: false,
-    blockCountries: false,
-    blockLanguage: false,
-    blockTimezone: false,
   });
 
   const [BlockIsOpen, setBlockIsOpen] = React.useState({
@@ -60,8 +57,6 @@ const Locations = () => {
       blockTimezone: true,
     });
   };
-
-  // const arrayAllData = [];
 
   return (
     <div className="container-fluid">
@@ -156,9 +151,21 @@ const Locations = () => {
               </div>
               {ApproveIsOpen.approveCountries && (
                 <>
-                  <Button>Clear</Button>
+                  <Button
+                    onClick={() => {
+                      setApproveIsOpen({
+                        approveCountries: false,
+                        approveLanguage: false,
+                        approveTimeZone: false,
+                      });
+                      setApproveData([]);
+                    }}
+                  >
+                    Clear
+                  </Button>
                   <div className="display-data">
                     {approveData.map((item, index) => {
+                      console.log(item);
                       return (
                         <span className="api-item" key={index}>
                           <span className="x">x</span>
@@ -202,7 +209,18 @@ const Locations = () => {
               </div>
               {BlockIsOpen.blockCountries && (
                 <>
-                  <Button>Clear</Button>
+                  <Button
+                    onClick={() => {
+                      setBlockIsOpen({
+                        blockCountries: false,
+                        blockLanguage: false,
+                        blockTimezone: false,
+                      });
+                      setBlockData([]);
+                    }}
+                  >
+                    Clear
+                  </Button>
                   <div className="display-data">
                     {blockData.map((item, index) => {
                       return (
@@ -300,9 +318,19 @@ const Locations = () => {
               </button>
               {ApproveIsOpen.approveLanguage && (
                 <>
-                  <Button>Clear</Button>
+                  <Button
+                    onClick={() => {
+                      setApproveIsOpen({
+                        ...ApproveIsOpen,
+                        approveLanguage: false,
+                      });
+                      setApproveData([]);
+                    }}
+                  >
+                    Clear
+                  </Button>
                   <div className="display-data">
-                  {approveData.map(( item ) => {
+                    {approveData.map((item) => {
                       const approveLanguage = item.Language.split(",");
                       return (
                         <div>
@@ -310,7 +338,7 @@ const Locations = () => {
                             return (
                               <span className="api-item" key={index}>
                                 <span className="x">x</span>
-                                  {item}
+                                {item}
                               </span>
                             );
                           })}
@@ -329,9 +357,16 @@ const Locations = () => {
               </button>
               {BlockIsOpen.blockLanguage && (
                 <>
-                  <Button>Clear</Button>
+                  <Button
+                    onClick={() => {
+                      setBlockIsOpen({ ...BlockIsOpen, blockLanguage: false });
+                      setBlockData([]);
+                    }}
+                  >
+                    Clear
+                  </Button>
                   <div className="display-data">
-                  {blockData.map(( item ) => {
+                    {blockData.map((item) => {
                       const BlockLanguage = item.Language.split(",");
                       return (
                         <div>
@@ -339,7 +374,7 @@ const Locations = () => {
                             return (
                               <span className="api-item" key={index}>
                                 <span className="x">x</span>
-                                  {item}
+                                {item}
                               </span>
                             );
                           })}
@@ -366,9 +401,19 @@ const Locations = () => {
               </button>
               {ApproveIsOpen.approveTimeZone && (
                 <>
-                  <Button>Clear</Button>
+                  <Button
+                    onClick={() => {
+                      setApproveIsOpen({
+                        ...ApproveIsOpen,
+                        approveTimeZone: false,
+                      });
+                      setApproveData([]);
+                    }}
+                  >
+                    Clear
+                  </Button>
                   <div className="display-data">
-                    {approveData.map(( item ) => {
+                    {approveData.map((item) => {
                       const approveTimezone = item.Timezones.split(",");
                       return (
                         <div>
@@ -376,7 +421,7 @@ const Locations = () => {
                             return (
                               <span className="api-item" key={index}>
                                 <span className="x">x</span>
-                                  {item}
+                                {item}
                               </span>
                             );
                           })}
@@ -395,9 +440,19 @@ const Locations = () => {
               </button>
               {BlockIsOpen.blockTimezone && (
                 <>
-                  <Button>Clear</Button>
+                  <Button
+                    onClick={() => {
+                      setBlockIsOpen({
+                        ...BlockIsOpen,
+                        blockTimezone: false,
+                      });
+                      setBlockData([]);
+                    }}
+                  >
+                    Clear
+                  </Button>
                   <div className="display-data">
-                  {blockData.map(( item ) => {
+                    {blockData.map((item) => {
                       const blockTimezone = item.Timezones.split(",");
                       return (
                         <div>
@@ -405,7 +460,7 @@ const Locations = () => {
                             return (
                               <span className="api-item" key={index}>
                                 <span className="x">x</span>
-                                  {item}
+                                {item}
                               </span>
                             );
                           })}
