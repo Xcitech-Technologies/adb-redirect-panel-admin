@@ -12,7 +12,7 @@ import {FaSignOutAlt} from 'react-icons/fa';
 const Navbar = () => {
   return (
     <>
-      <Nav>
+      <Nav className="navbar">
         <NavLink to='/admin/dashboard'>
           <img src="/logo.png" alt="Logo" width="40" height="50" />
         </NavLink>
