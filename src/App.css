@@ -10,7 +10,7 @@
 } */
 
 .wrapper {
-  padding: 15px 20px;
+  padding: 5px 0px;
 }
 
 .row {
@@ -449,8 +449,30 @@
   background: #5c6bc0;
 }
 
+.autoSearch{
+  width: 80%;
+}
 
+.clear-btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+.collapse{
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.collapse-container{
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 103px;
+  margin-top: 25px;
+}
+
+.collase{
+  margin-left: 90px;
+}
 
 
 
