@@ -2,15 +2,19 @@
   text-align: center;
 } */
 
-/* .navbar{
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-} */
+}
 
 .wrapper {
   padding: 5px 0px;
+}
+
+.container-fluid {
+  margin-top: 125px;
 }
 
 .row {
@@ -62,7 +66,7 @@
 .inputs {
   width: 80%;
   display: flex;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 .label {
@@ -154,7 +158,6 @@
   color: #fff;
   outline: none;
   cursor: pointer;
-  margin-top: 7px;
 }
 
 .update-cls {
@@ -250,6 +253,11 @@
 
 .nav-wrapper {
   width: 100%;
+  position: fixed;
+  top: 52px;
+  z-index: 1;
+  right: 0;
+  left: 0;
 }
 
 .tabs-style {
@@ -275,7 +283,7 @@
 
 .add-button {
   width: 66px;
-  height: 40px;
+  height: 37px;
   padding: 7px;
   border: none;
   border-radius: 5px;
@@ -283,8 +291,6 @@
   color: #fff;
   outline: none;
   cursor: pointer;
-  margin-top: 5px;
-  margin-bottom: 11px;
 }
 
 .cards-body {
@@ -296,6 +302,12 @@
 }
 
 /* tracking page css */
+
+.remove-button {
+  background-color: #5C6BC0;
+  border: none;
+  color: #fff;
+}
 
 .btn-condition {
   padding: 10px;
@@ -317,6 +329,10 @@
   align-items: center;
 }
 
+.add-container {
+  display: flex;
+}
+
 .urlfield-container {
   justify-content: space-around;
   align-items: center;
@@ -324,21 +340,21 @@
   margin-top: 10px;
 }
 
-.radio-container{
+.radio-container {
   justify-content: space-around;
   align-items: center;
   margin-left: 103px;
   margin-top: 12px;
 }
 
-.last-container{
+.last-container {
   justify-content: space-around;
   align-items: center;
   margin-left: 12px;
   margin-top: 10px;
 }
 
-.last-input{
+.last-input {
   width: 80%;
   padding: 7px;
   margin-top: 10px;
@@ -387,14 +403,30 @@
   margin-left: 5px;
 }
 
-.pt-container{
+.header-label{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.header-select{
+  width: 30%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background: #12141D;
+  outline: none;
+  color: #fff;
+  margin-left: 5px;
+}
+
+.pt-container {
   justify-content: space-around;
   align-items: center;
   margin-left: 15px;
   margin-top: 10px;
 }
 
-.pt-input{
+.pt-input {
   width: 91%;
   padding: 7px;
   margin-top: 10px;
@@ -403,10 +435,10 @@
   background: #12141D;
   outline: none;
   color: #fff;
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
-.pturl-input{
+.pturl-input {
   width: 90%;
   padding: 7px;
   margin-top: 10px;
@@ -449,40 +481,63 @@
   background: #5c6bc0;
 }
 
-.autoSearch{
+.radio-include {
+  display: none;
+}
+
+.radio-exclude {
+  display: none;
+}
+
+.radio-include:checked+.radio-label1 {
+  background: #28A745;
+}
+
+.radio-exclude:checked+.radio-label1 {
+  background: #DC143C;
+}
+
+.radio-label1 {
+  padding: 2px 10px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  background: #12141D;
+  transition: background 0.1s;
+  border: 2px solid #fff;
+}
+
+.autoSearch {
   width: 80%;
 }
 
-.clear-btn{
+.clear-btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.collapse{
+.collapse {
   margin-top: 25px;
   margin-bottom: 10px;
 }
 
-.collapse-container{
+.collapse-container {
   justify-content: space-around;
   align-items: center;
   margin-left: 103px;
   margin-top: 25px;
 }
 
-.collase{
+.collase {
   margin-left: 90px;
+  margin-top: 10px;
 }
 
 
+/* Ganeral Page CSS */
 
 
-
-
-
-
-
-.freq-inputs {
+.g-input {
   width: 100%;
   padding: 7px;
   margin-top: 10px;
@@ -493,35 +548,19 @@
   color: #fff;
 }
 
-.freq-due-input {
-  width: 45%;
-  padding: 7px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #12141D;
-  outline: none;
-  color: #fff;
-  margin-right: 15px;
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.min-inputs {
-  width: 95%;
-  padding: 7px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #12141D;
-  outline: none;
-  color: #fff;
+/* adb-froud-detection */
+
+.radio-item{
+  margin-left: 10px;
 }
 
-.BSR-input {
-  padding: 7px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #12141D;
-  outline: none;
-  color: #fff;
+.radio-meta {
+  padding: 15px;
 }

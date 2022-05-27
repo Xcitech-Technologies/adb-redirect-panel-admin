@@ -5,7 +5,7 @@ import { BiSort } from "react-icons/bi";
 
 const Offer = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ marginTop: "55px" }}>
       <div className="row">
         <div className="col-md-12">
           <div className="card">

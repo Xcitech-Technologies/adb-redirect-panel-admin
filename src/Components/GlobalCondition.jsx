@@ -15,7 +15,11 @@ const GlobalCondition = () => {
     userAgent: true,
   });
 
-  const [isvisible, setIsvisible] = React.useState({approved_referrers: true, blocked_referrers: true, ips1: true});
+  const [isvisible, setIsvisible] = React.useState({
+    approved_referrers: true,
+    blocked_referrers: true,
+    ips1: true,
+  });
 
   const [data, setData] = React.useState("");
 
@@ -25,8 +29,30 @@ const GlobalCondition = () => {
     setData(newData);
   }
 
+  const removeApproveRefOnclick = (index) => {
+    const condition = GlobalData[0].data[0].approved_referrers;
+    condition.splice(index, 1);
+    console.log(condition);
+    setData({ ...data, condition });
+  }
+
+  const removeIPsOnclick = (index) => {
+    const ips = GlobalData[0].data[0].blocked_IPs;
+    ips.splice(index, 1);
+    console.log(ips);
+    setData({ ...data, ips });
+  }
+
+  const removeBlockrefOnclick = (index) => {
+    const block = GlobalData[0].data[0].blocked_referrers;
+    block.splice(index, 1);
+    console.log(block);
+    setData({ ...data, block });
+  }
+
+
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ marginTop: "55px" }}>
       <div className="row">
         <div className="col-md-6">
           <div className="card">
@@ -53,58 +79,70 @@ const GlobalCondition = () => {
                     id="approvRaf"
                     type="text"
                   ></input>
-                  <button
-                    className="button"
-                    type="button"
-                  >
+                  <button className="button" type="button">
                     Add
                   </button>
-                  {isvisible.approved_referrers && (<div className="display">
-                    <Button onClick={() => {
-                      setIsvisible({ ...isvisible, approved_referrers: false });
-                    }}>Clear</Button>
-                    <div className="display-data">
-                      {GlobalData[0].data[0].approved_referrers.map(
-                        (data, index) => {
-                          return (
-                            <span className="api-item" key={index}>
-                              <span className="x">x</span>
-                              {data}
-                            </span>
-                          );
-                        }
-                      )}
+                  {isvisible.approved_referrers && (
+                    <div className="display">
+                      <Button
+                        onClick={() => {
+                          setIsvisible({
+                            ...isvisible,
+                            approved_referrers: false,
+                          });
+                        }}
+                      >
+                        Clear
+                      </Button>
+                      <div className="display-data">
+                        {GlobalData[0].data[0].approved_referrers.map(
+                          (data, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x" onClick={() => {removeApproveRefOnclick(index)}}>x</span>
+                                {data}
+                              </span>
+                            );
+                          }
+                        )}
+                      </div>
                     </div>
-                  </div>)}
+                  )}
                 </div>
                 <div className="card-content">
                   <div className="inputs">
                     <label className="label">Block Referers:</label>
                   </div>
                   <input className="input" type="text"></input>
-                  <button
-                    className="button"
-                    type="button"
-                  >
+                  <button className="button" type="button">
                     Add
                   </button>
-                  {isvisible.blocked_referrers && (<div className="display">
-                    <Button onClick={() => {
-                      setIsvisible({ ...isvisible, blocked_referrers: false });
-                    }}>Clear</Button>
-                    <div className="display-data">
-                      {GlobalData[0].data[0].blocked_referrers.map(
-                        (data, index) => {
-                          return (
-                            <span className="api-item" key={index}>
-                              <span className="x">x</span>
-                              {data}
-                            </span>
-                          );
-                        }
-                      )}
+                  {isvisible.blocked_referrers && (
+                    <div className="display">
+                      <Button
+                        onClick={() => {
+                          setIsvisible({
+                            ...isvisible,
+                            blocked_referrers: false,
+                          });
+                        }}
+                      >
+                        Clear
+                      </Button>
+                      <div className="display-data">
+                        {GlobalData[0].data[0].blocked_referrers.map(
+                          (data, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x" onClick={() => {removeBlockrefOnclick(index)}}>x</span>
+                                {data}
+                              </span>
+                            );
+                          }
+                        )}
+                      </div>
                     </div>
-                  </div>)}
+                  )}
                 </div>
               </div>
             )}
@@ -132,23 +170,29 @@ const GlobalCondition = () => {
                   <button className="button" type="button">
                     Add
                   </button>
-                  {isvisible.ips1 && (<div className="display">
-                    <Button onClick={() => {
-                      setIsvisible({ ...isvisible, ips1: false });
-                    }}>Clear</Button>
-                    <div className="display-data">
-                      {GlobalData[0].data[0].blocked_IPs.map(
-                        (data, index) => {
-                          return (
-                            <span className="api-item" key={index}>
-                              <span className="x">x</span>
-                              {data}
-                            </span>
-                          );
-                        }
-                      )}
+                  {isvisible.ips1 && (
+                    <div className="display">
+                      <Button
+                        onClick={() => {
+                          setIsvisible({ ...isvisible, ips1: false });
+                        }}
+                      >
+                        Clear
+                      </Button>
+                      <div className="display-data">
+                        {GlobalData[0].data[0].blocked_IPs.map(
+                          (data, index) => {
+                            return (
+                              <span className="api-item" key={index}>
+                                <span className="x" onClick={() => {removeIPsOnclick(index)}}>x</span>
+                                {data}
+                              </span>
+                            );
+                          }
+                        )}
+                      </div>
                     </div>
-                  </div>)}
+                  )}
                 </div>
               </div>
             )}

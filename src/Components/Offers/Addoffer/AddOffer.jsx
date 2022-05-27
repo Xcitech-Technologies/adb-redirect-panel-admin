@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const AddOffer = () => {
   return (
-    <div className="addoffer-wrapper">
+    <div className="addoffer-wrapper" style={{marginTop: "55px"}}>
       <div className="nav-wrapper">
         <nav className="tabs-style navbar-expand-lg">
           <div className="ml-3 navbar-collapse">

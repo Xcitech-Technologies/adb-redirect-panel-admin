@@ -126,6 +126,7 @@ const Locations = () => {
                 <div className="col-md-10">
                   <ReactSearchAutocomplete
                     items={arrayData}
+                    placeholder="Search approve country"
                     onSearch={handleOnSearch}
                     onSelect={handleOnSelect}
                     showIcon={false}
@@ -184,6 +185,7 @@ const Locations = () => {
                 <div className="col-md-10">
                   <ReactSearchAutocomplete
                     items={arrayData}
+                    placeholder="Search block country"
                     onSearch={blockHandleSearch}
                     onSelect={blockHandleSelect}
                     showIcon={false}
