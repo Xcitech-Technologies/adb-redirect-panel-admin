@@ -9,15 +9,61 @@ import Button from "../../../Controls/Button";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const Tracking = () => {
-  const [approveData, setApproveData] = React.useState([]);
+  const [addCondition, setAddCondition] = React.useState([
+    {
+      condition: {
+        urls: [
+          {
+            urlfield: {},
+            weight: {},
+            cap: {},
+          },
+        ],
+        based: "Weight Base",
+        desktopPtUrl: "",
+        mobilePtUrl: "",
+        intermediatePtUrl: "",
+        approveData: [],
+        approveCountries: false,
+        regionName: false,
+        cityName: false,
+        deviceName: false,
+        approveTimeZone: false,
+        approveLanguage: false
+      },
+      open: true,
+    },
+  ]);
 
-  const [ApproveIsOpen, setApproveIsOpen] = React.useState({
-    // approveCountries: false,
-    regionName: false,
-    cityName: false,
-    approveTimeZone: false,
-    approveLanguage: false,
-  });
+  const addConditionOnclick = () => {
+    setAddCondition([
+      ...addCondition,
+      {
+        condition: {
+          urls: [
+            {
+              id: Date.now(),
+              urlfield: {},
+              weight: {},
+              cap: {},
+            },
+          ],
+          based: "Weight Base",
+          desktopPtUrl: "",
+          mobilePtUrl: "",
+          intermediatePtUrl: "",
+          approveData: [],
+          approveCountries: false,
+          regionName: false,
+          cityName: false,
+          deviceName: false,
+          approveTimeZone: false,
+          approveLanguage: false,
+        },
+        open: false,
+      },
+    ]);
+  };
 
   const arrayData = jsonData[0].MasterData.map((item) => ({
     CountryCode: item.CountryCode,
@@ -33,20 +79,7 @@ const Tracking = () => {
     console.log(string, results);
   };
 
-  // const handleOnSelect = (item) => {
-  //   console.log(item);
-  //   setApproveData([...approveData, item]);
-  //   setApproveIsOpen({
-  //     approveCountries: true,
-  //     regionName: true,
-  //     cityName: true,
-  //     approveTimeZone: true,
-  //     approveLanguage: true,
-  //   });
-  // };
-
   const handleOnSelect = (e, item, index) => {
-
     let temp_data = [...addCondition];
     console.log(temp_data);
 
@@ -71,58 +104,22 @@ const Tracking = () => {
     console.log(addCondition[index].condition.approveData);
   };
 
-  const [addCondition, setAddCondition] = React.useState([
-    {
-      condition: {
-        urls: {},
-        weight: {},
-        cap: {},
-        based: "Weight Base",
-        desktopPtUrl: "",
-        mobilePtUrl: "",
-        intermediatePtUrl: "",
-        approveData: [],
-        approveCountries: false,
-        regionName: false,
-        cityName: false,
-        deviceName: false,
-        approveTimeZone: false,
-        approveLanguage: false,
-      },
-      open: true,
-    },
-  ]);
-
-  const addConditionOnclick = () => {
-    setAddCondition([
-      ...addCondition,
-      {
-        condition: {
-          urls: {},
-          weight: {},
-          cap: {},
-          based: "Weight Base",
-          desktopPtUrl: "",
-          mobilePtUrl: "",
-          intermediatePtUrl: "",
-          approveData: [],
-          approveCountries: false,
-          regionName: false,
-          cityName: false,
-          deviceName: false,
-          approveTimeZone: false,
-          approveLanguage: false,
-        },
-        open: false,
-      },
-    ]);
-  };
-
   const hnndleOpen = (index) => {
-    const item = addCondition[index];
-    item.open = !item.open;
-    addCondition[index] = item;
-    setAddCondition([...addCondition]);
+    let temp = [];
+    for (let i = 0; i < addCondition.length; i++) {
+      if (i === index) {
+        temp.push({
+          condition: { ...addCondition[i].condition },
+          open: !addCondition[i].open,
+        });
+      } else {
+        temp.push({
+          condition: { ...addCondition[i].condition },
+          open: false,
+        });
+      }
+    }
+    setAddCondition(temp);
   };
 
   const removeConditionOnclick = (index) => {
@@ -132,21 +129,49 @@ const Tracking = () => {
     setAddCondition(temp);
   };
 
-  const [addField, setaddField] = React.useState([{ field: "" }]);
-
-  const addFieldOnclick = () => {
-    setaddField([...addField, { field: "" }]);
-  };
-
-  const removeFieldOnclick = (index) => {
-    const field = [...addField];
-    field.splice(index, 1);
-    setaddField(field);
-  };
-
   const [region, setRegion] = React.useState("");
   const [cities, setCities] = React.useState("");
   const [device, setDevice] = React.useState("");
+
+  const [contryIsOpen, setContryIsOpen] = React.useState({
+    countryInclude: true,
+    countryExclude: false,
+    // regionInclude: true,
+    // regionExclude: false,
+    // cityInclude: true,
+    // cityExclude: false,
+    // deviceInclude: true,
+    // deviceExclude: false,
+  });
+
+  const [timeZoneIsOpen, setTimeZoneIsOpen] = React.useState({
+    timeZoneInclude: true,
+    timeZoneExclude: false,
+  });
+
+  const [languageIsOpen, setLanguageIsOpen] = React.useState({
+    languageInclude: true,
+    languageExclude: false,
+  });
+
+  const addFieldOnclick = (index) => {
+    let addfields = [...addCondition];
+    console.log(index);
+    console.log(addfields[index]);
+    addfields[index]?.condition.urls.push({
+      id: Date.now(),
+      urlfield: {},
+      weight: {},
+      cap: {},
+    });
+    setAddCondition(addfields);
+  };
+
+  const removeFieldOnclick = (index, i) => {
+    const field = [...addCondition];
+    field[index].condition.urls.splice(i, 1);
+    addCondition(field);
+  };
 
   const onChangeDesktopPtUrl = (e, index) => {
     const newAddCondition = [...addCondition];
@@ -190,7 +215,14 @@ const Tracking = () => {
     setAddCondition(newAddCondition);
   };
 
-  console.log("-------------approved data--------------", approveData);
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      let newdata = [...region];
+      newdata.push(e.target.value);
+      setRegion(newdata);
+    }
+  };
+
   console.log("------------cart state------------------", addCondition);
 
   return (
@@ -273,7 +305,7 @@ const Tracking = () => {
                             />
                           </div>
                         </div>
-                        {addCondition[index].condition.approveCountries && (
+                        {item.condition.approveCountries && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -281,6 +313,12 @@ const Tracking = () => {
                               type="radio"
                               name="country"
                               id="include1"
+                              onClick={() =>
+                                setContryIsOpen({
+                                  countryInclude: true,
+                                  countryExclude: false,
+                                })
+                              }
                             />
                             <label className="radio-label1" htmlFor="include1">
                               Include
@@ -290,6 +328,12 @@ const Tracking = () => {
                               type="radio"
                               name="country"
                               id="exclude1"
+                              onClick={() =>
+                                setContryIsOpen({
+                                  countryInclude: false,
+                                  countryExclude: true,
+                                })
+                              }
                             />
                             <label className="radio-label1" htmlFor="exclude1">
                               Exclude
@@ -297,17 +341,22 @@ const Tracking = () => {
                             <div className="clear-btn">
                               <Button
                                 onClick={() => {
-                                  setApproveIsOpen({
-                                    approveCountries: false,
-                                  });
-                                  setApproveData([]);
+                                  addCondition[
+                                    index
+                                  ].condition.approveCountries = false;
+                                  addCondition[
+                                    index
+                                  ].condition.approveTimeZone = false;
+                                  addCondition[
+                                    index
+                                  ].condition.approveLanguage = false;
                                 }}
                               >
                                 Clear
                               </Button>
                             </div>
-                            {addCondition[index].condition.approveData.map(
-                              (item, index) => {
+                            {contryIsOpen.countryInclude &&
+                              item.condition.approveData.map((item, index) => {
                                 console.log(item);
                                 return (
                                   <span className="api-item" key={index}>
@@ -315,8 +364,20 @@ const Tracking = () => {
                                     {item.CountryName}
                                   </span>
                                 );
-                              }
-                            )}
+                              })}
+                            {contryIsOpen.countryExclude &&
+                              item.condition.approveData.map((item, index) => {
+                                console.log(item);
+                                return (
+                                  <span
+                                    className="api-item-exclude"
+                                    key={index}
+                                  >
+                                    <span className="x">x</span>
+                                    {item.CountryName}
+                                  </span>
+                                );
+                              })}
                           </div>
                         )}
                       </div>
@@ -329,12 +390,11 @@ const Tracking = () => {
                             type="text"
                             name=""
                             id="region-input"
-                            onChange={(e) => setRegion(e.target.value)}
-                            onSubmit={(e) => setRegion(e.target.value)}
                             placeholder="Enter Region Name"
+                            onKeyPress={(e) => handleKeyPress(e)}
                           />
                         </div>
-                        {addCondition[index].condition.regionName && (
+                        {item.condition.regionName && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -358,10 +418,9 @@ const Tracking = () => {
                             <div className="clear-btn">
                               <Button
                                 onClick={() => {
-                                  setApproveIsOpen({
-                                    approveCountries: false,
-                                  });
-                                  setApproveData([]);
+                                  addCondition[
+                                    index
+                                  ].condition.regionName = false;
                                 }}
                               >
                                 Clear
@@ -382,11 +441,11 @@ const Tracking = () => {
                             type="text"
                             name=""
                             id="cities-input"
-                            onSubmit={(e) => setCities(e.target.value)}
+                            onChange={(e) => setCities(e.target.value)}
                             placeholder="Enter Cities Name"
                           />
                         </div>
-                        {addCondition[index].condition.cityName && (
+                        {item.condition.cityName && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -410,10 +469,9 @@ const Tracking = () => {
                             <div className="clear-btn">
                               <Button
                                 onClick={() => {
-                                  setApproveIsOpen({
-                                    approveCountries: false,
-                                  });
-                                  setApproveData([]);
+                                  addCondition[
+                                    index
+                                  ].condition.cityName = false;
                                 }}
                               >
                                 Clear
@@ -437,7 +495,7 @@ const Tracking = () => {
                             placeholder="Enter Device Name"
                           />
                         </div>
-                        {addCondition[index].condition.deviceName && (
+                        {item.condition.deviceName && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -461,10 +519,9 @@ const Tracking = () => {
                             <div className="clear-btn">
                               <Button
                                 onClick={() => {
-                                  setApproveIsOpen({
-                                    approveCountries: false,
-                                  });
-                                  setApproveData([]);
+                                  addCondition[
+                                    index
+                                  ].condition.deviceName = false;
                                 }}
                               >
                                 Clear
@@ -480,9 +537,8 @@ const Tracking = () => {
                       <div className="col-md-12">
                         <div className="radio-container form-group">
                           <input
-                            defaultChecked
+                            checked={item.condition.based === "Weight Base"}
                             className="radio-input"
-                            selected
                             type="radio"
                             name="radio"
                             id="1"
@@ -493,6 +549,7 @@ const Tracking = () => {
                             Weight Base
                           </label>
                           <input
+                            checked={item.condition.based === "Time Base"}
                             className="radio-input"
                             type="radio"
                             name="radio"
@@ -514,18 +571,18 @@ const Tracking = () => {
                           <button
                             className="addurl-btn"
                             type="button"
-                            onClick={addFieldOnclick}
+                            onClick={() => {addFieldOnclick(index)}}
                           >
                             <BiAddToQueue />
                           </button>
 
-                          {addField.map((add, i) => (
+                          {item.condition.urls.map((add, i) => (
                             <>
                               {i > 0 && (
                                 <button
                                   className="addurl-btn"
                                   type="button"
-                                  onClick={() => removeFieldOnclick(i)}
+                                  onClick={() => removeFieldOnclick(index, i)}
                                 >
                                   <TiDeleteOutline />
                                 </button>
@@ -601,7 +658,7 @@ const Tracking = () => {
                             id=""
                             placeholder="Search Country Name"
                           />
-                          {addCondition[index].condition.approveTimeZone && (
+                          {item.condition.approveTimeZone && (
                             <div className="collase">
                               <input
                                 defaultChecked
@@ -609,6 +666,12 @@ const Tracking = () => {
                                 type="radio"
                                 name="timezone"
                                 id="include5"
+                                onClick={() =>
+                                  setTimeZoneIsOpen({
+                                    timeZoneInclude: true,
+                                    timeZoneExclude: false,
+                                  })
+                                }
                               />
                               <label
                                 className="radio-label1"
@@ -621,6 +684,12 @@ const Tracking = () => {
                                 type="radio"
                                 name="timezone"
                                 id="exclude5"
+                                onClick={() =>
+                                  setTimeZoneIsOpen({
+                                    timeZoneInclude: false,
+                                    timeZoneExclude: true,
+                                  })
+                                }
                               />
                               <label
                                 className="radio-label1"
@@ -631,36 +700,56 @@ const Tracking = () => {
                               <div className="clear-btn">
                                 <Button
                                   onClick={() => {
-                                    setApproveIsOpen({
-                                      ...ApproveIsOpen,
-                                      approveTimeZone: false,
-                                    });
-                                    setApproveData([]);
+                                    addCondition[
+                                      index
+                                    ].condition.approveTimeZone = false;
                                   }}
                                 >
                                   Clear
                                 </Button>
                               </div>
                               <div className="display-data">
-                                {addCondition[index].condition.approveData.map((item) => {
-                                  const approveTimezone =
-                                    item.Timezones.split(",");
-                                  return (
-                                    <div>
-                                      {approveTimezone.map((item, index) => {
-                                        return (
-                                          <span
-                                            className="api-item"
-                                            key={index}
-                                          >
-                                            <span className="x">x</span>
-                                            {item}
-                                          </span>
-                                        );
-                                      })}
-                                    </div>
-                                  );
-                                })}
+                                {timeZoneIsOpen.timeZoneInclude &&
+                                  item.condition.approveData.map((item) => {
+                                    const approveTimezone =
+                                      item.Timezones.split(",");
+                                    return (
+                                      <div>
+                                        {approveTimezone.map((item, index) => {
+                                          return (
+                                            <span
+                                              className="api-item"
+                                              key={index}
+                                            >
+                                              <span className="x">x</span>
+                                              {item}
+                                            </span>
+                                          );
+                                        })}
+                                      </div>
+                                    );
+                                  })}
+
+                                {timeZoneIsOpen.timeZoneExclude &&
+                                  item.condition.approveData.map((item) => {
+                                    const approveTimezone =
+                                      item.Timezones.split(",");
+                                    return (
+                                      <div>
+                                        {approveTimezone.map((item, index) => {
+                                          return (
+                                            <span
+                                              className="api-item-exclude"
+                                              key={index}
+                                            >
+                                              <span className="x">x</span>
+                                              {item}
+                                            </span>
+                                          );
+                                        })}
+                                      </div>
+                                    );
+                                  })}
                               </div>
                             </div>
                           )}
@@ -677,7 +766,7 @@ const Tracking = () => {
                             id=""
                             placeholder="Search Region Name"
                           />
-                          {addCondition[index].condition.approveLanguage && (
+                          {item.condition.approveLanguage && (
                             <div className="collase">
                               <input
                                 defaultChecked
@@ -685,6 +774,12 @@ const Tracking = () => {
                                 type="radio"
                                 name="language"
                                 id="include6"
+                                onClick={() =>
+                                  setLanguageIsOpen({
+                                    languageInclude: true,
+                                    languageExclude: false,
+                                  })
+                                }
                               />
                               <label
                                 className="radio-label1"
@@ -697,6 +792,12 @@ const Tracking = () => {
                                 type="radio"
                                 name="language"
                                 id="exclude6"
+                                onClick={() =>
+                                  setLanguageIsOpen({
+                                    languageInclude: false,
+                                    languageExclude: true,
+                                  })
+                                }
                               />
                               <label
                                 className="radio-label1"
@@ -707,36 +808,56 @@ const Tracking = () => {
                               <div className="clear-btn">
                                 <Button
                                   onClick={() => {
-                                    setApproveIsOpen({
-                                      ...ApproveIsOpen,
-                                      approveTimeZone: false,
-                                    });
-                                    setApproveData([]);
+                                    addCondition[
+                                      index
+                                    ].condition.approveLanguage = false;
                                   }}
                                 >
                                   Clear
                                 </Button>
                               </div>
                               <div className="display-data">
-                                {addCondition[index].condition.approveData.map((item) => {
-                                  const approveLanguage =
-                                    item.Language.split(",");
-                                  return (
-                                    <div>
-                                      {approveLanguage.map((item, index) => {
-                                        return (
-                                          <span
-                                            className="api-item"
-                                            key={index}
-                                          >
-                                            <span className="x">x</span>
-                                            {item}
-                                          </span>
-                                        );
-                                      })}
-                                    </div>
-                                  );
-                                })}
+                                {languageIsOpen.languageInclude &&
+                                  item.condition.approveData.map((item) => {
+                                    const approveLanguage =
+                                      item.Language.split(",");
+                                    return (
+                                      <div>
+                                        {approveLanguage.map((item, index) => {
+                                          return (
+                                            <span
+                                              className="api-item"
+                                              key={index}
+                                            >
+                                              <span className="x">x</span>
+                                              {item}
+                                            </span>
+                                          );
+                                        })}
+                                      </div>
+                                    );
+                                  })}
+
+                                {languageIsOpen.languageExclude &&
+                                  item.condition.approveData.map((item) => {
+                                    const approveLanguage =
+                                      item.Language.split(",");
+                                    return (
+                                      <div>
+                                        {approveLanguage.map((item, index) => {
+                                          return (
+                                            <span
+                                              className="api-item-exclude"
+                                              key={index}
+                                            >
+                                              <span className="x">x</span>
+                                              {item}
+                                            </span>
+                                          );
+                                        })}
+                                      </div>
+                                    );
+                                  })}
                               </div>
                             </div>
                           )}

@@ -131,6 +131,19 @@
   border-radius: 5px;
 }
 
+.api-item-exclude {
+  margin-right: 5px;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 5px;
+  background-color: #DC143C;
+  display: inline-block;
+  border-radius: 5px;
+}
+
 .x {
   background-color: #fff;
   text-shadow: none;
@@ -155,7 +168,7 @@
   padding: 7px;
   border: none;
   border-radius: 5px;
-  background: #DC143C;
+  background: rgb(245, 42, 42);
   color: #fff;
   outline: none;
   cursor: pointer;
