@@ -9,8 +9,10 @@ import Button from "../../../Controls/Button";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const Tracking = () => {
+  const [approveData, setApproveData] = React.useState([]);
+
   const [ApproveIsOpen, setApproveIsOpen] = React.useState({
-    approveCountries: false,
+    // approveCountries: false,
     regionName: false,
     cityName: false,
     approveTimeZone: false,
@@ -26,31 +28,93 @@ const Tracking = () => {
     CountryLanguagecode: item.CountryLanguagecode,
     Domain: item.Domain,
   }));
-  // console.log(arrayData);
 
   const handleOnSearch = (string, results) => {
     console.log(string, results);
   };
 
-  const handleOnSelect = (item) => {
-    console.log(item);
-    setApproveData([...approveData, item]);
-    setApproveIsOpen({
-      approveCountries: true,
-      regionName: true,
-      cityName: true,
-      approveTimeZone: true,
-      approveLanguage: true,
-    });
+  // const handleOnSelect = (item) => {
+  //   console.log(item);
+  //   setApproveData([...approveData, item]);
+  //   setApproveIsOpen({
+  //     approveCountries: true,
+  //     regionName: true,
+  //     cityName: true,
+  //     approveTimeZone: true,
+  //     approveLanguage: true,
+  //   });
+  // };
+
+  const handleOnSelect = (e, item, index) => {
+
+    let temp_data = [...addCondition];
+    console.log(temp_data);
+
+    let previusApprovedData = [...temp_data[index].condition.approveData];
+    console.log(previusApprovedData);
+
+    let updatePreviousData = [...previusApprovedData, e];
+    console.log(updatePreviousData);
+
+    temp_data[index].condition.approveData = updatePreviousData;
+    console.log(temp_data[index].condition.approveData);
+
+    temp_data[index].condition.approveCountries = true;
+    temp_data[index].condition.regionName = true;
+    temp_data[index].condition.cityName = true;
+    temp_data[index].condition.deviceName = true;
+    temp_data[index].condition.approveTimeZone = true;
+    temp_data[index].condition.approveLanguage = true;
+
+    setAddCondition(temp_data);
+
+    console.log(addCondition[index].condition.approveData);
   };
 
   const [addCondition, setAddCondition] = React.useState([
-    {id:Date.now().toString(), condition: "" /*[{data: [""]}]*/, open: true },
-  ]); 
+    {
+      condition: {
+        urls: {},
+        weight: {},
+        cap: {},
+        based: "Weight Base",
+        desktopPtUrl: "",
+        mobilePtUrl: "",
+        intermediatePtUrl: "",
+        approveData: [],
+        approveCountries: false,
+        regionName: false,
+        cityName: false,
+        deviceName: false,
+        approveTimeZone: false,
+        approveLanguage: false,
+      },
+      open: true,
+    },
+  ]);
+
   const addConditionOnclick = () => {
     setAddCondition([
       ...addCondition,
-      { condition: "" /*[{data: [""]}]*/, open: false,id:Date.now().toString() },
+      {
+        condition: {
+          urls: {},
+          weight: {},
+          cap: {},
+          based: "Weight Base",
+          desktopPtUrl: "",
+          mobilePtUrl: "",
+          intermediatePtUrl: "",
+          approveData: [],
+          approveCountries: false,
+          regionName: false,
+          cityName: false,
+          deviceName: false,
+          approveTimeZone: false,
+          approveLanguage: false,
+        },
+        open: false,
+      },
     ]);
   };
 
@@ -61,9 +125,9 @@ const Tracking = () => {
     setAddCondition([...addCondition]);
   };
 
-  const removeConditionOnclick = (id) => {
-    let temp = addCondition.filter(item=>item.id!==id)
-    console.log(temp,addCondition);
+  const removeConditionOnclick = (index) => {
+    let temp = addCondition.filter((item, i) => i !== index);
+    console.log(temp, addCondition);
 
     setAddCondition(temp);
   };
@@ -76,15 +140,58 @@ const Tracking = () => {
 
   const removeFieldOnclick = (index) => {
     const field = [...addField];
-    field.slice(index, 0);
+    field.splice(index, 1);
     setaddField(field);
   };
-
-  const [approveData, setApproveData] = React.useState([]);
 
   const [region, setRegion] = React.useState("");
   const [cities, setCities] = React.useState("");
   const [device, setDevice] = React.useState("");
+
+  const onChangeDesktopPtUrl = (e, index) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.desktopPtUrl = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  const onChangeMobilePtUrl = (e, index) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.mobilePtUrl = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  const onChangeIntermediatePtUrl = (e, index) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.intermediatePtUrl = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  const onChangeBased = (e, index) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.based = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  const onChangeUrls = (e, index, i) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.urls[i] = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  const onChangeWeight = (e, index, i) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.weight[i] = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  const onChangeCap = (e, index, i) => {
+    const newAddCondition = [...addCondition];
+    newAddCondition[index].condition.cap[i] = e.target.value;
+    setAddCondition(newAddCondition);
+  };
+
+  console.log("-------------approved data--------------", approveData);
+  console.log("------------cart state------------------", addCondition);
 
   return (
     <div className="container-fluid">
@@ -98,15 +205,14 @@ const Tracking = () => {
             Add Condition
           </button>
         </div>
-      </div> 
+      </div>
 
-
-        {addCondition.map((item, index) => (
-        <div className="row" key={index}>
+      {addCondition.map((item, index) => (
+        <div className="row" key={item.index}>
           <div className="main-container">
             <div className="col-md-11">
               <div className="card">
-                <div className="card-header" >
+                <div className="card-header">
                   <div className="collapes_btn">
                     Condition {index + 1}
                     <div>
@@ -114,15 +220,21 @@ const Tracking = () => {
                         <button
                           type="button"
                           className="remove-button"
-                          onClick={() => removeConditionOnclick(item.id)}
+                          onClick={() => removeConditionOnclick(index)}
                         >
                           <RiChatDeleteFill size="25" />
                         </button>
                       )}
                       {item.open ? (
-                        <FaAngleUp size="25" onClick={() => hnndleOpen(index)} />
+                        <FaAngleUp
+                          size="25"
+                          onClick={() => hnndleOpen(index)}
+                        />
                       ) : (
-                        <FaAngleDown size="25" onClick={() => hnndleOpen(index)} />
+                        <FaAngleDown
+                          size="25"
+                          onClick={() => hnndleOpen(index)}
+                        />
                       )}
                     </div>
                   </div>
@@ -142,7 +254,7 @@ const Tracking = () => {
                               id="country-input"
                               items={arrayData}
                               onSearch={handleOnSearch}
-                              onSelect={handleOnSelect}
+                              onSelect={(e) => handleOnSelect(e, item, index)}
                               showIcon={false}
                               placeholder="Search Country Name"
                               styling={{
@@ -161,7 +273,7 @@ const Tracking = () => {
                             />
                           </div>
                         </div>
-                        {ApproveIsOpen.approveCountries && (
+                        {addCondition[index].condition.approveCountries && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -194,15 +306,17 @@ const Tracking = () => {
                                 Clear
                               </Button>
                             </div>
-                            {approveData.map((item, index) => {
-                              console.log(item);
-                              return (
-                                <span className="api-item" key={index}>
-                                  <span className="x">x</span>
-                                  {item.CountryName}
-                                </span>
-                              );
-                            })}
+                            {addCondition[index].condition.approveData.map(
+                              (item, index) => {
+                                console.log(item);
+                                return (
+                                  <span className="api-item" key={index}>
+                                    <span className="x">x</span>
+                                    {item.CountryName}
+                                  </span>
+                                );
+                              }
+                            )}
                           </div>
                         )}
                       </div>
@@ -220,7 +334,7 @@ const Tracking = () => {
                             placeholder="Enter Region Name"
                           />
                         </div>
-                        {ApproveIsOpen.approveCountries && (
+                        {addCondition[index].condition.regionName && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -272,7 +386,7 @@ const Tracking = () => {
                             placeholder="Enter Cities Name"
                           />
                         </div>
-                        {ApproveIsOpen.approveCountries && (
+                        {addCondition[index].condition.cityName && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -323,7 +437,7 @@ const Tracking = () => {
                             placeholder="Enter Device Name"
                           />
                         </div>
-                        {ApproveIsOpen.approveCountries && (
+                        {addCondition[index].condition.deviceName && (
                           <div className="collapse-container form-group">
                             <input
                               defaultChecked
@@ -372,6 +486,8 @@ const Tracking = () => {
                             type="radio"
                             name="radio"
                             id="1"
+                            value="Weight Base"
+                            onChange={(e) => onChangeBased(e, index)}
                           />
                           <label className="radio-label" htmlFor="1">
                             Weight Base
@@ -381,6 +497,8 @@ const Tracking = () => {
                             type="radio"
                             name="radio"
                             id="2"
+                            value="Time Base"
+                            onChange={(e) => onChangeBased(e, index)}
                           />
                           <label className="radio-label" htmlFor="2">
                             Time Base
@@ -401,35 +519,38 @@ const Tracking = () => {
                             <BiAddToQueue />
                           </button>
 
-                          {addField.map((add, index) => (
+                          {addField.map((add, i) => (
                             <>
-                              {index > 0 && (
+                              {i > 0 && (
                                 <button
                                   className="addurl-btn"
                                   type="button"
-                                  onClick={() => removeFieldOnclick(index)}
+                                  onClick={() => removeFieldOnclick(i)}
                                 >
                                   <TiDeleteOutline />
                                 </button>
                               )}
                               <input
                                 className="urls-input1"
-                                style={index > 0 ? { marginLeft: "53px" } : {}}
+                                style={i > 0 ? { marginLeft: "53px" } : {}}
                                 type="text"
                                 name=""
                                 id=""
+                                onChange={(e) => onChangeUrls(e, index, i)}
                                 placeholder="Enter URLs"
-                                key={index}
+                                key={i}
                               />
                               <input
                                 className="urls-input2"
                                 type="text"
                                 placeholder="WT"
+                                onChange={(e) => onChangeWeight(e, index, i)}
                               />
                               <input
                                 className="urls-input3"
                                 type="text"
                                 placeholder="CAP"
+                                onChange={(e) => onChangeCap(e, index, i)}
                               />
                             </>
                           ))}
@@ -445,12 +566,14 @@ const Tracking = () => {
                             className="pt-input"
                             type="text"
                             placeholder="Desktop PT URL"
+                            onChange={(e) => onChangeDesktopPtUrl(e, index)}
                           />
                         </div>
                         <div className="form-group">
                           <input
                             className="pturl-input"
                             type="text"
+                            onChange={(e) => onChangeMobilePtUrl(e, index)}
                             placeholder="Mobile PT URL"
                           />
                         </div>
@@ -458,6 +581,9 @@ const Tracking = () => {
                           <input
                             className="pturl-input"
                             type="text"
+                            onChange={(e) =>
+                              onChangeIntermediatePtUrl(e, index)
+                            }
                             placeholder="intermediary URL"
                           />
                         </div>
@@ -475,7 +601,7 @@ const Tracking = () => {
                             id=""
                             placeholder="Search Country Name"
                           />
-                          {ApproveIsOpen.approveTimeZone && (
+                          {addCondition[index].condition.approveTimeZone && (
                             <div className="collase">
                               <input
                                 defaultChecked
@@ -516,7 +642,7 @@ const Tracking = () => {
                                 </Button>
                               </div>
                               <div className="display-data">
-                                {approveData.map((item) => {
+                                {addCondition[index].condition.approveData.map((item) => {
                                   const approveTimezone =
                                     item.Timezones.split(",");
                                   return (
@@ -551,7 +677,7 @@ const Tracking = () => {
                             id=""
                             placeholder="Search Region Name"
                           />
-                          {ApproveIsOpen.approveLanguage && (
+                          {addCondition[index].condition.approveLanguage && (
                             <div className="collase">
                               <input
                                 defaultChecked
@@ -592,7 +718,7 @@ const Tracking = () => {
                                 </Button>
                               </div>
                               <div className="display-data">
-                                {approveData.map((item) => {
+                                {addCondition[index].condition.approveData.map((item) => {
                                   const approveLanguage =
                                     item.Language.split(",");
                                   return (
@@ -623,7 +749,7 @@ const Tracking = () => {
             </div>
           </div>
         </div>
-      ))}  
+      ))}
     </div>
   );
 };
