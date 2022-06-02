@@ -45,7 +45,6 @@ const Tracking = () => {
         condition: {
           urls: [
             {
-              id: Date.now(),
               urlfield: {},
               weight: {},
               cap: {},
@@ -81,13 +80,9 @@ const Tracking = () => {
     Domain: item.Domain,
   }));
 
-  const handleOnSearch = (string, results) => {
-    console.log(string, results);
-  };
 
   const handleOnSelect = (e, item, index) => {
     let temp_data = [...addCondition];
-    console.log(temp_data);
 
     let previusApprovedData = [...temp_data[index].condition.approveData];
     console.log(previusApprovedData);
@@ -106,10 +101,6 @@ const Tracking = () => {
     temp_data[index].condition.approveLanguage = true;
 
     setAddCondition(temp_data);
-
-    console.log(addCondition[index].condition.approveData);
-
-    console.log(item.condition.approveCountries);
   };
 
   const hnndleOpen = (index) => {
@@ -136,10 +127,6 @@ const Tracking = () => {
 
     setAddCondition(temp);
   };
-
-  // const [region, setRegion] = React.useState([]);
-  const [cities, setCities] = React.useState([]);
-  const [device, setDevice] = React.useState([]);
 
   const [contryIsOpen, setContryIsOpen] = React.useState({
     countryInclude: true,
@@ -176,7 +163,6 @@ const Tracking = () => {
     console.log(index);
     console.log(addfields[index]);
     addfields[index]?.condition.urls.push({
-      id: Date.now(),
       urlfield: {},
       weight: {},
       cap: {},
@@ -265,23 +251,23 @@ const Tracking = () => {
     setAddCondition(mainData);
   }
 
-  // const removeRegion = (index1, index) => {
-  //   let mainData = [...region];
-  //   mainData[index].condition.approveData.splice(index1, 1);
-  //   setRegion(mainData)
-  // }
+  const removeRegion = (index1, index) => {
+    let mainData = [...addCondition];
+    mainData[index].condition.regionData.splice(index1, 1);
+    setAddCondition(mainData)
+  }
 
-  // const removeCities = (index1, index) => {
-  //   let mainData = [...addCondition];
-  //   mainData[index].condition.approveData.splice(index1, 1);
-  //   setAddCondition(mainData)
-  // }
+  const removeCities = (index1, index) => {
+    let mainData = [...addCondition];
+    mainData[index].condition.citiesData.splice(index1, 1);
+    setAddCondition(mainData)
+  }
 
-  // const removeDevice = (index1, index) => {
-  //   let mainData = [...addCondition];
-  //   mainData[index].condition.approveData.splice(index1, 1);
-  //   setAddCondition(mainData)
-  // }
+  const removeDevice = (index1, index) => {
+    let mainData = [...addCondition];
+    mainData[index].condition.deviceData.splice(index1, 1);
+    setAddCondition(mainData)
+  }
 
   const removeTimezone = ( index, index1 ) => {
     let mainData = [...addCondition];
@@ -357,7 +343,6 @@ const Tracking = () => {
                             <ReactSearchAutocomplete
                               id="country-input"
                               items={arrayData}
-                              onSearch={handleOnSearch}
                               onSelect={(e) => handleOnSelect(e, item, index)}
                               showIcon={false}
                               placeholder="Search Country Name"
@@ -509,7 +494,7 @@ const Tracking = () => {
                               item.condition.regionData.map((item, index1) => {
                               return (
                                 <span className="api-item" key={index1}>
-                                  <span className="x">x</span>
+                                  <span className="x" onClick={() => removeRegion(index, index1)}>x</span>
                                   {item}
                                 </span>
                               )
@@ -519,7 +504,7 @@ const Tracking = () => {
                               console.log(item);
                               return (
                                 <span className="api-item-exclude" key={index1}>
-                                  <span className="x">x</span>
+                                  <span className="x" onClick={() => removeRegion(index, index1)}>x</span>
                                   {item}
                                 </span>
                               )
@@ -588,7 +573,7 @@ const Tracking = () => {
                               item.condition.citiesData.map((item, index1) => {
                                 return (
                                   <span className="api-item" key={index1}>
-                                    <span className="x">x</span>
+                                    <span className="x" onClick={() => {removeCities(index, index1)}}>x</span>
                                     {item}
                                 </span>
                               )
@@ -598,7 +583,7 @@ const Tracking = () => {
                               item.condition.citiesData.map((item, index1) => {
                                 return (
                                   <span className="api-item-exclude" key={index1}>
-                                    <span className="x">x</span>
+                                    <span className="x" onClick={() => {removeCities(index, index1)}}>x</span>
                                     {item}
                                 </span>
                               )
@@ -667,7 +652,7 @@ const Tracking = () => {
                                 console.log(item);
                                 return (
                                 <span className="api-item" key={index1}>
-                                  <span className="x">x</span>
+                                  <span className="x" onClick={() => removeDevice(index, index1)}>x</span>
                                   {item}
                                   </span>
                                 )
@@ -677,7 +662,7 @@ const Tracking = () => {
                               item.condition.deviceData.map((item, index1) => {
                                 return (
                                 <span className="api-item-exclude" key={index1}>
-                                  <span className="x">x</span>
+                                  <span className="x" onClick={() => removeDevice(index, index1)}>x</span>
                                   {item}
                                   </span>
                                 )

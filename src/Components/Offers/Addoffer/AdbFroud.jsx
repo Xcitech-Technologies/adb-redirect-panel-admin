@@ -13,7 +13,7 @@ const AdbFroud = () => {
                   <div className="inputs">
                     <label className="label">Meta :</label>
                   </div>
-                  <div class="radio-item">
+                  <div className="radio-item">
                     <input defaultChecked type="radio" id="meta1" name="meta" />
                     <label className="radio-meta" htmlFor="meta1">
                       Off
@@ -35,7 +35,7 @@ const AdbFroud = () => {
                   <div className="inputs">
                     <label className="label">S2S :</label>
                   </div>
-                  <div class="radio-item">
+                  <div className="radio-item">
                     <input defaultChecked type="radio" id="s2s1" name="s2s" />
                     <label className="radio-meta" htmlFor="s2s1">
                       Off
