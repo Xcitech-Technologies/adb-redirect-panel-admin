@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const AddOffer = () => {
   return (
@@ -8,12 +8,12 @@ const AddOffer = () => {
         <nav className="tabs-style navbar-expand-lg">
           <div className="ml-3 navbar-collapse">
             <div className="navbar-nav col-6">
-              <Link to="/admin/offers/addoffer/">General</Link>
-              <Link to="/admin/offers/addoffer/locations">Location</Link>
-              <Link to="/admin/offers/addoffer/tracking">Tracking</Link>
-              <Link to="/admin/offers/addoffer/adbFroud">
+              <NavLink className="link" to="/admin/offers/addoffer/">General</NavLink>
+              <NavLink className="link" to="/admin/offers/addoffer/locations">Location</NavLink>
+              <NavLink className="link" to="/admin/offers/addoffer/tracking">Tracking</NavLink>
+              <NavLink className="link" to="/admin/offers/addoffer/adbFroud">
                 Adb Froud Detection Service
-              </Link>
+              </NavLink>
             </div>
             <div className="col-6 align-end">
               <button className="btn btn-success">Save</button>

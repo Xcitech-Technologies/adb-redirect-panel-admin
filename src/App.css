@@ -103,6 +103,10 @@
   margin: 10px;
 }
 
+.button:hover{
+  background-color: #0d6efd;
+}
+
 .display {
   padding-left: 10px;
   padding-right: 10px;
@@ -286,9 +290,13 @@
 
 
 .navbar-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  color: #fff;
+    padding: 6px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+ a.active{
+  background-color: #1A1C2A;
+  border-radius: 5px;
 }
 
 .align-end {
@@ -330,6 +338,10 @@
   border: none;
   border-radius: 5px;
   color: #fff;
+}
+.btn-condition:hover{
+  background-color: #0cce6b;
+  color: #12141D;
 }
 
 .cards-body {

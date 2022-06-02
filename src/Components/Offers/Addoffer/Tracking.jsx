@@ -24,6 +24,9 @@ const Tracking = () => {
         mobilePtUrl: "",
         intermediatePtUrl: "",
         approveData: [],
+        regionData: [],
+        citiesData: [],
+        deviceData: [],
         approveCountries: false,
         regionName: false,
         cityName: false,
@@ -53,6 +56,9 @@ const Tracking = () => {
           mobilePtUrl: "",
           intermediatePtUrl: "",
           approveData: [],
+          regionData: [],
+          citiesData: [],
+          deviceData: [],
           approveCountries: false,
           regionName: false,
           cityName: false,
@@ -102,6 +108,8 @@ const Tracking = () => {
     setAddCondition(temp_data);
 
     console.log(addCondition[index].condition.approveData);
+
+    console.log(item.condition.approveCountries);
   };
 
   const hnndleOpen = (index) => {
@@ -129,20 +137,29 @@ const Tracking = () => {
     setAddCondition(temp);
   };
 
-  const [region, setRegion] = React.useState("");
-  const [cities, setCities] = React.useState("");
-  const [device, setDevice] = React.useState("");
+  // const [region, setRegion] = React.useState([]);
+  const [cities, setCities] = React.useState([]);
+  const [device, setDevice] = React.useState([]);
 
   const [contryIsOpen, setContryIsOpen] = React.useState({
     countryInclude: true,
     countryExclude: false,
-    // regionInclude: true,
-    // regionExclude: false,
-    // cityInclude: true,
-    // cityExclude: false,
-    // deviceInclude: true,
-    // deviceExclude: false,
   });
+
+  const [regionIsOpen, setRegionIsOpen] = React.useState({
+    regionInclude: true,
+    regionExclude: false
+  })
+
+  const [cityIsOpen, setCityIsOpen] = React.useState({
+    cityInclude: true,
+    cityExclude: false
+  })
+
+  const [deviceIsOpen, setDeviceIsOpen] = React.useState({
+    deviceInclude: true,
+    deviceExclude: false
+  })
 
   const [timeZoneIsOpen, setTimeZoneIsOpen] = React.useState({
     timeZoneInclude: true,
@@ -215,13 +232,68 @@ const Tracking = () => {
     setAddCondition(newAddCondition);
   };
 
-  const handleKeyPress = (e) => {
+  const regionHandleKeyPress = (e, index) => {
     if (e.key === "Enter") {
-      let newdata = [...region];
-      newdata.push(e.target.value);
-      setRegion(newdata);
+      let newdata = [...addCondition];
+      addCondition[index].condition.regionData.push(e.target.value);
+      setAddCondition(newdata);
+      console.log(newdata);
     }
   };
+
+  const cityHandleKeyPress = (e, index) => {
+    if (e.key === "Enter") {
+      let newdata = [...addCondition];
+      addCondition[index].condition.citiesData.push(e.target.value);
+      setAddCondition(newdata);
+      console.log(newdata);
+    }
+  };
+
+  const deviceHandleKeyPress = (e, index) => {
+    if (e.key === "Enter") {
+      let newdata = [...addCondition];
+      addCondition[index].condition.deviceData.push(e.target.value);
+      setAddCondition(newdata);
+      console.log(newdata);
+    }
+  };
+
+  const removeCountry = (index1, index) => {
+    let mainData = [...addCondition];
+    mainData[index].condition.approveData.splice(index1, 1);
+    setAddCondition(mainData);
+  }
+
+  // const removeRegion = (index1, index) => {
+  //   let mainData = [...region];
+  //   mainData[index].condition.approveData.splice(index1, 1);
+  //   setRegion(mainData)
+  // }
+
+  // const removeCities = (index1, index) => {
+  //   let mainData = [...addCondition];
+  //   mainData[index].condition.approveData.splice(index1, 1);
+  //   setAddCondition(mainData)
+  // }
+
+  // const removeDevice = (index1, index) => {
+  //   let mainData = [...addCondition];
+  //   mainData[index].condition.approveData.splice(index1, 1);
+  //   setAddCondition(mainData)
+  // }
+
+  const removeTimezone = ( index, index1 ) => {
+    let mainData = [...addCondition];
+    mainData[index].condition.approveData.splice(index1, 1);
+    setAddCondition(mainData);
+  }
+
+  const removeLanguages = (index, index1) => {
+    let mainData = [...addCondition];
+    mainData[index].condition.approveData.splice(index1, 1);
+    setAddCondition(mainData)
+  }
 
   console.log("------------cart state------------------", addCondition);
 
@@ -341,39 +413,34 @@ const Tracking = () => {
                             <div className="clear-btn">
                               <Button
                                 onClick={() => {
-                                  addCondition[
-                                    index
-                                  ].condition.approveCountries = false;
-                                  addCondition[
-                                    index
-                                  ].condition.approveTimeZone = false;
-                                  addCondition[
-                                    index
-                                  ].condition.approveLanguage = false;
+                                  item.condition.approveCountries = false;
+                                  item.condition.approveTimeZone = false;
+                                  item.condition.approveLanguage = false;
+                                  console.log(item.condition.approveCountries);
                                 }}
                               >
                                 Clear
                               </Button>
                             </div>
                             {contryIsOpen.countryInclude &&
-                              item.condition.approveData.map((item, index) => {
+                              item.condition.approveData.map((item, index1) => {
                                 console.log(item);
                                 return (
-                                  <span className="api-item" key={index}>
-                                    <span className="x">x</span>
+                                  <span className="api-item" key={index1}>
+                                    <span className="x" onClick={() => (removeCountry(index1, index))}>x</span>
                                     {item.CountryName}
                                   </span>
                                 );
                               })}
                             {contryIsOpen.countryExclude &&
-                              item.condition.approveData.map((item, index) => {
+                              item.condition.approveData.map((item, index1) => {
                                 console.log(item);
                                 return (
                                   <span
                                     className="api-item-exclude"
-                                    key={index}
+                                    key={index1}
                                   >
-                                    <span className="x">x</span>
+                                    <span className="x" onClick={() => (removeCountry(index1, index))}>x</span>
                                     {item.CountryName}
                                   </span>
                                 );
@@ -391,7 +458,7 @@ const Tracking = () => {
                             name=""
                             id="region-input"
                             placeholder="Enter Region Name"
-                            onKeyPress={(e) => handleKeyPress(e)}
+                            onKeyPress={(e) => regionHandleKeyPress(e, index)}
                           />
                         </div>
                         {item.condition.regionName && (
@@ -402,6 +469,12 @@ const Tracking = () => {
                               type="radio"
                               name="region"
                               id="include2"
+                              onClick={() =>
+                                setRegionIsOpen({
+                                  regionInclude: true,
+                                  regionExclude: false,
+                                })
+                              }
                             />
                             <label className="radio-label1" htmlFor="include2">
                               Include
@@ -411,6 +484,12 @@ const Tracking = () => {
                               type="radio"
                               name="region"
                               id="exclude2"
+                              onClick={() =>
+                                setRegionIsOpen({
+                                  regionInclude: false,
+                                  regionExclude: true,
+                                })
+                              }
                             />
                             <label className="radio-label1" htmlFor="exclude2">
                               Exclude
@@ -426,7 +505,25 @@ const Tracking = () => {
                                 Clear
                               </Button>
                             </div>
-                            {region}
+                            {regionIsOpen.regionInclude && 
+                              item.condition.regionData.map((item, index1) => {
+                              return (
+                                <span className="api-item" key={index1}>
+                                  <span className="x">x</span>
+                                  {item}
+                                </span>
+                              )
+                            })}
+                            {regionIsOpen.regionExclude && 
+                              item.condition.regionData.map((item, index1) => {
+                              console.log(item);
+                              return (
+                                <span className="api-item-exclude" key={index1}>
+                                  <span className="x">x</span>
+                                  {item}
+                                </span>
+                              )
+                            })}
                           </div>
                         )}
                       </div>
@@ -441,8 +538,8 @@ const Tracking = () => {
                             type="text"
                             name=""
                             id="cities-input"
-                            onChange={(e) => setCities(e.target.value)}
                             placeholder="Enter Cities Name"
+                            onKeyPress={(e) => cityHandleKeyPress(e, index)}
                           />
                         </div>
                         {item.condition.cityName && (
@@ -453,6 +550,11 @@ const Tracking = () => {
                               type="radio"
                               name="cities"
                               id="include3"
+                              onClick={() => setCityIsOpen({
+                                cityInclude: true,
+                                cityExclude: false
+                              })
+                              }
                             />
                             <label className="radio-label1" htmlFor="include3">
                               Include
@@ -462,6 +564,11 @@ const Tracking = () => {
                               type="radio"
                               name="cities"
                               id="exclude3"
+                              onClick={() => setCityIsOpen({
+                                cityInclude: false,
+                                cityExclude: true
+                              })
+                              }
                             />
                             <label className="radio-label1" htmlFor="exclude3">
                               Exclude
@@ -477,7 +584,26 @@ const Tracking = () => {
                                 Clear
                               </Button>
                             </div>
-                            {cities}
+                            {cityIsOpen.cityInclude &&
+                              item.condition.citiesData.map((item, index1) => {
+                                return (
+                                  <span className="api-item" key={index1}>
+                                    <span className="x">x</span>
+                                    {item}
+                                </span>
+                              )
+                              })
+                            }
+                            {cityIsOpen.cityExclude &&
+                              item.condition.citiesData.map((item, index1) => {
+                                return (
+                                  <span className="api-item-exclude" key={index1}>
+                                    <span className="x">x</span>
+                                    {item}
+                                </span>
+                              )
+                              })
+                            }
                           </div>
                         )}
                       </div>
@@ -490,9 +616,8 @@ const Tracking = () => {
                             type="text"
                             name=""
                             id="device-input"
-                            onChange={(e) => setDevice(e.target.value)}
-                            onSubmit={(e) => setDevice(e.target.value)}
                             placeholder="Enter Device Name"
+                            onKeyPress={(e) => deviceHandleKeyPress(e, index)}
                           />
                         </div>
                         {item.condition.deviceName && (
@@ -503,6 +628,11 @@ const Tracking = () => {
                               type="radio"
                               name="device"
                               id="include4"
+                              onClick={() => setDeviceIsOpen({
+                                deviceInclude: true,
+                                deviceExclude: false
+                              })
+                              }
                             />
                             <label className="radio-label1" htmlFor="include4">
                               Include
@@ -512,6 +642,11 @@ const Tracking = () => {
                               type="radio"
                               name="device"
                               id="exclude4"
+                              onClick={() => setDeviceIsOpen({
+                                deviceInclude: false,
+                                deviceExclude: true
+                              })
+                              }
                             />
                             <label className="radio-label1" htmlFor="exclude4">
                               Exclude
@@ -527,7 +662,27 @@ const Tracking = () => {
                                 Clear
                               </Button>
                             </div>
-                            {device}
+                            {deviceIsOpen.deviceInclude && 
+                              item.condition.deviceData.map((item, index1) => {
+                                console.log(item);
+                                return (
+                                <span className="api-item" key={index1}>
+                                  <span className="x">x</span>
+                                  {item}
+                                  </span>
+                                )
+                              })
+                            }
+                            {deviceIsOpen.deviceExclude && 
+                              item.condition.deviceData.map((item, index1) => {
+                                return (
+                                <span className="api-item-exclude" key={index1}>
+                                  <span className="x">x</span>
+                                  {item}
+                                  </span>
+                                )
+                              })
+                            }
                           </div>
                         )}
                       </div>
@@ -715,13 +870,13 @@ const Tracking = () => {
                                       item.Timezones.split(",");
                                     return (
                                       <div>
-                                        {approveTimezone.map((item, index) => {
+                                        {approveTimezone.map((item, index1) => {
                                           return (
                                             <span
                                               className="api-item"
-                                              key={index}
+                                              key={index1}
                                             >
-                                              <span className="x">x</span>
+                                              <span className="x" onClick={() => (removeTimezone(index1, index))}>x</span>
                                               {item}
                                             </span>
                                           );
@@ -736,13 +891,13 @@ const Tracking = () => {
                                       item.Timezones.split(",");
                                     return (
                                       <div>
-                                        {approveTimezone.map((item, index) => {
+                                        {approveTimezone.map((item, index1) => {
                                           return (
                                             <span
                                               className="api-item-exclude"
-                                              key={index}
+                                              key={index1}
                                             >
-                                              <span className="x">x</span>
+                                              <span className="x" onClick={() => (removeTimezone(index1, index))}>x</span>
                                               {item}
                                             </span>
                                           );
@@ -823,13 +978,13 @@ const Tracking = () => {
                                       item.Language.split(",");
                                     return (
                                       <div>
-                                        {approveLanguage.map((item, index) => {
+                                        {approveLanguage.map((item, index1) => {
                                           return (
                                             <span
                                               className="api-item"
-                                              key={index}
+                                              key={index1}
                                             >
-                                              <span className="x">x</span>
+                                              <span className="x" onClick={() => (removeLanguages(index1, index))}>x</span>
                                               {item}
                                             </span>
                                           );
@@ -844,13 +999,13 @@ const Tracking = () => {
                                       item.Language.split(",");
                                     return (
                                       <div>
-                                        {approveLanguage.map((item, index) => {
+                                        {approveLanguage.map((item, index1) => {
                                           return (
                                             <span
                                               className="api-item-exclude"
-                                              key={index}
+                                              key={index1}
                                             >
-                                              <span className="x">x</span>
+                                              <span className="x" onClick={() => (removeLanguages(index1, index))}>x</span>
                                               {item}
                                             </span>
                                           );
