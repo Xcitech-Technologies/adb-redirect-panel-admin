@@ -288,7 +288,7 @@ const GlobalCondition = () => {
                 {isOpen ? <FaAngleUp /> : <FaAngleDown />}
               </div>
             </div>
-            {isOpen && (
+            {isOpen.asn && (
               <div className="card-body">
                 <div className="card-content">
                   <div className="inputs">
@@ -319,7 +319,7 @@ const GlobalCondition = () => {
           <div className="card">
             <div
               className="card-header"
-              onClick={() => setIsOpen({ ...isOpen, ips2: !isOpen.ips2 })}
+              onClick={() => setIsOpen({ ...isOpen, isp2: !isOpen.isp2 })}
             >
               <div className="collapes_btn">
                 <p className="card-title"> ISP </p>
