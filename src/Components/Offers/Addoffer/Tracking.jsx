@@ -354,6 +354,7 @@ const Tracking = () => {
                                 color: "white",
                                 hoverBackgroundColor: "lightgreen",
                                 lineColor: "lightgreen",
+                                paddingLeft: "0px"
                               }}
                               fuseOptions={{
                                 keys: ["CountryCode", "CountryName"],
@@ -482,9 +483,7 @@ const Tracking = () => {
                             <div className="clear-btn">
                               <Button
                                 onClick={() => {
-                                  addCondition[
-                                    index
-                                  ].condition.regionName = false;
+                                  item.condition.regionName = false;
                                 }}
                               >
                                 Clear

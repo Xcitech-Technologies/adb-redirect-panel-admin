@@ -28,15 +28,6 @@ const Locations = () => {
     CountryLanguagecode: item.CountryLanguagecode,
     Domain: item.Domain,
   }));
-  console.log(approveData);
-
-  const handleOnSearch = (string, results) => {
-    console.log(string, results);
-  };
-
-  const blockHandleSearch = (string, results) => {
-    console.log(string, results);
-  };
 
   const handleOnSelect = (item) => {
     console.log(item);
@@ -50,13 +41,49 @@ const Locations = () => {
 
   const blockHandleSelect = (item) => {
     console.log(item);
-    setBlockData([...approveData, item]);
+    setBlockData([...blockData, item]);
     setBlockIsOpen({
       blockCountries: true,
       blockLanguage: true,
       blockTimezone: true,
     });
   };
+
+  const removeApproveCountry = (index) => {
+    let country = [...approveData];
+    country.splice(index, 1);
+    setApproveData(country);
+  }
+
+  const removeBlockCountry = (index) => { 
+    let country = [...blockData];
+    country.splice(index, 1);
+    setBlockData(country);
+  }
+
+  const deleteApproveTimeZone = (index) => { 
+    let timezone = [...approveData];
+    timezone.splice(index, 1);
+    setApproveData(timezone);
+  }
+
+  const deleteBlockTimeZone = (index) => {
+    let timezone = [...blockData];
+    timezone.splice(index, 1);
+    setBlockData(timezone);
+  }
+
+  const deleteApproveLanguages = (index) => { 
+    let language = [...approveData];
+    language.splice(index, 1);
+    setApproveData(language);
+  }
+  
+  const deleteBlockLanguages = (index) => { 
+    let language = [...blockData];
+    language.splice(index, 1);
+    setBlockData(language);
+  }
 
   return (
     <div className="container-fluid">
@@ -127,7 +154,6 @@ const Locations = () => {
                   <ReactSearchAutocomplete
                     items={arrayData}
                     placeholder="Search approve country"
-                    onSearch={handleOnSearch}
                     onSelect={handleOnSelect}
                     showIcon={false}
                     styling={{
@@ -166,10 +192,9 @@ const Locations = () => {
                   </Button>
                   <div className="display-data">
                     {approveData.map((item, index) => {
-                      console.log(item);
                       return (
                         <span className="api-item" key={index}>
-                          <span className="x">x</span>
+                          <span className="x" onClick={() => {removeApproveCountry(index)}}>x</span>
                           {item.CountryName}
                         </span>
                       );
@@ -186,7 +211,6 @@ const Locations = () => {
                   <ReactSearchAutocomplete
                     items={arrayData}
                     placeholder="Search block country"
-                    onSearch={blockHandleSearch}
                     onSelect={blockHandleSelect}
                     showIcon={false}
                     styling={{
@@ -227,7 +251,7 @@ const Locations = () => {
                     {blockData.map((item, index) => {
                       return (
                         <span className="api-item" key={index}>
-                          <span className="x">x</span>
+                          <span className="x" onClick={() => {removeBlockCountry(index)}}>x</span>
                           {item.CountryName}
                         </span>
                       );
@@ -339,7 +363,7 @@ const Locations = () => {
                           {approveLanguage.map((item, index) => {
                             return (
                               <span className="api-item" key={index}>
-                                <span className="x">x</span>
+                                <span className="x" onClick={() => deleteApproveLanguages(index)}>x</span>
                                 {item}
                               </span>
                             );
@@ -375,7 +399,7 @@ const Locations = () => {
                           {BlockLanguage.map((item, index) => {
                             return (
                               <span className="api-item" key={index}>
-                                <span className="x">x</span>
+                                <span className="x" onClick={() => deleteBlockLanguages(index)}>x</span>
                                 {item}
                               </span>
                             );
@@ -416,13 +440,14 @@ const Locations = () => {
                   </Button>
                   <div className="display-data">
                     {approveData.map((item) => {
+                      console.log(item);
                       const approveTimezone = item.Timezones.split(",");
                       return (
                         <div>
                           {approveTimezone.map((item, index) => {
                             return (
                               <span className="api-item" key={index}>
-                                <span className="x">x</span>
+                                <span className="x" onClick={() => {deleteApproveTimeZone(index)}}>x</span>
                                 {item}
                               </span>
                             );
@@ -461,7 +486,7 @@ const Locations = () => {
                           {blockTimezone.map((item, index) => {
                             return (
                               <span className="api-item" key={index}>
-                                <span className="x">x</span>
+                                <span className="x" onClick={() => {deleteBlockTimeZone(index)}}>x</span>
                                 {item}
                               </span>
                             );

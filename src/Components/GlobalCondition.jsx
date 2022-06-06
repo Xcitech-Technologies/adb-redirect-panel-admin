@@ -32,21 +32,18 @@ const GlobalCondition = () => {
   const removeApproveRefOnclick = (index) => {
     const condition = GlobalData[0].data[0].approved_referrers;
     condition.splice(index, 1);
-    console.log(condition);
     setData({ ...data, condition });
   }
 
   const removeIPsOnclick = (index) => {
     const ips = GlobalData[0].data[0].blocked_IPs;
     ips.splice(index, 1);
-    console.log(ips);
     setData({ ...data, ips });
   }
 
   const removeBlockrefOnclick = (index) => {
     const block = GlobalData[0].data[0].blocked_referrers;
     block.splice(index, 1);
-    console.log(block);
     setData({ ...data, block });
   }
 
