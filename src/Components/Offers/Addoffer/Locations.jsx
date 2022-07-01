@@ -1,7 +1,7 @@
 import React from "react";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import Button from "../../../Controls/Button";
 import jsonData from "../../../data.json";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const Locations = () => {
   // const [isapproved, setIsapproved] = React.useState({referers: false, countries: false, cities:false, region: false, language:false, timeZone: false});
@@ -30,7 +30,6 @@ const Locations = () => {
   }));
 
   const handleOnSelect = (item) => {
-    console.log(item);
     setApproveData([...approveData, item]);
     setApproveIsOpen({
       approveCountries: true,
@@ -40,7 +39,6 @@ const Locations = () => {
   };
 
   const blockHandleSelect = (item) => {
-    console.log(item);
     setBlockData([...blockData, item]);
     setBlockIsOpen({
       blockCountries: true,
@@ -50,40 +48,40 @@ const Locations = () => {
   };
 
   const removeApproveCountry = (index) => {
-    let country = [...approveData];
+    const country = [...approveData];
     country.splice(index, 1);
     setApproveData(country);
-  }
+  };
 
-  const removeBlockCountry = (index) => { 
-    let country = [...blockData];
+  const removeBlockCountry = (index) => {
+    const country = [...blockData];
     country.splice(index, 1);
     setBlockData(country);
-  }
+  };
 
-  const deleteApproveTimeZone = (index) => { 
-    let timezone = [...approveData];
+  const deleteApproveTimeZone = (index) => {
+    const timezone = [...approveData];
     timezone.splice(index, 1);
     setApproveData(timezone);
-  }
+  };
 
   const deleteBlockTimeZone = (index) => {
-    let timezone = [...blockData];
+    const timezone = [...blockData];
     timezone.splice(index, 1);
     setBlockData(timezone);
-  }
+  };
 
-  const deleteApproveLanguages = (index) => { 
-    let language = [...approveData];
+  const deleteApproveLanguages = (index) => {
+    const language = [...approveData];
     language.splice(index, 1);
     setApproveData(language);
-  }
-  
-  const deleteBlockLanguages = (index) => { 
-    let language = [...blockData];
+  };
+
+  const deleteBlockLanguages = (index) => {
+    const language = [...blockData];
     language.splice(index, 1);
     setBlockData(language);
-  }
+  };
 
   return (
     <div className="container-fluid">
@@ -191,14 +189,19 @@ const Locations = () => {
                     Clear
                   </Button>
                   <div className="display-data">
-                    {approveData.map((item, index) => {
-                      return (
-                        <span className="api-item" key={index}>
-                          <span className="x" onClick={() => {removeApproveCountry(index)}}>x</span>
-                          {item.CountryName}
+                    {approveData.map((item, index) => (
+                      <span className="api-item" key={index}>
+                        <span
+                          className="x"
+                          onClick={() => {
+                            removeApproveCountry(index);
+                          }}
+                        >
+                          x
                         </span>
-                      );
-                    })}
+                        {item.CountryName}
+                      </span>
+                    ))}
                   </div>
                 </>
               )}
@@ -248,14 +251,19 @@ const Locations = () => {
                     Clear
                   </Button>
                   <div className="display-data">
-                    {blockData.map((item, index) => {
-                      return (
-                        <span className="api-item" key={index}>
-                          <span className="x" onClick={() => {removeBlockCountry(index)}}>x</span>
-                          {item.CountryName}
+                    {blockData.map((item, index) => (
+                      <span className="api-item" key={index}>
+                        <span
+                          className="x"
+                          onClick={() => {
+                            removeBlockCountry(index);
+                          }}
+                        >
+                          x
                         </span>
-                      );
-                    })}
+                        {item.CountryName}
+                      </span>
+                    ))}
                   </div>
                 </>
               )}
@@ -356,18 +364,21 @@ const Locations = () => {
                     Clear
                   </Button>
                   <div className="display-data">
-                    {approveData.map((item) => {
-                      const approveLanguage = item.Language.split(",");
+                    {approveData.map((item0, key) => {
+                      const approveLanguage = item0.Language.split(",");
                       return (
-                        <div>
-                          {approveLanguage.map((item, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => deleteApproveLanguages(index)}>x</span>
-                                {item}
+                        <div key={key}>
+                          {approveLanguage.map((item1, index) => (
+                            <span className="api-item" key={index}>
+                              <span
+                                className="x"
+                                onClick={() => deleteApproveLanguages(index)}
+                              >
+                                x
                               </span>
-                            );
-                          })}
+                              {item1}
+                            </span>
+                          ))}
                         </div>
                       );
                     })}
@@ -392,18 +403,21 @@ const Locations = () => {
                     Clear
                   </Button>
                   <div className="display-data">
-                    {blockData.map((item) => {
+                    {blockData.map((item, key) => {
                       const BlockLanguage = item.Language.split(",");
                       return (
-                        <div>
-                          {BlockLanguage.map((item, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => deleteBlockLanguages(index)}>x</span>
-                                {item}
+                        <div key={key}>
+                          {BlockLanguage.map((item4, index) => (
+                            <span className="api-item" key={index}>
+                              <span
+                                className="x"
+                                onClick={() => deleteBlockLanguages(index)}
+                              >
+                                x
                               </span>
-                            );
-                          })}
+                              {item4}
+                            </span>
+                          ))}
                         </div>
                       );
                     })}
@@ -439,19 +453,23 @@ const Locations = () => {
                     Clear
                   </Button>
                   <div className="display-data">
-                    {approveData.map((item) => {
-                      console.log(item);
+                    {approveData.map((item, key) => {
                       const approveTimezone = item.Timezones.split(",");
                       return (
-                        <div>
-                          {approveTimezone.map((item, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => {deleteApproveTimeZone(index)}}>x</span>
-                                {item}
+                        <div key={key}>
+                          {approveTimezone.map((item0, index) => (
+                            <span className="api-item" key={index}>
+                              <span
+                                className="x"
+                                onClick={() => {
+                                  deleteApproveTimeZone(index);
+                                }}
+                              >
+                                x
                               </span>
-                            );
-                          })}
+                              {item0}
+                            </span>
+                          ))}
                         </div>
                       );
                     })}
@@ -479,18 +497,23 @@ const Locations = () => {
                     Clear
                   </Button>
                   <div className="display-data">
-                    {blockData.map((item) => {
+                    {blockData.map((item, key) => {
                       const blockTimezone = item.Timezones.split(",");
                       return (
-                        <div>
-                          {blockTimezone.map((item, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => {deleteBlockTimeZone(index)}}>x</span>
-                                {item}
+                        <div key={key}>
+                          {blockTimezone.map((itemd, index) => (
+                            <span className="api-item" key={index}>
+                              <span
+                                className="x"
+                                onClick={() => {
+                                  deleteBlockTimeZone(index);
+                                }}
+                              >
+                                x
                               </span>
-                            );
-                          })}
+                              {itemd}
+                            </span>
+                          ))}
                         </div>
                       );
                     })}

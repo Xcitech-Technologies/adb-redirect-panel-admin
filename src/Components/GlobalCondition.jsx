@@ -1,6 +1,5 @@
 import React from "react";
-import { FaAngleUp } from "react-icons/fa";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import Button from "../Controls/Button";
 import GlobalData from "../GlobalData.json";
 
@@ -33,20 +32,19 @@ const GlobalCondition = () => {
     const condition = GlobalData[0].data[0].approved_referrers;
     condition.splice(index, 1);
     setData({ ...data, condition });
-  }
+  };
 
   const removeIPsOnclick = (index) => {
     const ips = GlobalData[0].data[0].blocked_IPs;
     ips.splice(index, 1);
     setData({ ...data, ips });
-  }
+  };
 
   const removeBlockrefOnclick = (index) => {
     const block = GlobalData[0].data[0].blocked_referrers;
     block.splice(index, 1);
     setData({ ...data, block });
-  }
-
+  };
 
   return (
     <div className="wrapper" style={{ marginTop: "55px" }}>
@@ -93,14 +91,19 @@ const GlobalCondition = () => {
                       </Button>
                       <div className="display-data">
                         {GlobalData[0].data[0].approved_referrers.map(
-                          (data, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => {removeApproveRefOnclick(index)}}>x</span>
-                                {data}
+                          (ele, index) => (
+                            <span className="api-item" key={index}>
+                              <span
+                                className="x"
+                                onClick={() => {
+                                  removeApproveRefOnclick(index);
+                                }}
+                              >
+                                x
                               </span>
-                            );
-                          }
+                              {ele}
+                            </span>
+                          )
                         )}
                       </div>
                     </div>
@@ -128,14 +131,19 @@ const GlobalCondition = () => {
                       </Button>
                       <div className="display-data">
                         {GlobalData[0].data[0].blocked_referrers.map(
-                          (data, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => {removeBlockrefOnclick(index)}}>x</span>
-                                {data}
+                          (ele, index) => (
+                            <span className="api-item" key={index}>
+                              <span
+                                className="x"
+                                onClick={() => {
+                                  removeBlockrefOnclick(index);
+                                }}
+                              >
+                                x
                               </span>
-                            );
-                          }
+                              {ele}
+                            </span>
+                          )
                         )}
                       </div>
                     </div>
@@ -177,16 +185,19 @@ const GlobalCondition = () => {
                         Clear
                       </Button>
                       <div className="display-data">
-                        {GlobalData[0].data[0].blocked_IPs.map(
-                          (data, index) => {
-                            return (
-                              <span className="api-item" key={index}>
-                                <span className="x" onClick={() => {removeIPsOnclick(index)}}>x</span>
-                                {data}
-                              </span>
-                            );
-                          }
-                        )}
+                        {GlobalData[0].data[0].blocked_IPs.map((ele, index) => (
+                          <span className="api-item" key={index}>
+                            <span
+                              className="x"
+                              onClick={() => {
+                                removeIPsOnclick(index);
+                              }}
+                            >
+                              x
+                            </span>
+                            {ele}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   )}
@@ -215,59 +226,51 @@ const GlobalCondition = () => {
                   <div className="inputs">
                     <label className="label">Meta Alternative:</label>
                   </div>
-                  {GlobalData.map((data, index) => {
-                    return (
-                      <input
-                        className="input"
-                        type="text"
-                        key={index}
-                        value={data.data[0].meta_alternative}
-                        onChange={(e) => handle(e)}
-                      ></input>
-                    );
-                  })}
+                  {GlobalData.map((ele, index) => (
+                    <input
+                      className="input"
+                      type="text"
+                      key={index}
+                      value={ele.data[0].meta_alternative}
+                      onChange={(e) => handle(e)}
+                    ></input>
+                  ))}
                   <div className="inputs">
                     <label className="label">Desktop Approved:</label>
                   </div>
-                  {GlobalData.map((data, index) => {
-                    return (
-                      <input
-                        className="input"
-                        type="text"
-                        key={index}
-                        value={data.data[0].desktop_approved}
-                        onChange={(e) => handle(e)}
-                      ></input>
-                    );
-                  })}
+                  {GlobalData.map((ele, index) => (
+                    <input
+                      className="input"
+                      type="text"
+                      key={index}
+                      value={ele.data[0].desktop_approved}
+                      onChange={(e) => handle(e)}
+                    ></input>
+                  ))}
                   <div className="inputs">
                     <label className="label">Mobile Approved:</label>
                   </div>
-                  {GlobalData.map((data, index) => {
-                    return (
-                      <input
-                        className="input"
-                        type="text"
-                        key={index}
-                        value={data.data[0].mobile_approved}
-                        onChange={(e) => handle(e)}
-                      ></input>
-                    );
-                  })}
+                  {GlobalData.map((ele, index) => (
+                    <input
+                      className="input"
+                      type="text"
+                      key={index}
+                      value={ele.data[0].mobile_approved}
+                      onChange={(e) => handle(e)}
+                    ></input>
+                  ))}
                   <div className="inputs">
                     <label className="label">Intermediary Rejected:</label>
                   </div>
-                  {GlobalData.map((data, index) => {
-                    return (
-                      <input
-                        className="input"
-                        type="text"
-                        key={index}
-                        value={data.data[0].intermediary_rejected}
-                        onChange={(e) => handle(e)}
-                      ></input>
-                    );
-                  })}
+                  {GlobalData.map((ele, index) => (
+                    <input
+                      className="input"
+                      type="text"
+                      key={index}
+                      value={ele.data[0].intermediary_rejected}
+                      onChange={(e) => handle(e)}
+                    ></input>
+                  ))}
                 </div>
               </div>
             )}

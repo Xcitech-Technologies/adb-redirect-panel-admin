@@ -2,13 +2,13 @@ body {
   margin: 0;
   font-family: "Comfortaa", sans-serif;
   color: #fff;
-  font-size: 0.9000rem;
-  background-color: #12141D;
+  font-size: 0.9rem;
+  background-color: #12141d;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

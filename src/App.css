@@ -84,7 +84,7 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 10px;
@@ -103,7 +103,7 @@
   margin: 10px;
 }
 
-.button:hover{
+.button:hover {
   background-color: #0d6efd;
 }
 
@@ -143,7 +143,7 @@
   color: #fff;
   font-weight: 400;
   margin-bottom: 5px;
-  background-color: #DC143C;
+  background-color: #dc143c;
   display: inline-block;
   border-radius: 5px;
 }
@@ -206,7 +206,7 @@
 }
 
 .form-control {
-  background-color: #252B50;
+  background-color: #252b50;
   border: none;
 }
 
@@ -244,7 +244,6 @@
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-
 }
 
 :hover {
@@ -252,14 +251,14 @@
 }
 
 #status {
-  background-color: #252B50;
+  background-color: #252b50;
   border: none;
   color: #fff;
   width: 100px;
 }
 
 #type {
-  background-color: #252B50;
+  background-color: #252b50;
   border: none;
   color: #fff;
 }
@@ -289,14 +288,13 @@
   justify-content: flex-start;
 }
 
-
 .navbar-nav a {
-    padding: 6px 15px;
-    text-decoration: none;
-    color: #fff;
+  padding: 6px 15px;
+  text-decoration: none;
+  color: #fff;
 }
- a.active{
-  background-color: #1A1C2A;
+a.active {
+  background-color: #1a1c2a;
   border-radius: 5px;
 }
 
@@ -310,7 +308,7 @@
   padding: 7px;
   border: none;
   border-radius: 5px;
-  background: #28A745;
+  background: #28a745;
   color: #fff;
   outline: none;
   cursor: pointer;
@@ -327,7 +325,7 @@
 /* tracking page css */
 
 .remove-button {
-  background-color: #5C6BC0;
+  background-color: #5c6bc0;
   border: none;
   color: #fff;
 }
@@ -335,14 +333,14 @@
 .btn-condition {
   padding: 10px;
   float: right;
-  background: #28A745;
+  background: #28a745;
   border: none;
   border-radius: 5px;
   color: #fff;
 }
-.btn-condition:hover{
+.btn-condition:hover {
   background-color: #0cce6b;
-  color: #12141D;
+  color: #12141d;
 }
 
 .cards-body {
@@ -387,12 +385,11 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 15px;
 }
-
 
 .urls-input1 {
   width: 73%;
@@ -400,7 +397,7 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 10px;
@@ -412,7 +409,7 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 5px;
@@ -424,23 +421,23 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 5px;
 }
 
-.header-label{
+.header-label {
   margin-top: 10px;
   margin-bottom: 0;
 }
 
-.header-select{
+.header-select {
   width: 30%;
   padding: 7px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 5px;
@@ -459,7 +456,7 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 20px;
@@ -471,7 +468,7 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
   margin-left: 100px;
@@ -495,7 +492,7 @@
   font-size: 15px;
   color: #fff;
   cursor: pointer;
-  background: #12141D;
+  background: #12141d;
   transition: background 0.1s;
   border: 2px solid #fff;
 }
@@ -504,7 +501,7 @@
   border-right: 1px solid #fff;
 }
 
-.radio-input:checked+.radio-label {
+.radio-input:checked + .radio-label {
   background: #5c6bc0;
 }
 
@@ -516,12 +513,12 @@
   display: none;
 }
 
-.radio-include:checked+.radio-label1 {
-  background: #28A745;
+.radio-include:checked + .radio-label1 {
+  background: #28a745;
 }
 
-.radio-exclude:checked+.radio-label1 {
-  background: #DC143C;
+.radio-exclude:checked + .radio-label1 {
+  background: #dc143c;
 }
 
 .radio-label1 {
@@ -529,7 +526,7 @@
   font-size: 15px;
   color: #fff;
   cursor: pointer;
-  background: #12141D;
+  background: #12141d;
   transition: background 0.1s;
   border: 2px solid #fff;
 }
@@ -560,9 +557,7 @@
   margin-top: 10px;
 }
 
-
 /* Ganeral Page CSS */
-
 
 .g-input {
   width: 100%;
@@ -570,7 +565,7 @@
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: #12141D;
+  background: #12141d;
   outline: none;
   color: #fff;
 }
@@ -584,7 +579,7 @@
 
 /* adb-froud-detection */
 
-.radio-item{
+.radio-item {
   margin-left: 10px;
 }
 

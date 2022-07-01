@@ -3,10 +3,9 @@ import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { BiAddToQueue } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import { RiChatDeleteFill } from "react-icons/ri";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import jsonData from "../../../data.json";
 import Button from "../../../Controls/Button";
-
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 const Tracking = () => {
   const [addCondition, setAddCondition] = React.useState([
@@ -32,7 +31,7 @@ const Tracking = () => {
         cityName: false,
         deviceName: false,
         approveTimeZone: false,
-        approveLanguage: false
+        approveLanguage: false,
       },
       open: true,
     },
@@ -80,31 +79,27 @@ const Tracking = () => {
     Domain: item.Domain,
   }));
 
-
   const handleOnSelect = (e, item, index) => {
-    let temp_data = [...addCondition];
+    const tempData = [...addCondition];
 
-    let previusApprovedData = [...temp_data[index].condition.approveData];
-    console.log(previusApprovedData);
+    const previusApprovedData = [...tempData[index].condition.approveData];
 
-    let updatePreviousData = [...previusApprovedData, e];
-    console.log(updatePreviousData);
+    const updatePreviousData = [...previusApprovedData, e];
 
-    temp_data[index].condition.approveData = updatePreviousData;
-    console.log(temp_data[index].condition.approveData);
+    tempData[index].condition.approveData = updatePreviousData;
 
-    temp_data[index].condition.approveCountries = true;
-    temp_data[index].condition.regionName = true;
-    temp_data[index].condition.cityName = true;
-    temp_data[index].condition.deviceName = true;
-    temp_data[index].condition.approveTimeZone = true;
-    temp_data[index].condition.approveLanguage = true;
+    tempData[index].condition.approveCountries = true;
+    tempData[index].condition.regionName = true;
+    tempData[index].condition.cityName = true;
+    tempData[index].condition.deviceName = true;
+    tempData[index].condition.approveTimeZone = true;
+    tempData[index].condition.approveLanguage = true;
 
-    setAddCondition(temp_data);
+    setAddCondition(tempData);
   };
 
   const hnndleOpen = (index) => {
-    let temp = [];
+    const temp = [];
     for (let i = 0; i < addCondition.length; i++) {
       if (i === index) {
         temp.push({
@@ -122,8 +117,7 @@ const Tracking = () => {
   };
 
   const removeConditionOnclick = (index) => {
-    let temp = addCondition.filter((item, i) => i !== index);
-    console.log(temp, addCondition);
+    const temp = addCondition.filter((item, i) => i !== index);
 
     setAddCondition(temp);
   };
@@ -135,18 +129,18 @@ const Tracking = () => {
 
   const [regionIsOpen, setRegionIsOpen] = React.useState({
     regionInclude: true,
-    regionExclude: false
-  })
+    regionExclude: false,
+  });
 
   const [cityIsOpen, setCityIsOpen] = React.useState({
     cityInclude: true,
-    cityExclude: false
-  })
+    cityExclude: false,
+  });
 
   const [deviceIsOpen, setDeviceIsOpen] = React.useState({
     deviceInclude: true,
-    deviceExclude: false
-  })
+    deviceExclude: false,
+  });
 
   const [timeZoneIsOpen, setTimeZoneIsOpen] = React.useState({
     timeZoneInclude: true,
@@ -159,9 +153,8 @@ const Tracking = () => {
   });
 
   const addFieldOnclick = (index) => {
-    let addfields = [...addCondition];
-    console.log(index);
-    console.log(addfields[index]);
+    const addfields = [...addCondition];
+
     addfields[index]?.condition.urls.push({
       urlfield: {},
       weight: {},
@@ -220,68 +213,63 @@ const Tracking = () => {
 
   const regionHandleKeyPress = (e, index) => {
     if (e.key === "Enter") {
-      let newdata = [...addCondition];
+      const newdata = [...addCondition];
       addCondition[index].condition.regionData.push(e.target.value);
       setAddCondition(newdata);
-      console.log(newdata);
     }
   };
 
   const cityHandleKeyPress = (e, index) => {
     if (e.key === "Enter") {
-      let newdata = [...addCondition];
+      const newdata = [...addCondition];
       addCondition[index].condition.citiesData.push(e.target.value);
       setAddCondition(newdata);
-      console.log(newdata);
     }
   };
 
   const deviceHandleKeyPress = (e, index) => {
     if (e.key === "Enter") {
-      let newdata = [...addCondition];
+      const newdata = [...addCondition];
       addCondition[index].condition.deviceData.push(e.target.value);
       setAddCondition(newdata);
-      console.log(newdata);
     }
   };
 
   const removeCountry = (index1, index) => {
-    let mainData = [...addCondition];
+    const mainData = [...addCondition];
     mainData[index].condition.approveData.splice(index1, 1);
     setAddCondition(mainData);
-  }
+  };
 
   const removeRegion = (index1, index) => {
-    let mainData = [...addCondition];
+    const mainData = [...addCondition];
     mainData[index].condition.regionData.splice(index1, 1);
-    setAddCondition(mainData)
-  }
+    setAddCondition(mainData);
+  };
 
   const removeCities = (index1, index) => {
-    let mainData = [...addCondition];
+    const mainData = [...addCondition];
     mainData[index].condition.citiesData.splice(index1, 1);
-    setAddCondition(mainData)
-  }
+    setAddCondition(mainData);
+  };
 
   const removeDevice = (index1, index) => {
-    let mainData = [...addCondition];
+    const mainData = [...addCondition];
     mainData[index].condition.deviceData.splice(index1, 1);
-    setAddCondition(mainData)
-  }
+    setAddCondition(mainData);
+  };
 
-  const removeTimezone = ( index, index1 ) => {
-    let mainData = [...addCondition];
+  const removeTimezone = (index, index1) => {
+    const mainData = [...addCondition];
     mainData[index].condition.approveData.splice(index1, 1);
     setAddCondition(mainData);
-  }
+  };
 
   const removeLanguages = (index, index1) => {
-    let mainData = [...addCondition];
+    const mainData = [...addCondition];
     mainData[index].condition.approveData.splice(index1, 1);
-    setAddCondition(mainData)
-  }
-
-  console.log("------------cart state------------------", addCondition);
+    setAddCondition(mainData);
+  };
 
   return (
     <div className="container-fluid">
@@ -354,7 +342,7 @@ const Tracking = () => {
                                 color: "white",
                                 hoverBackgroundColor: "lightgreen",
                                 lineColor: "lightgreen",
-                                paddingLeft: "0px"
+                                paddingLeft: "0px",
                               }}
                               fuseOptions={{
                                 keys: ["CountryCode", "CountryName"],
@@ -402,35 +390,46 @@ const Tracking = () => {
                                   item.condition.approveCountries = false;
                                   item.condition.approveTimeZone = false;
                                   item.condition.approveLanguage = false;
-                                  console.log(item.condition.approveCountries);
                                 }}
                               >
                                 Clear
                               </Button>
                             </div>
                             {contryIsOpen.countryInclude &&
-                              item.condition.approveData.map((item, index1) => {
-                                console.log(item);
-                                return (
+                              item.condition.approveData.map(
+                                (item0, index1) => (
                                   <span className="api-item" key={index1}>
-                                    <span className="x" onClick={() => (removeCountry(index1, index))}>x</span>
-                                    {item.CountryName}
+                                    <span
+                                      className="x"
+                                      onClick={() =>
+                                        removeCountry(index1, index)
+                                      }
+                                    >
+                                      x
+                                    </span>
+                                    {item0.CountryName}
                                   </span>
-                                );
-                              })}
+                                )
+                              )}
                             {contryIsOpen.countryExclude &&
-                              item.condition.approveData.map((item, index1) => {
-                                console.log(item);
-                                return (
+                              item.condition.approveData.map(
+                                (item4, index1) => (
                                   <span
                                     className="api-item-exclude"
                                     key={index1}
                                   >
-                                    <span className="x" onClick={() => (removeCountry(index1, index))}>x</span>
-                                    {item.CountryName}
+                                    <span
+                                      className="x"
+                                      onClick={() =>
+                                        removeCountry(index1, index)
+                                      }
+                                    >
+                                      x
+                                    </span>
+                                    {item4.CountryName}
                                   </span>
-                                );
-                              })}
+                                )
+                              )}
                           </div>
                         )}
                       </div>
@@ -489,25 +488,30 @@ const Tracking = () => {
                                 Clear
                               </Button>
                             </div>
-                            {regionIsOpen.regionInclude && 
-                              item.condition.regionData.map((item, index1) => {
-                              return (
+                            {regionIsOpen.regionInclude &&
+                              item.condition.regionData.map((item5, index1) => (
                                 <span className="api-item" key={index1}>
-                                  <span className="x" onClick={() => removeRegion(index, index1)}>x</span>
-                                  {item}
+                                  <span
+                                    className="x"
+                                    onClick={() => removeRegion(index, index1)}
+                                  >
+                                    x
+                                  </span>
+                                  {item5}
                                 </span>
-                              )
-                            })}
-                            {regionIsOpen.regionExclude && 
-                              item.condition.regionData.map((item, index1) => {
-                              console.log(item);
-                              return (
+                              ))}
+                            {regionIsOpen.regionExclude &&
+                              item.condition.regionData.map((item0, index1) => (
                                 <span className="api-item-exclude" key={index1}>
-                                  <span className="x" onClick={() => removeRegion(index, index1)}>x</span>
-                                  {item}
+                                  <span
+                                    className="x"
+                                    onClick={() => removeRegion(index, index1)}
+                                  >
+                                    x
+                                  </span>
+                                  {item0}
                                 </span>
-                              )
-                            })}
+                              ))}
                           </div>
                         )}
                       </div>
@@ -534,10 +538,11 @@ const Tracking = () => {
                               type="radio"
                               name="cities"
                               id="include3"
-                              onClick={() => setCityIsOpen({
-                                cityInclude: true,
-                                cityExclude: false
-                              })
+                              onClick={() =>
+                                setCityIsOpen({
+                                  cityInclude: true,
+                                  cityExclude: false,
+                                })
                               }
                             />
                             <label className="radio-label1" htmlFor="include3">
@@ -548,10 +553,11 @@ const Tracking = () => {
                               type="radio"
                               name="cities"
                               id="exclude3"
-                              onClick={() => setCityIsOpen({
-                                cityInclude: false,
-                                cityExclude: true
-                              })
+                              onClick={() =>
+                                setCityIsOpen({
+                                  cityInclude: false,
+                                  cityExclude: true,
+                                })
                               }
                             />
                             <label className="radio-label1" htmlFor="exclude3">
@@ -569,25 +575,33 @@ const Tracking = () => {
                               </Button>
                             </div>
                             {cityIsOpen.cityInclude &&
-                              item.condition.citiesData.map((item, index1) => {
-                                return (
-                                  <span className="api-item" key={index1}>
-                                    <span className="x" onClick={() => {removeCities(index, index1)}}>x</span>
-                                    {item}
+                              item.condition.citiesData.map((item1, index1) => (
+                                <span className="api-item" key={index1}>
+                                  <span
+                                    className="x"
+                                    onClick={() => {
+                                      removeCities(index, index1);
+                                    }}
+                                  >
+                                    x
+                                  </span>
+                                  {item1}
                                 </span>
-                              )
-                              })
-                            }
+                              ))}
                             {cityIsOpen.cityExclude &&
-                              item.condition.citiesData.map((item, index1) => {
-                                return (
-                                  <span className="api-item-exclude" key={index1}>
-                                    <span className="x" onClick={() => {removeCities(index, index1)}}>x</span>
-                                    {item}
+                              item.condition.citiesData.map((item0, index1) => (
+                                <span className="api-item-exclude" key={index1}>
+                                  <span
+                                    className="x"
+                                    onClick={() => {
+                                      removeCities(index, index1);
+                                    }}
+                                  >
+                                    x
+                                  </span>
+                                  {item0}
                                 </span>
-                              )
-                              })
-                            }
+                              ))}
                           </div>
                         )}
                       </div>
@@ -612,10 +626,11 @@ const Tracking = () => {
                               type="radio"
                               name="device"
                               id="include4"
-                              onClick={() => setDeviceIsOpen({
-                                deviceInclude: true,
-                                deviceExclude: false
-                              })
+                              onClick={() =>
+                                setDeviceIsOpen({
+                                  deviceInclude: true,
+                                  deviceExclude: false,
+                                })
                               }
                             />
                             <label className="radio-label1" htmlFor="include4">
@@ -626,10 +641,11 @@ const Tracking = () => {
                               type="radio"
                               name="device"
                               id="exclude4"
-                              onClick={() => setDeviceIsOpen({
-                                deviceInclude: false,
-                                deviceExclude: true
-                              })
+                              onClick={() =>
+                                setDeviceIsOpen({
+                                  deviceInclude: false,
+                                  deviceExclude: true,
+                                })
                               }
                             />
                             <label className="radio-label1" htmlFor="exclude4">
@@ -646,27 +662,30 @@ const Tracking = () => {
                                 Clear
                               </Button>
                             </div>
-                            {deviceIsOpen.deviceInclude && 
-                              item.condition.deviceData.map((item, index1) => {
-                                console.log(item);
-                                return (
+                            {deviceIsOpen.deviceInclude &&
+                              item.condition.deviceData.map((item0, index1) => (
                                 <span className="api-item" key={index1}>
-                                  <span className="x" onClick={() => removeDevice(index, index1)}>x</span>
-                                  {item}
+                                  <span
+                                    className="x"
+                                    onClick={() => removeDevice(index, index1)}
+                                  >
+                                    x
                                   </span>
-                                )
-                              })
-                            }
-                            {deviceIsOpen.deviceExclude && 
-                              item.condition.deviceData.map((item, index1) => {
-                                return (
+                                  {item0}
+                                </span>
+                              ))}
+                            {deviceIsOpen.deviceExclude &&
+                              item.condition.deviceData.map((item1, index1) => (
                                 <span className="api-item-exclude" key={index1}>
-                                  <span className="x" onClick={() => removeDevice(index, index1)}>x</span>
-                                  {item}
+                                  <span
+                                    className="x"
+                                    onClick={() => removeDevice(index, index1)}
+                                  >
+                                    x
                                   </span>
-                                )
-                              })
-                            }
+                                  {item1}
+                                </span>
+                              ))}
                           </div>
                         )}
                       </div>
@@ -710,7 +729,9 @@ const Tracking = () => {
                           <button
                             className="addurl-btn"
                             type="button"
-                            onClick={() => {addFieldOnclick(index)}}
+                            onClick={() => {
+                              addFieldOnclick(index);
+                            }}
                           >
                             <BiAddToQueue />
                           </button>
@@ -849,46 +870,70 @@ const Tracking = () => {
                               </div>
                               <div className="display-data">
                                 {timeZoneIsOpen.timeZoneInclude &&
-                                  item.condition.approveData.map((item) => {
-                                    const approveTimezone =
-                                      item.Timezones.split(",");
-                                    return (
-                                      <div>
-                                        {approveTimezone.map((item, index1) => {
-                                          return (
-                                            <span
-                                              className="api-item"
-                                              key={index1}
-                                            >
-                                              <span className="x" onClick={() => (removeTimezone(index1, index))}>x</span>
-                                              {item}
-                                            </span>
-                                          );
-                                        })}
-                                      </div>
-                                    );
-                                  })}
+                                  item.condition.approveData.map(
+                                    (item1, key) => {
+                                      const approveTimezone =
+                                        item1.Timezones.split(",");
+                                      return (
+                                        <div key={key}>
+                                          {approveTimezone.map(
+                                            (item0, index1) => (
+                                              <span
+                                                className="api-item"
+                                                key={index1}
+                                              >
+                                                <span
+                                                  className="x"
+                                                  onClick={() =>
+                                                    removeTimezone(
+                                                      index1,
+                                                      index
+                                                    )
+                                                  }
+                                                >
+                                                  x
+                                                </span>
+                                                {item0}
+                                              </span>
+                                            )
+                                          )}
+                                        </div>
+                                      );
+                                    }
+                                  )}
 
                                 {timeZoneIsOpen.timeZoneExclude &&
-                                  item.condition.approveData.map((item) => {
-                                    const approveTimezone =
-                                      item.Timezones.split(",");
-                                    return (
-                                      <div>
-                                        {approveTimezone.map((item, index1) => {
-                                          return (
-                                            <span
-                                              className="api-item-exclude"
-                                              key={index1}
-                                            >
-                                              <span className="x" onClick={() => (removeTimezone(index1, index))}>x</span>
-                                              {item}
-                                            </span>
-                                          );
-                                        })}
-                                      </div>
-                                    );
-                                  })}
+                                  item.condition.approveData.map(
+                                    (item0, key) => {
+                                      const approveTimezone =
+                                        item0.Timezones.split(",");
+                                      return (
+                                        <div key={key}>
+                                          {approveTimezone.map(
+                                            (item3, index1) => (
+                                              <span
+                                                className="api-item-exclude"
+                                                key={index1}
+                                              >
+                                                <span
+                                                  className="x"
+                                                  onClick={() =>
+                                                    removeTimezone(
+                                                      index1,
+                                                      index
+                                                    )
+                                                  }
+                                                >
+                                                  x
+                                                </span>
+                                                {item3}
+                                              </span>
+                                            )
+                                          )}
+                                        </div>
+                                      );
+                                    }
+                                  )}
                               </div>
                             </div>
                           )}
@@ -957,46 +1002,70 @@ const Tracking = () => {
                               </div>
                               <div className="display-data">
                                 {languageIsOpen.languageInclude &&
-                                  item.condition.approveData.map((item) => {
-                                    const approveLanguage =
-                                      item.Language.split(",");
-                                    return (
-                                      <div>
-                                        {approveLanguage.map((item, index1) => {
-                                          return (
-                                            <span
-                                              className="api-item"
-                                              key={index1}
-                                            >
-                                              <span className="x" onClick={() => (removeLanguages(index1, index))}>x</span>
-                                              {item}
-                                            </span>
-                                          );
-                                        })}
-                                      </div>
-                                    );
-                                  })}
+                                  item.condition.approveData.map(
+                                    (item2, key) => {
+                                      const approveLanguage =
+                                        item2.Language.split(",");
+                                      return (
+                                        <div key={key}>
+                                          {approveLanguage.map(
+                                            (ele, index1) => (
+                                              <span
+                                                className="api-item"
+                                                key={index1}
+                                              >
+                                                <span
+                                                  className="x"
+                                                  onClick={() =>
+                                                    removeLanguages(
+                                                      index1,
+                                                      index
+                                                    )
+                                                  }
+                                                >
+                                                  x
+                                                </span>
+                                                {ele}
+                                              </span>
+                                            )
+                                          )}
+                                        </div>
+                                      );
+                                    }
+                                  )}
 
                                 {languageIsOpen.languageExclude &&
-                                  item.condition.approveData.map((item) => {
-                                    const approveLanguage =
-                                      item.Language.split(",");
-                                    return (
-                                      <div>
-                                        {approveLanguage.map((item, index1) => {
-                                          return (
-                                            <span
-                                              className="api-item-exclude"
-                                              key={index1}
-                                            >
-                                              <span className="x" onClick={() => (removeLanguages(index1, index))}>x</span>
-                                              {item}
-                                            </span>
-                                          );
-                                        })}
-                                      </div>
-                                    );
-                                  })}
+                                  item.condition.approveData.map(
+                                    (item1, key) => {
+                                      const approveLanguage =
+                                        item1.Language.split(",");
+                                      return (
+                                        <div key={key}>
+                                          {approveLanguage.map(
+                                            (ele, index1) => (
+                                              <span
+                                                className="api-item-exclude"
+                                                key={index1}
+                                              >
+                                                <span
+                                                  className="x"
+                                                  onClick={() =>
+                                                    removeLanguages(
+                                                      index1,
+                                                      index
+                                                    )
+                                                  }
+                                                >
+                                                  x
+                                                </span>
+                                                {ele}
+                                              </span>
+                                            )
+                                          )}
+                                        </div>
+                                      );
+                                    }
+                                  )}
                               </div>
                             </div>
                           )}
