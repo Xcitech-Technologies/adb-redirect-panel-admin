@@ -15,5 +15,7 @@ module.exports = {
     "react/prop-types": ["off"],
     "no-param-reassign": ["off"],
     "no-plusplus": ["off"],
+    "default-param-last": 0,
+    "prettier/prettier": "warn",
   },
 };

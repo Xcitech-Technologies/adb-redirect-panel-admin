@@ -1,0 +1,12 @@
+.customCardContainer {
+  .headerComponent {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 16px 20px;
+    background-color: $lightBlue;
+  }
+  .cardBody {
+    padding: 16px 20px;
+    background-color: $blue2;
+  }
+}
