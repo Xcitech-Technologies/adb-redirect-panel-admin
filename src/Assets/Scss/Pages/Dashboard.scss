@@ -1,7 +1,21 @@
 .dashboardContainer {
   width: 100vw;
+  padding: 10px;
+  position: relative;
+
   .row {
     margin-left: 0;
     margin-right: 0;
+    display: flex;
+  }
+
+  .card1Button {
+    background-color: $lightGreen;
+    border: none;
+    margin: 5px;
+    flex-grow: 1;
+  }
+  .card1Button:focus {
+    box-shadow: none;
   }
 }

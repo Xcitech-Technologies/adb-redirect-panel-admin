@@ -15,6 +15,7 @@ import { ToastContainer } from "react-toastify";
 import authProtectedRoutes from "./Routes/routes";
 import Login from "./Pages/Login/Login.jsx";
 import "./Assets/Scss/index.scss";
+import Navbar from "./Layout/Navbar.jsx";
 
 function App() {
   const privateRoutes = useMemo(
@@ -24,10 +25,13 @@ function App() {
           path={path}
           key={key}
           element={
-            localStorage.getItem("token") ? (
+            !localStorage.getItem("token") ? (
               <Navigate to={{ pathname: "/login" }} />
             ) : (
-              <Component />
+              <>
+                <Navbar />
+                <Component />
+              </>
             )
           }
         />
@@ -47,8 +51,15 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-      {!localStorage.getItem("token") ? (
-        <Routes>{privateRoutes}</Routes>
+      {localStorage.getItem("token") ? (
+        <Routes>
+          {privateRoutes}
+
+          <Route
+            path="*"
+            element={<Navigate to={{ pathname: "/admin/dashboard" }} />}
+          />
+        </Routes>
       ) : (
         <Routes>
           <Route path="/login" element={<Login />} />

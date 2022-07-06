@@ -19,6 +19,7 @@ const auth = (state = initialState, action) => {
       };
     case actionTypes.LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload);
+      window.location.href = "/";
       return {
         ...state,
         loading: false,

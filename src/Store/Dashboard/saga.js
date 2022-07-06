@@ -6,7 +6,7 @@ function* getDashboardSaga({ sort }) {
   try {
     // yield put({ type: actionTypes.SET_AUTH_LOADING });
     const { data } = yield API.get(
-      `/getDashboard${sort ? "?sort=clicks" : ""}`,
+      `/getDashboard${sort ? `?sort=${sort}` : ""}`,
       {
         headers: {
           "access-token":

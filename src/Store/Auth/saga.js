@@ -6,9 +6,12 @@ import API from "../../Axios/Axios";
 function* loginSaga({ payload }) {
   try {
     yield put({ type: actionTypes.SET_AUTH_LOADING });
-    const { data } = yield API.post("/firebase/login", payload);
+    const { data } = yield API.post(
+      "https://multihostingreviews.com/dashboard/api/firebase/login",
+      payload
+    );
     if (data.success) {
-      yield put({ type: actionTypes.LOGIN_SUCCESS, payload: data.token });
+      yield put({ type: actionTypes.LOGIN_SUCCESS, payload: data.data.token });
       toast.success("Login Successfull.");
     } else {
       yield put({
