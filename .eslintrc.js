@@ -17,5 +17,7 @@ module.exports = {
     "no-plusplus": ["off"],
     "default-param-last": 0,
     "prettier/prettier": "warn",
+    "no-debugger": "warn",
+    "import/no-extraneous-dependencies": 0,
   },
 };

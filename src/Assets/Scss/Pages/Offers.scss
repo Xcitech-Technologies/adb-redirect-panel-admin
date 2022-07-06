@@ -4,5 +4,27 @@
   .head {
     display: flex;
     align-items: center;
+
+    button.green {
+      background: $lightGreen;
+      width: 100%;
+      border: none;
+      margin-right: 5px;
+    }
+    button.white {
+      background: $white;
+      color: $primary;
+      width: 100%;
+      border: none;
+      margin: 0 5px;
+    }
+  }
+  table {
+    border: none;
+
+    color: $white;
+    thead {
+      font-size: 1rem;
+    }
   }
 }

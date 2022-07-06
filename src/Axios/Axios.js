@@ -13,7 +13,7 @@ API.interceptors.request.use((request) => {
   if (request.url.endsWith("login")) return request;
 
   const token = localStorage.getItem("token");
-  request.headers.token = token;
+  request.headers["access-token"] = token;
   request.headers["Content-Type"] = "application/json";
 
   return request;
