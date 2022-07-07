@@ -1,6 +1,7 @@
 .offersContainer {
-  width: 100vw;
-  padding: 10px;
+  max-width: 100vw;
+
+  padding: 20px;
   .head {
     display: flex;
     align-items: center;
@@ -19,12 +20,66 @@
       margin: 0 5px;
     }
   }
+  .offers {
+    .cardBody {
+      padding: 0;
+    }
+  }
   table {
     border: none;
 
     color: $white;
     thead {
+      tr {
+        border-color: $blue5;
+        background-color: $blue5;
+        th {
+          padding: 0.75rem;
+        }
+      }
       font-size: 1rem;
+    }
+    tbody {
+      tr {
+        border-color: #292d44;
+        td {
+          padding: 0.75rem;
+          vertical-align: middle;
+          font-weight: 400;
+          font-size: 0.8125rem;
+          .form-check-input:checked {
+            background-color: $lightGreen;
+            border-color: $lightGreen;
+          }
+          button {
+            font-weight: 400;
+            font-size: 0.8125rem;
+          }
+          button:focus {
+            box-shadow: none;
+          }
+          .form-check-input {
+            height: 20px;
+            width: 40px;
+            margin-right: 10px;
+          }
+          .form-check-input:focus {
+            box-shadow: none;
+          }
+          .editButton {
+            margin-right: 10px;
+          }
+          .copyButton {
+            background-color: $lightGreen;
+            border-color: $lightGreen;
+            margin-right: 10px;
+          }
+          .deleteButton {
+            background-color: $red;
+            border-color: $red;
+          }
+        }
+      }
     }
   }
 }

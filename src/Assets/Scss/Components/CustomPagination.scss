@@ -1,0 +1,39 @@
+.customPagination {
+  display: flex;
+  list-style: none;
+  outline: none;
+  padding: 0;
+}
+.customPagination > .selected > a {
+  background-color: $lightBlue;
+  color: #fff;
+}
+.customPagination > .disabled {
+  opacity: 0.5;
+}
+.customPagination > li > a {
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.customPagination > .active > a,
+.customPagination > .active > span,
+.customPagination > .active > a:hover,
+.customPagination > .active > span:hover,
+.customPagination > .active > a:focus,
+.customPagination > .active > span:focus {
+  background-color: $lightBlue;
+  border-color: $lightBlue;
+  outline: none;
+}
+.customPagination > li > a,
+.customPagination > li > span {
+  color: $white;
+  text-decoration: none;
+}
+.customPagination > li:first-child > a,
+.customPagination > li:first-child > span,
+.customPagination > li:last-child > a,
+.customPagination > li:last-child > span {
+  border-radius: unset;
+}
