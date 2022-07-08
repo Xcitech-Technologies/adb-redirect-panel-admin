@@ -21,5 +21,6 @@ module.exports = {
     "import/no-extraneous-dependencies": 0,
     "no-underscore-dangle": 0,
     "no-alert": 0,
+    "arrow-body-style": "warn",
   },
 };

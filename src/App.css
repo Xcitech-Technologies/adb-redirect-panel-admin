@@ -246,8 +246,8 @@
   cursor: pointer;
 }
 
-:hover {
-  color: #fff;
+x:hover {
+  color: #000;
 }
 
 #status {
