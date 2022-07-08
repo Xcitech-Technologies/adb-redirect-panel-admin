@@ -24,7 +24,6 @@ import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
 import API from "../../Axios/Axios";
 
 const DATA_PER_PAGE = 20;
-/* eslint-disable  */
 
 const Offers = () => {
   const dispatch = useDispatch();
@@ -36,13 +35,10 @@ const Offers = () => {
   const [query, setQuery] = useState({ search: "", tags: "" });
   const [selected, setSelected] = useState([]);
 
-  const isAllChecked = () => {
-    return Array.from({ length: offers.length }, (e, i) => i).every(
-      (element) => {
-        return selected.includes(element);
-      }
+  const isAllChecked = () =>
+    Array.from({ length: offers.length }, (e, i) => i).every((element) =>
+      selected.includes(element)
     );
-  };
 
   const handleSearch = () => {
     dispatch(
@@ -67,7 +63,7 @@ const Offers = () => {
           });
       }
     } catch (err) {
-      console.log(err);
+      alert("Unable to download");
     }
   };
 
@@ -75,19 +71,16 @@ const Offers = () => {
     const temp = offers;
 
     if (sortBy.type) {
-      if (sortBy.type === "timestamp") {
-        temp.sort(function (a, b) {
+      temp.sort((a, b) => {
+        if (sortBy.type === "timestamp") {
           return sortBy.asc
             ? a.timestamp - b.timestamp
             : b.timestamp - a.timestamp;
-        });
-      } else {
-        temp.sort(function (a, b) {
-          return sortBy.asc
-            ? a[sortBy.type].localeCompare(b[sortBy.type])
-            : b[sortBy.type].localeCompare(a[sortBy.type]);
-        });
-      }
+        }
+        return sortBy.asc
+          ? a[sortBy.type].localeCompare(b[sortBy.type])
+          : b[sortBy.type].localeCompare(a[sortBy.type]);
+      });
     }
 
     return temp.slice((page - 1) * DATA_PER_PAGE, page * DATA_PER_PAGE);
@@ -137,23 +130,23 @@ const Offers = () => {
 
   const handlePause = () => {
     if (window.confirm("Are you sure to pause selected offers?")) {
-       dispatch(
-         pauseOffersAction({
-           links_id: selected.map((item) => offers[item]._id),
-         })
-       );
-       setSelected([]);
+      dispatch(
+        pauseOffersAction({
+          links_id: selected.map((item) => offers[item]._id),
+        })
+      );
+      setSelected([]);
     }
   };
 
   const handleResume = () => {
     if (window.confirm("Are you sure to resume selected offers?")) {
-       dispatch(
-         resumeOffersAction({
-           links_id: selected.map((item) => offers[item]._id),
-         })
-       );
-       setSelected([]);
+      dispatch(
+        resumeOffersAction({
+          links_id: selected.map((item) => offers[item]._id),
+        })
+      );
+      setSelected([]);
     }
   };
 

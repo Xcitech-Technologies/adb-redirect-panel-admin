@@ -19,5 +19,7 @@ module.exports = {
     "prettier/prettier": "warn",
     "no-debugger": "warn",
     "import/no-extraneous-dependencies": 0,
+    "no-underscore-dangle": 0,
+    "no-alert": 0,
   },
 };
