@@ -20,6 +20,30 @@
       margin: 0 5px;
     }
   }
+  .optionsBar {
+    padding: 10px;
+    display: flex;
+    .deleteAll {
+      background-color: $red;
+      border-color: $red;
+    }
+    .pause {
+      background-color: $yellow;
+      border-color: $yellow;
+    }
+    .resume {
+      background-color: $lightGreen;
+      border-color: $lightGreen;
+    }
+    .btn {
+      margin-right: 10px;
+      font-weight: 400;
+      font-size: 0.8125rem;
+    }
+    .btn:focus {
+      box-shadow: none;
+    }
+  }
   .offers {
     .cardBody {
       padding: 0;

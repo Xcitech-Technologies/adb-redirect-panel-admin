@@ -29,6 +29,27 @@ const Offers = (state = initialState, action) => {
         error: true,
         errorMessage: action.errorMessage,
       };
+    case actionTypes.CLONE_OFFER_SUCCESS:
+    case actionTypes.DELETE_OFFER_SUCCESS:
+    case actionTypes.DELETE_SELECTED_OFFERS_SUCCESS:
+    case actionTypes.PAUSE_OFFER_SUCCESS:
+    case actionTypes.RESUME_OFFER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: action.payload,
+      };
+    case actionTypes.CLONE_OFFER_FAILURE:
+    case actionTypes.DELETE_SELECTED_OFFERS_FAILURE:
+    case actionTypes.PAUSE_OFFER_FAILURE:
+    case actionTypes.RESUME_OFFER_FAILURE:
+    case actionTypes.DELETE_OFFER_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: true,
+        errorMessage: action.errorMessage,
+      };
     default:
       return state;
   }
