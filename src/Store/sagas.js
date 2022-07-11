@@ -2,8 +2,14 @@ import { all } from "redux-saga/effects";
 
 import AuthSaga from "./Auth/saga";
 import DashboardSaga from "./Dashboard/saga";
+import GlobalConditionsSaga from "./GlobalConditions/saga";
 import OffersSaga from "./Offers/saga";
 
 export default function* rootSaga() {
-  yield all([AuthSaga(), DashboardSaga(), OffersSaga()]);
+  yield all([
+    AuthSaga(),
+    DashboardSaga(),
+    OffersSaga(),
+    GlobalConditionsSaga(),
+  ]);
 }

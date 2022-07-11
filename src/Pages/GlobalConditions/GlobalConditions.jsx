@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import CustomCardCollapse from "../../Components/UI/CustomCardCollapse.jsx";
+import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
+import getGlobalConditionsAction, {
+  updateGlobalConditionsAction,
+} from "../../Store/GlobalConditions/actions";
 
 const GlobalConditions = () => {
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.GlobalConditions);
+
   const [referers, setReferers] = useState({
     approved: [],
     block: [],
@@ -24,6 +33,12 @@ const GlobalConditions = () => {
     block: [],
   });
   const [ipConditions, setIpConditions] = useState([]);
+  const [macros, setMacros] = useState({
+    meta_alternative: "",
+    desktop_approved: "",
+    mobileApproved: "",
+    intermediary_rejected: "",
+  });
   const [inputs, setInputs] = useState({
     approvedreferers: "",
     blockreferers: "",
@@ -42,87 +57,223 @@ const GlobalConditions = () => {
     setInputs({ ...inputs, [event.target.name]: event.target.value });
   };
 
+  const handleChangeMacros = (event) => {
+    setMacros({ ...macros, [event.target.name]: event.target.value });
+  };
+
+  useEffect(() => {
+    if (data?.length > 0) {
+      setMacros({
+        meta_alternative: data[0].meta_alternative || "",
+        mobile_approved: data[0].mobile_approved,
+        desktop_approved: data[0].desktop_approved,
+        intermediary_rejected: data[0].intermediary_rejected,
+      });
+      setIpConditions(data[0].blocked_IPs);
+      setReferers({
+        approved: data[0].approved_referrers,
+        block: data[0].blocked_referrers,
+      });
+      setASN({
+        approved: data[0].approvedASN,
+        block: data[0].blockedASN,
+      });
+      setISP({
+        approved: data[0].approvedISP,
+        block: data[0].blockedISP,
+      });
+      setOrganization({
+        approved: data[0].approvedOrganization,
+        block: data[0].blockedOrganization,
+      });
+      setUserAgent({
+        approved: data[0].approvedUserAgent,
+        block: data[0].rejectedUserAgent,
+      });
+    }
+  }, [data]);
+
+  const handleUpdate = () => {
+    dispatch(
+      updateGlobalConditionsAction({
+        approvedASN: ASN.approved,
+        approvedISP: ISP.approved,
+        approvedOrganization: organization.approved,
+        approvedUserAgent: userAgent.approved,
+        approved_referrers: referers.approved,
+        blockedASN: ASN.block,
+        blockedISP: ISP.block,
+        blockedOrganization: organization.block,
+        blocked_IPs: ipConditions,
+        blocked_referrers: referers.block,
+        rejectedUserAgent: userAgent.block,
+        ...macros,
+      })
+    );
+  };
+
+  useEffect(() => {
+    dispatch(getGlobalConditionsAction());
+  }, [dispatch]);
+
   return (
     <div className="globalConditionsContainer">
-      <Row>
-        <Col md={6}>
-          <CustomCardCollapse header="Referers" defaultCollapse={true}>
-            <Referers
-              handleInputChange={handleInputChange}
-              inputs={inputs}
-              setReferers={setReferers}
-              setInputs={setInputs}
-              referers={referers}
-            />
-          </CustomCardCollapse>
-        </Col>
-        <Col md={6}>
-          <CustomCardCollapse header="IPs" defaultCollapse={true}>
-            <IpConditions
-              ipConditions={ipConditions}
-              setIpConditions={setIpConditions}
-              setInputs={setInputs}
-              handleInputChange={handleInputChange}
-              inputs={inputs}
-            />
-          </CustomCardCollapse>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6}>
-          <CustomCardCollapse header="Macros" defaultCollapse={true}>
-            <Macros />
-          </CustomCardCollapse>
-        </Col>
-        <Col md={6}>
-          <CustomCardCollapse header="ASN" defaultCollapse={true}>
-            <ASNComponent
-              handleInputChange={handleInputChange}
-              inputs={inputs}
-              setASN={setASN}
-              setInputs={setInputs}
-              ASN={ASN}
-            />
-          </CustomCardCollapse>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6}>
-          <CustomCardCollapse header="ISP" defaultCollapse={true}>
-            <ISPComponent
-              handleInputChange={handleInputChange}
-              inputs={inputs}
-              setISP={setISP}
-              setInputs={setInputs}
-              ISP={ISP}
-            />
-          </CustomCardCollapse>
-        </Col>
-        <Col md={6}>
-          <CustomCardCollapse header="Organization" defaultCollapse={true}>
-            <OrganizationComponent
-              handleInputChange={handleInputChange}
-              inputs={inputs}
-              setOrganization={setOrganization}
-              setInputs={setInputs}
-              organization={organization}
-            />
-          </CustomCardCollapse>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6}>
-          <CustomCardCollapse header="User Agent" defaultCollapse={true}>
-            <UserAgentComponent
-              handleInputChange={handleInputChange}
-              inputs={inputs}
-              setUserAgent={setUserAgent}
-              setInputs={setInputs}
-              userAgent={userAgent}
-            />
-          </CustomCardCollapse>
-        </Col>
-      </Row>
+      {loading ? (
+        <CustomSpinner />
+      ) : (
+        <>
+          <Row>
+            <Col md={6}>
+              <CustomCardCollapse
+                header={
+                  <div className="d-flex align-items-center">
+                    Referers{" "}
+                    <HeaderCount
+                      green={referers.approved.length}
+                      red={referers.block.length}
+                    />
+                  </div>
+                }
+                defaultCollapse={true}
+              >
+                <Referers
+                  handleInputChange={handleInputChange}
+                  inputs={inputs}
+                  setReferers={setReferers}
+                  setInputs={setInputs}
+                  referers={referers}
+                />
+              </CustomCardCollapse>
+            </Col>
+            <Col md={6}>
+              <CustomCardCollapse
+                header={
+                  <div className="d-flex align-items-center">
+                    IPs
+                    <HeaderCount red={ipConditions.length} />
+                  </div>
+                }
+                defaultCollapse={true}
+              >
+                <IpConditions
+                  ipConditions={ipConditions}
+                  setIpConditions={setIpConditions}
+                  setInputs={setInputs}
+                  handleInputChange={handleInputChange}
+                  inputs={inputs}
+                />
+              </CustomCardCollapse>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <CustomCardCollapse header="Macros" defaultCollapse={true}>
+                <Macros
+                  macros={macros}
+                  handleChangeMacros={handleChangeMacros}
+                />
+              </CustomCardCollapse>
+            </Col>
+            <Col md={6}>
+              <CustomCardCollapse
+                header={
+                  <div className="d-flex align-items-center">
+                    ASN
+                    <HeaderCount
+                      green={ASN.approved.length}
+                      red={ASN.block.length}
+                    />
+                  </div>
+                }
+                defaultCollapse={true}
+              >
+                <ASNComponent
+                  handleInputChange={handleInputChange}
+                  inputs={inputs}
+                  setASN={setASN}
+                  setInputs={setInputs}
+                  ASN={ASN}
+                />
+              </CustomCardCollapse>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <CustomCardCollapse
+                header={
+                  <div className="d-flex align-items-center">
+                    ISP
+                    <HeaderCount
+                      green={ISP.approved.length}
+                      red={ISP.block.length}
+                    />
+                  </div>
+                }
+                defaultCollapse={true}
+              >
+                <ISPComponent
+                  handleInputChange={handleInputChange}
+                  inputs={inputs}
+                  setISP={setISP}
+                  setInputs={setInputs}
+                  ISP={ISP}
+                />
+              </CustomCardCollapse>
+            </Col>
+            <Col md={6}>
+              <CustomCardCollapse
+                header={
+                  <div className="d-flex align-items-center">
+                    Organization
+                    <HeaderCount
+                      green={organization.approved.length}
+                      red={organization.block.length}
+                    />
+                  </div>
+                }
+                defaultCollapse={true}
+              >
+                <OrganizationComponent
+                  handleInputChange={handleInputChange}
+                  inputs={inputs}
+                  setOrganization={setOrganization}
+                  setInputs={setInputs}
+                  organization={organization}
+                />
+              </CustomCardCollapse>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <CustomCardCollapse
+                header={
+                  <div className="d-flex align-items-center">
+                    User Agent
+                    <HeaderCount
+                      green={userAgent.approved.length}
+                      red={userAgent.block.length}
+                    />
+                  </div>
+                }
+                defaultCollapse={true}
+              >
+                <UserAgentComponent
+                  handleInputChange={handleInputChange}
+                  inputs={inputs}
+                  setUserAgent={setUserAgent}
+                  setInputs={setInputs}
+                  userAgent={userAgent}
+                />
+              </CustomCardCollapse>
+            </Col>
+          </Row>
+          <div className="d-flex justify-content-center mt-5 updateButton">
+            <Button className="updateButton" onClick={handleUpdate}>
+              Update
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
@@ -234,7 +385,37 @@ const IpConditions = ({
   />
 );
 
-const Macros = () => <div>MACROS</div>;
+const Macros = ({ handleChangeMacros, macros }) => (
+  <div>
+    <CustomInputForGlobal
+      label="Meta Alternative:"
+      name="meta_alternative"
+      value={macros.meta_alternative}
+      onChange={handleChangeMacros}
+    />
+    <CustomInputForGlobal
+      label="Desktop Approved:"
+      name="desktop_approved"
+      value={macros.desktop_approved}
+      onChange={handleChangeMacros}
+      style={{ marginTop: "10px" }}
+    />
+    <CustomInputForGlobal
+      label="Mobile Approved:"
+      style={{ marginTop: "10px" }}
+      name="mobile_approved"
+      value={macros.mobile_approved}
+      onChange={handleChangeMacros}
+    />
+    <CustomInputForGlobal
+      label="Intermediary Rejected:"
+      style={{ marginTop: "10px" }}
+      name="intermediary_rejected"
+      value={macros.intermediary_rejected}
+      onChange={handleChangeMacros}
+    />
+  </div>
+);
 
 const ASNComponent = ({
   handleInputChange,
@@ -555,7 +736,7 @@ const CustomModuleInput = ({
         </Button>
       </Col>
     </div>
-    {data.length > 0 && (
+    {data?.length > 0 && (
       <>
         <Button className="clearButton" onClick={handleClear}>
           Clear
@@ -582,8 +763,9 @@ const CustomInputForGlobal = ({
   onChange,
   type,
   handleEnter,
+  style,
 }) => (
-  <div className="customInputForGlobal">
+  <div className="customInputForGlobal" style={style}>
     <Form.Group>
       <Form.Label htmlFor={name}>{label}</Form.Label>
       <Form.Control
@@ -598,6 +780,13 @@ const CustomInputForGlobal = ({
         }}
       />
     </Form.Group>
+  </div>
+);
+
+const HeaderCount = ({ green, red }) => (
+  <div className="headerCountComponent">
+    {green !== undefined && <div className="green">{green}</div>}
+    {red !== undefined && <div className="red">{red}</div>}
   </div>
 );
 
