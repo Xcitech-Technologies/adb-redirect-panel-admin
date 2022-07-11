@@ -144,7 +144,13 @@ const Referers = ({
         if (inputs.approvedreferers) {
           setReferers({
             ...referers,
-            approved: [...referers.approved, inputs.approvedreferers],
+            approved: [
+              ...referers.approved,
+              ...inputs.approvedreferers
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, approvedreferers: "" });
         }
@@ -169,7 +175,13 @@ const Referers = ({
         if (inputs.blockreferers) {
           setReferers({
             ...referers,
-            block: [...referers.block, inputs.blockreferers],
+            block: [
+              ...referers.block,
+              ...inputs.blockreferers
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, blockreferers: "" });
         }
@@ -202,7 +214,13 @@ const IpConditions = ({
     label="Ip Conditions:"
     handleEnter={() => {
       if (inputs.ipConditions) {
-        setIpConditions([...ipConditions, inputs.ipConditions]);
+        setIpConditions([
+          ...ipConditions,
+          ...inputs.ipConditions
+            .split(",")
+            .map((e) => e.trim())
+            .filter((e) => e !== ""),
+        ]);
         setInputs({ ...inputs, ipConditions: "" });
       }
     }}
@@ -235,7 +253,13 @@ const ASNComponent = ({
         if (inputs.approvedAsn) {
           setASN({
             ...ASN,
-            approved: [...ASN.approved, inputs.approvedAsn],
+            approved: [
+              ...ASN.approved,
+              ...inputs.approvedAsn
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, approvedAsn: "" });
         }
@@ -260,7 +284,13 @@ const ASNComponent = ({
         if (inputs.blockAsn) {
           setASN({
             ...ASN,
-            block: [...ASN.block, inputs.blockAsn],
+            block: [
+              ...ASN.block,
+              ...inputs.blockAsn
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, blockAsn: "" });
         }
@@ -296,7 +326,13 @@ const ISPComponent = ({
         if (inputs.approvedIsp) {
           setISP({
             ...ISP,
-            approved: [...ISP.approved, inputs.approvedIsp],
+            approved: [
+              ...ISP.approved,
+              ...inputs.approvedIsp
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, approvedIsp: "" });
         }
@@ -321,7 +357,13 @@ const ISPComponent = ({
         if (inputs.blockIsp) {
           setISP({
             ...ISP,
-            block: [...ISP.block, inputs.blockIsp],
+            block: [
+              ...ISP.block,
+              ...inputs.blockIsp
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, blockIsp: "" });
         }
@@ -356,7 +398,13 @@ const OrganizationComponent = ({
         if (inputs.approvedOrganization) {
           setOrganization({
             ...organization,
-            approved: [...organization.approved, inputs.approvedOrganization],
+            approved: [
+              ...organization.approved,
+              ...inputs.approvedOrganization
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, approvedOrganization: "" });
         }
@@ -381,7 +429,13 @@ const OrganizationComponent = ({
         if (inputs.blockOrganization) {
           setOrganization({
             ...organization,
-            block: [...organization.block, inputs.blockOrganization],
+            block: [
+              ...organization.block,
+              ...inputs.blockOrganization
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, blockOrganization: "" });
         }
@@ -417,7 +471,13 @@ const UserAgentComponent = ({
         if (inputs.approvedUserAgent) {
           setUserAgent({
             ...userAgent,
-            approved: [...userAgent.approved, inputs.approvedUserAgent],
+            approved: [
+              ...userAgent.approved,
+              ...inputs.approvedUserAgent
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, approvedUserAgent: "" });
         }
@@ -442,7 +502,13 @@ const UserAgentComponent = ({
         if (inputs.blockUserAgent) {
           setUserAgent({
             ...userAgent,
-            block: [...userAgent.block, inputs.blockUserAgent],
+            block: [
+              ...userAgent.block,
+              ...inputs.blockUserAgent
+                .split(",")
+                .map((e) => e.trim())
+                .filter((e) => e !== ""),
+            ],
           });
           setInputs({ ...inputs, blockUserAgent: "" });
         }
