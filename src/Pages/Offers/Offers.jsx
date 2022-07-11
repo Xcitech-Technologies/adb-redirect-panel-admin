@@ -19,6 +19,7 @@ import {
   deleteSelectedOffersAction,
   pauseOffersAction,
   resumeOffersAction,
+  toggleOfferAction,
 } from "../../Store/Offers/actions";
 import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
 import API from "../../Axios/Axios";
@@ -89,6 +90,10 @@ const Offers = () => {
   const handleCopy = (original) => {
     navigator.clipboard.writeText(`/${original}`);
     toast.success("Copied Original");
+  };
+
+  const handlePauseResume = (object) => {
+    dispatch(toggleOfferAction(object));
   };
 
   const handleCheck = (key) => {
@@ -307,7 +312,16 @@ const Offers = () => {
                     </td>
                     <td>
                       <div className="d-flex align-items-center">
-                        <Form.Check type="switch" checked={data.status} />
+                        <Form.Check
+                          type="switch"
+                          checked={data.status}
+                          onChange={(e) =>
+                            handlePauseResume({
+                              id: data._id,
+                              status: e.target.checked,
+                            })
+                          }
+                        />
                         <Button className="editButton">Edit</Button>
                         <Button
                           className="copyButton"
@@ -379,6 +393,11 @@ const Header = ({ setQuery, query, handleSearch, handleExportOffers }) => (
                 value={query.search}
                 onChange={(e) => {
                   setQuery({ ...query, search: e.target.value });
+                }}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
                 }}
               />
 

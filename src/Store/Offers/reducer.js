@@ -34,6 +34,7 @@ const Offers = (state = initialState, action) => {
     case actionTypes.DELETE_SELECTED_OFFERS_SUCCESS:
     case actionTypes.PAUSE_OFFER_SUCCESS:
     case actionTypes.RESUME_OFFER_SUCCESS:
+    case actionTypes.TOGGLE_OFFER_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -44,6 +45,7 @@ const Offers = (state = initialState, action) => {
     case actionTypes.PAUSE_OFFER_FAILURE:
     case actionTypes.RESUME_OFFER_FAILURE:
     case actionTypes.DELETE_OFFER_FAILURE:
+    case actionTypes.TOGGLE_OFFER_FAILURE:
       return {
         ...state,
         loading: false,

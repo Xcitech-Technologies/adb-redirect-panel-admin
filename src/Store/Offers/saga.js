@@ -167,6 +167,32 @@ function* resumeOfferSaga({ links }) {
     });
   }
 }
+function* toggleOfferSaga({ obj }) {
+  try {
+    yield put({ type: actionTypes.SET_OFFERS_LOADING });
+    const { data } = yield API.post(`/linkstatus/${obj.id}`, obj);
+
+    if (data.success) {
+      yield put({ type: actionTypes.GET_OFFERS });
+      yield put({
+        type: actionTypes.TOGGLE_OFFER_SUCCESS,
+        payload: "Successful",
+      });
+    } else {
+      toast.error("Unable to toggle Links.");
+      yield put({
+        type: actionTypes.TOGGLE_OFFER_FAILURE,
+        errorMessage: "Unable to toggle Link.",
+      });
+    }
+  } catch (error) {
+    toast.error("Unable to resume Links.");
+    yield put({
+      type: actionTypes.TOGGLE_OFFER_FAILURE,
+      errorMessage: "Unable to toggle Link.",
+    });
+  }
+}
 
 function* OffersSaga() {
   yield all([
@@ -175,6 +201,7 @@ function* OffersSaga() {
     takeLatest(actionTypes.DELETE_OFFER, deleteOfferSaga),
     takeLatest(actionTypes.DELETE_SELECTED_OFFERS, deleteSelectedOffersSaga),
     takeLatest(actionTypes.PAUSE_OFFER, pasueOfferSaga),
+    takeLatest(actionTypes.TOGGLE_OFFER, toggleOfferSaga),
     takeLatest(actionTypes.RESUME_OFFER, resumeOfferSaga),
   ]);
 }

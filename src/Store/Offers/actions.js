@@ -27,3 +27,8 @@ export const resumeOffersAction = (links) => ({
   type: actionTypes.RESUME_OFFER,
   links,
 });
+
+export const toggleOfferAction = (obj) => ({
+  type: actionTypes.TOGGLE_OFFER,
+  obj,
+});
