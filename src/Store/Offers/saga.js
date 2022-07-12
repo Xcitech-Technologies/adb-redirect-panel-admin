@@ -30,6 +30,31 @@ function* getOffersSaga({ params }) {
   }
 }
 
+function* getOfferDetailsSaga({ id }) {
+  try {
+    yield put({ type: actionTypes.SET_OFFERS_LOADING });
+    const { data } = yield API.get(`link/${id}`);
+
+    if (data.success) {
+      yield put({
+        type: actionTypes.GET_OFFER_DETAILS_SUCCESS,
+        payload: data.data,
+      });
+    } else {
+      yield put({
+        type: actionTypes.GET_OFFER_DETAILS_FAILURE,
+        errorMessage: "Unable to load Offer detail.",
+      });
+    }
+  } catch (error) {
+    toast.error("Unable to load Offer details.");
+    yield put({
+      type: actionTypes.GET_OFFER_DETAILS_FAILURE,
+      errorMessage: "Unable to load Offer detail.",
+    });
+  }
+}
+
 function* cloneOfferSaga({ id }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
@@ -197,6 +222,7 @@ function* toggleOfferSaga({ obj }) {
 function* OffersSaga() {
   yield all([
     takeLatest(actionTypes.GET_OFFERS, getOffersSaga),
+    takeLatest(actionTypes.GET_OFFER_DETAILS, getOfferDetailsSaga),
     takeLatest(actionTypes.CLONE_OFFER, cloneOfferSaga),
     takeLatest(actionTypes.DELETE_OFFER, deleteOfferSaga),
     takeLatest(actionTypes.DELETE_SELECTED_OFFERS, deleteSelectedOffersSaga),

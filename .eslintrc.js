@@ -16,7 +16,7 @@ module.exports = {
     "no-param-reassign": ["off"],
     "no-plusplus": ["off"],
     "default-param-last": 0,
-    "prettier/prettier": "warn",
+    "prettier/prettier": 0,
     "no-debugger": "warn",
     "import/no-extraneous-dependencies": 0,
     "no-underscore-dangle": 0,

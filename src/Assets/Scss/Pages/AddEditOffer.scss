@@ -1,0 +1,44 @@
+.addEditOfferContainer {
+  .header {
+    background-color: $lightBlue;
+    padding: 5px 20px;
+    border-radius: 3px;
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        font-size: 0.8125rem;
+        border: none;
+      }
+      .tabButton {
+        background-color: transparent;
+        margin-left: 5px;
+      }
+
+      .selected {
+        background-color: $blue6;
+      }
+
+      .submit {
+        background-color: $lightGreen;
+      }
+    }
+  }
+  .body {
+    padding: 20px;
+    .generalContainer {
+      .customSelectWithLabel {
+        select {
+          height: 33px;
+        }
+      }
+      .customInputWithLabel {
+        input {
+          height: 33px;
+        }
+      }
+    }
+  }
+}

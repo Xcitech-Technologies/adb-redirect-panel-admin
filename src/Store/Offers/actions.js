@@ -5,6 +5,11 @@ export const getOffersAction = (params) => ({
   params,
 });
 
+export const getOfferDetailsAction = (id) => ({
+  type: actionTypes.GET_OFFER_DETAILS,
+  id,
+});
+
 export const cloneOfferAction = (id) => ({
   type: actionTypes.CLONE_OFFER,
   id,

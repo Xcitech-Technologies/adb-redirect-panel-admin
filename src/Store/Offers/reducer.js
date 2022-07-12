@@ -5,6 +5,7 @@ const initialState = {
   errorMessage: "",
   offers: [],
   loading: false,
+  offerDetails: {},
 };
 
 const Offers = (state = initialState, action) => {
@@ -29,6 +30,12 @@ const Offers = (state = initialState, action) => {
         error: true,
         errorMessage: action.errorMessage,
       };
+    case actionTypes.GET_OFFER_DETAILS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        offerDetails: action.payload,
+      };
     case actionTypes.CLONE_OFFER_SUCCESS:
     case actionTypes.DELETE_OFFER_SUCCESS:
     case actionTypes.DELETE_SELECTED_OFFERS_SUCCESS:
@@ -40,6 +47,7 @@ const Offers = (state = initialState, action) => {
         loading: false,
         message: action.payload,
       };
+    case actionTypes.GET_OFFER_DETAILS_FAILURE:
     case actionTypes.CLONE_OFFER_FAILURE:
     case actionTypes.DELETE_SELECTED_OFFERS_FAILURE:
     case actionTypes.PAUSE_OFFER_FAILURE:

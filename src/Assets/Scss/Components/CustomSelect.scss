@@ -7,3 +7,55 @@
   padding: 6px 12px;
   height: 100%;
 }
+
+.customSelectWithLabel {
+  label {
+    margin-bottom: 3px;
+  }
+  select {
+    width: 100% !important;
+    color: $white !important;
+    background: $blue3 !important;
+    border-radius: 0.25rem;
+    border: 1px solid $blue4;
+    padding: 6px 12px;
+  }
+  font-size: 0.8125rem;
+}
+
+.customMultiSelectWithLabel {
+  label {
+    margin-bottom: 3px;
+  }
+  .multi-select {
+    .multi-select__control {
+      width: 100% !important;
+      color: $white !important;
+      background: $blue3 !important;
+      border-radius: 0.25rem;
+      border: 1px solid $blue4;
+      .multi-select__value-container {
+        padding-top: 0;
+        padding-bottom: 0;
+        .multi-select__input-container {
+          color: $white;
+        }
+        .multi-select__multi-value {
+          background: transparent;
+
+          border: 1px solid $white;
+          .multi-select__multi-value__label {
+            color: $white;
+          }
+          .multi-select__multi-value__remove {
+            color: $red;
+          }
+        }
+      }
+    }
+    .multi-select__menu {
+      background: $blue3 !important;
+    }
+  }
+  font-size: 0.8125rem;
+}

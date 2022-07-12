@@ -5,6 +5,7 @@ import { RiArrowUpDownFill } from "react-icons/ri";
 import { MdFiberManualRecord } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
 import fileDownload from "js-file-download";
@@ -28,6 +29,7 @@ const DATA_PER_PAGE = 20;
 
 const Offers = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { loading, offers } = useSelector((state) => state.Offers);
 
@@ -179,6 +181,7 @@ const Offers = () => {
               query={query}
               handleSearch={handleSearch}
               handleExportOffers={handleExportOffers}
+              navigate={navigate}
             />
           }
           className="offers"
@@ -322,7 +325,14 @@ const Offers = () => {
                             })
                           }
                         />
-                        <Button className="editButton">Edit</Button>
+                        <Button
+                          className="editButton"
+                          onClick={() =>
+                            navigate(`/admin/offer/edit/${data._id}`)
+                          }
+                        >
+                          Edit
+                        </Button>
                         <Button
                           className="copyButton"
                           onClick={() => handleCloneOffer(data._id)}
@@ -360,7 +370,13 @@ const Offers = () => {
     </div>
   );
 };
-const Header = ({ setQuery, query, handleSearch, handleExportOffers }) => (
+const Header = ({
+  setQuery,
+  query,
+  handleSearch,
+  handleExportOffers,
+  navigate,
+}) => (
   <div className="head">
     <Row
       style={{
@@ -456,7 +472,12 @@ const Header = ({ setQuery, query, handleSearch, handleExportOffers }) => (
           <Button className="green" onClick={() => handleSearch()}>
             <FaSearch />
           </Button>
-          <Button className="white">Add Offer</Button>
+          <Button
+            className="white"
+            onClick={() => navigate("/admin/offer/addOffer")}
+          >
+            Add Offer
+          </Button>
           <Button className="white" onClick={handleExportOffers}>
             Export
           </Button>
