@@ -1,0 +1,28 @@
+.customTextArea {
+  width: 100% !important;
+  color: $white !important;
+  background: $blue3 !important;
+  border-radius: 0.25rem;
+  border: 1px solid $blue4;
+  padding: 6px 12px;
+  height: 100%;
+}
+.customTextArea::placeholder {
+  color: $white;
+  opacity: 0.8;
+}
+
+.customTextAreaWithLabel {
+  font-size: 0.8125rem;
+  label {
+    margin-bottom: 3px;
+  }
+  textarea {
+    width: 100% !important;
+    color: $white !important;
+    background: $blue3 !important;
+    border-radius: 0.25rem;
+    border: 1px solid $blue4;
+    padding: 6px 12px;
+  }
+}

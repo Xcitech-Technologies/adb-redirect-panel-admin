@@ -6,6 +6,7 @@ import CustomSelect, {
   CustomMultiSelectWithLabel,
   CustomSelectWithLabel,
 } from "../UI/CustomSelect.jsx";
+import { CustomTextAreaWithLabel } from "../UI/CustomTextArea.jsx";
 
 const options = [
   { name: "Google Ads D2M", value: "Google Ads D2M" },
@@ -65,119 +66,151 @@ const General = ({ generalDetails, setGeneralDetails }) => {
   return (
     <div className="generalContainer">
       <CustomCard header={<Header />}>
-        <Row>
-          <Col md={3}>
-            <CustomInputWithLabel
-              label="Enter Offer ID:"
-              name="original"
-              onChange={handleInputChange}
-              value={generalDetails.original}
-            />
-          </Col>
-          <Col md={3}>
-            <CustomInputWithLabel
-              label="Enter Offer Name:"
-              name="nickname"
-              onChange={handleInputChange}
-              value={generalDetails.nickname}
-            />
-          </Col>
-          <Col md={3}>
-            <CustomSelectWithLabel
-              label="Type:"
-              name="type"
-              options={types}
-              onChange={handleInputChange}
-              value={generalDetails.type}
-            />
-          </Col>
-          <Col md={3}>
-            <CustomSelectWithLabel
-              label="Network ID:"
-              name="network_id"
-              options={networks}
-              onChange={handleInputChange}
-              value={generalDetails.network_id}
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={3}>
-            <CustomInputWithLabel
-              label="HasOffer ID :"
-              name="has_offer"
-              onChange={handleInputChange}
-              value={generalDetails.has_offer}
-            />
-          </Col>
-          <Col md={6}>
-            <CustomMultiSelectWithLabel
-              label="Approved Domain:"
-              options={domainList}
-              isMulti
-              onChange={(e, v) => {
-                if (v.action === "select-option") {
-                  setGeneralDetails((current) => ({
-                    ...current,
-                    domain: [...current.domain, v.option],
-                  }));
-                }
-                if (v.action === "remove-value") {
-                  setGeneralDetails((current) => ({
-                    ...current,
-                    domain: current.domain.filter(
-                      (ele) => ele.value !== v.removedValue.label
-                    ),
-                  }));
-                }
-                if (v.action === "clear") {
-                  setGeneralDetails((current) => ({
-                    ...current,
-                    domain: [],
-                  }));
-                }
-              }}
-              value={generalDetails.domain}
-            />
-          </Col>
-          <Col md={3}>
-            <CustomModuleInput
-              label="Associate Tags:"
-              name="tags"
-              handleInputChange={(e) => setTempTag(e.target.value)}
-              input={tempTag}
-              data={generalDetails.tags}
-              handleEnter={() => {
-                if (tempTag) {
-                  setGeneralDetails((current) => ({
-                    ...current,
-                    tags: [
-                      ...current.tags,
-                      ...tempTag
-                        .split(",")
-                        .map((e) => e.trim())
-                        .filter((e) => e !== ""),
-                    ],
-                  }));
-                  setTempTag("");
-                }
-              }}
-              handleClear={() => {
-                setGeneralDetails((current) => ({ ...current, tags: [] }));
-              }}
-              clearById={(index) => {
-                setGeneralDetails((current) => ({
-                  ...current,
-                  tags: current.tags.filter((e, i) => i !== index),
-                }));
-              }}
-            />
-          </Col>
-        </Row>
+        <CardContent1
+          tempTag={tempTag}
+          setTempTag={setTempTag}
+          generalDetails={generalDetails}
+          setGeneralDetails={setGeneralDetails}
+          handleInputChange={handleInputChange}
+        />
+      </CustomCard>
+      <CustomCard header={"Default Destination"} style={{ marginTop: "10px" }}>
+        <CardContent2
+          handleInputChange={handleInputChange}
+          generalDetails={generalDetails}
+        />
       </CustomCard>
     </div>
   );
 };
+
+const CardContent1 = ({
+  tempTag,
+  setGeneralDetails,
+  setTempTag,
+  generalDetails,
+  handleInputChange,
+}) => (
+  <>
+    <Row>
+      <Col md={3}>
+        <CustomInputWithLabel
+          label="Enter Offer ID:"
+          name="original"
+          onChange={handleInputChange}
+          value={generalDetails.original}
+        />
+      </Col>
+      <Col md={3}>
+        <CustomInputWithLabel
+          label="Enter Offer Name:"
+          name="nickname"
+          onChange={handleInputChange}
+          value={generalDetails.nickname}
+        />
+      </Col>
+      <Col md={3}>
+        <CustomSelectWithLabel
+          label="Type:"
+          name="type"
+          options={types}
+          onChange={handleInputChange}
+          value={generalDetails.type}
+        />
+      </Col>
+      <Col md={3}>
+        <CustomSelectWithLabel
+          label="Network ID:"
+          name="network_id"
+          options={networks}
+          onChange={handleInputChange}
+          value={generalDetails.network_id}
+        />
+      </Col>
+    </Row>
+    <Row>
+      <Col md={3}>
+        <CustomInputWithLabel
+          label="HasOffer ID :"
+          name="has_offer"
+          onChange={handleInputChange}
+          value={generalDetails.has_offer}
+        />
+      </Col>
+      <Col md={6}>
+        <CustomMultiSelectWithLabel
+          label="Approved Domain:"
+          options={domainList}
+          isMulti
+          onChange={(e, v) => {
+            if (v.action === "select-option") {
+              setGeneralDetails((current) => ({
+                ...current,
+                domain: [...current.domain, v.option],
+              }));
+            }
+            if (v.action === "remove-value") {
+              setGeneralDetails((current) => ({
+                ...current,
+                domain: current.domain.filter(
+                  (ele) => ele.value !== v.removedValue.label
+                ),
+              }));
+            }
+            if (v.action === "clear") {
+              setGeneralDetails((current) => ({
+                ...current,
+                domain: [],
+              }));
+            }
+          }}
+          value={generalDetails.domain}
+        />
+      </Col>
+      <Col md={3}>
+        <CustomModuleInput
+          label="Associate Tags:"
+          name="tags"
+          handleInputChange={(e) => setTempTag(e.target.value)}
+          input={tempTag}
+          data={generalDetails.tags}
+          handleEnter={() => {
+            if (tempTag) {
+              setGeneralDetails((current) => ({
+                ...current,
+                tags: [
+                  ...current.tags,
+                  ...tempTag
+                    .split(",")
+                    .map((e) => e.trim())
+                    .filter((e) => e !== ""),
+                ],
+              }));
+              setTempTag("");
+            }
+          }}
+          handleClear={() => {
+            setGeneralDetails((current) => ({ ...current, tags: [] }));
+          }}
+          clearById={(index) => {
+            setGeneralDetails((current) => ({
+              ...current,
+              tags: current.tags.filter((e, i) => i !== index),
+            }));
+          }}
+        />
+      </Col>
+    </Row>
+    <Row>
+      <CustomTextAreaWithLabel
+        label="Link Description:"
+        name="link_description"
+        onChange={handleInputChange}
+        value={generalDetails.link_description}
+      />
+    </Row>
+  </>
+);
 
 const Header = () => (
   <div className="d-flex align-items-center">
@@ -186,6 +219,27 @@ const Header = () => (
       <CustomSelect options={options} />
     </div>
   </div>
+);
+
+const CardContent2 = ({ generalDetails, handleInputChange }) => (
+  <Row>
+    <Col md={6}>
+      <CustomInputWithLabel
+        label="Redirect URL:"
+        name="destination"
+        onChange={handleInputChange}
+        value={generalDetails.destination}
+      />
+    </Col>
+    <Col md={6}>
+      <CustomInputWithLabel
+        label="Rejected URL:"
+        name="rejected"
+        onChange={handleInputChange}
+        value={generalDetails.rejected}
+      />
+    </Col>
+  </Row>
 );
 
 export default General;

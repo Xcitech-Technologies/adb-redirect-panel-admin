@@ -1,0 +1,25 @@
+.customRadioButton {
+  font-size: 0.8125rem;
+  .customRadioButtonLabel {
+    width: 100%;
+    margin-bottom: 3px;
+  }
+  .rbtn {
+    label {
+      input {
+        margin-right: 10px;
+      }
+    }
+    label:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+}
+
+.customCheckBox {
+  font-size: 0.8125rem;
+
+  input {
+    margin-right: 10px;
+  }
+}

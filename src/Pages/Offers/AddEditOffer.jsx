@@ -5,6 +5,7 @@ import General from "../../Components/Offers/General.jsx";
 import Head from "../../Components/Offers/Head.jsx";
 import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
 import { getOfferDetailsAction } from "../../Store/Offers/actions";
+import ADBFraudDetection from "../../Components/Offers/ADBFraudDetection.jsx";
 
 const tabs = ["General", "ADB Fraud Detection Service"];
 const initalGeneralState = {
@@ -20,6 +21,29 @@ const initalGeneralState = {
   destination: "",
   rejected: "",
 };
+const initalADBFraudDetectionState = {
+  meta_ip_process: "0",
+  s2s_ip_process: "0",
+  ipqs: "",
+  strictness: "",
+  vpn: false,
+  approveProxy: false,
+  block_bot_detected: false,
+  allowVPN: false,
+  lighterPenalties: false,
+  approvedConnectionType: [],
+  blockedConnectionType: [],
+  approvedISP: [],
+  blockedISP: [],
+  approvedASN: [],
+  blockedASN: [],
+  approvedOrganization: [],
+  blockedOrganization: [],
+  blockedAffSub2: [],
+  approvedAffSub2: [],
+  allowRecentAbuse: false,
+  allowedAbuseVelocity: [],
+};
 
 const AddEditOffer = () => {
   const { pathname } = useLocation();
@@ -31,6 +55,9 @@ const AddEditOffer = () => {
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [generalDetails, setGeneralDetails] = useState(initalGeneralState);
+  const [adbFraudDetection, setAdbFraudDetection] = useState(
+    initalADBFraudDetectionState
+  );
 
   const handleSubmit = () => {};
 
@@ -48,6 +75,29 @@ const AddEditOffer = () => {
         link_description: offerDetails.link_description,
         destination: offerDetails.destination,
         rejected: offerDetails.rejected,
+      });
+      setAdbFraudDetection({
+        meta_ip_process: offerDetails.meta_ip_process,
+        s2s_ip_process: offerDetails.s2s_ip_process,
+        ipqs: offerDetails.s2s_ip_process ? offerDetails.s2s_ip_process : "",
+        strictness: offerDetails.strictness ? offerDetails.strictness : "",
+        vpn: offerDetails.vpn,
+        approveProxy: offerDetails.approveProxy,
+        block_bot_detected: offerDetails.block_bot_detected,
+        allowVPN: offerDetails.allowVPN,
+        lighterPenalties: offerDetails.lighterPenalties,
+        approvedConnectionType: offerDetails.approvedConnectionType,
+        blockedConnectionType: offerDetails.blockedConnectionType,
+        approvedISP: offerDetails.approvedISP,
+        blockedISP: offerDetails.blockedISP,
+        approvedASN: offerDetails.approvedASN,
+        blockedASN: offerDetails.blockedASN,
+        approvedOrganization: offerDetails.approvedOrganization,
+        blockedOrganization: offerDetails.blockedOrganization,
+        blockedAffSub2: offerDetails.blockedAffSub2,
+        approvedAffSub2: offerDetails.approvedAffSub2,
+        allowRecentAbuse: offerDetails.allowRecentAbuse,
+        allowedAbuseVelocity: offerDetails.allowedAbuseVelocity,
       });
     }
   }, [offerDetails]);
@@ -76,6 +126,12 @@ const AddEditOffer = () => {
               <General
                 generalDetails={generalDetails}
                 setGeneralDetails={setGeneralDetails}
+              />
+            )}
+            {selectedTab === tabs[1] && (
+              <ADBFraudDetection
+                adbFraudDetection={adbFraudDetection}
+                setAdbFraudDetection={setAdbFraudDetection}
               />
             )}
           </div>
