@@ -3,7 +3,7 @@ import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import { BiAddToQueue } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import { RiChatDeleteFill } from "react-icons/ri";
-// import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import jsonData from "../../../data.json";
 import Button from "../../../Controls/Button";
 

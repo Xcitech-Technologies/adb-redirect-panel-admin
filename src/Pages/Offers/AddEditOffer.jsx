@@ -6,8 +6,9 @@ import Head from "../../Components/Offers/Head.jsx";
 import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
 import { getOfferDetailsAction } from "../../Store/Offers/actions";
 import ADBFraudDetection from "../../Components/Offers/ADBFraudDetection.jsx";
+import Tracking from "../../Components/Offers/Tracking.jsx";
 
-const tabs = ["General", "ADB Fraud Detection Service"];
+const tabs = ["General", "ADB Fraud Detection Service", "Tracking"];
 const initalGeneralState = {
   category: "",
   original: "",
@@ -45,6 +46,30 @@ const initalADBFraudDetectionState = {
   allowedAbuseVelocity: [],
 };
 
+const trackingObj = {
+  // countryData: [],
+  // countryCondition: 0,
+  regionData: [],
+  regionCondition: 0,
+  // citiesData: [],
+  // citiesCondition: 0,
+  // timezonesData: [],
+  // timezonesCondition: 0,
+  // languagesData: [],
+  // languagesCondition: 0,
+  // devices: [],
+  // weightage_urls: [
+  //   {
+  //     url: "",
+  //     weight_range: "",
+  //     cap: "",
+  //   },
+  // ],
+  // desktop_pt_url: "",
+  // mobile_pt_url: "",
+  // intermediary_url: "",
+};
+
 const AddEditOffer = () => {
   const { pathname } = useLocation();
   const pathArray = pathname.split("/");
@@ -58,6 +83,11 @@ const AddEditOffer = () => {
   const [adbFraudDetection, setAdbFraudDetection] = useState(
     initalADBFraudDetectionState
   );
+  const [trackingDetails, setTrackingDetails] = useState([{ ...trackingObj }]);
+
+  const handleAddConditionButton = () => {
+    setTrackingDetails((current) => [...current, { ...trackingObj }]);
+  };
 
   const handleSubmit = () => {};
 
@@ -132,6 +162,13 @@ const AddEditOffer = () => {
               <ADBFraudDetection
                 adbFraudDetection={adbFraudDetection}
                 setAdbFraudDetection={setAdbFraudDetection}
+              />
+            )}
+            {selectedTab === tabs[2] && (
+              <Tracking
+                setTrackingDetails={setTrackingDetails}
+                trackingDetails={trackingDetails}
+                handleAddConditionButton={handleAddConditionButton}
               />
             )}
           </div>

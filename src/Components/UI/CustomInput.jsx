@@ -1,7 +1,9 @@
 import React from "react";
-import { Col, Button, Form } from "react-bootstrap";
+import { Col, Button, Form, Row } from "react-bootstrap";
 
-const CustomInput = ({ rest }) => <input {...rest} className="customInput" />;
+const CustomInput = ({ ...rest }) => (
+  <input className="customInput" {...rest} />
+);
 
 export const CustomInputWithLabel = ({ label, name, ...rest }) => (
   <div className="customInputWithLabel">
@@ -82,6 +84,96 @@ export const CustomInputForG = ({
         }}
       />
     </Form.Group>
+  </div>
+);
+
+export const IncludeExcludeInputModule = ({
+  label,
+  name,
+  onChange,
+  value,
+  handleEnter,
+  data,
+  clearById,
+  check,
+  setCheck,
+  handleClear,
+  id,
+}) => (
+  <Row className="IncludeExcludeInputModule">
+    <Col md={3} className="IncludeExcludeInputModuleLabel">
+      {label}
+    </Col>
+    <Col md={9}>
+      <div className="d-flex flex-column">
+        <IncludeExcludeInput
+          type="text"
+          name={name}
+          onChange={onChange}
+          value={value}
+          id={id}
+          handleEnter={handleEnter}
+        />
+        <div className="radioButtonContainer">
+          <Button
+            onClick={() => setCheck(0)}
+            className={check === 0 ? "includeActive" : "normal"}
+          >
+            Include
+          </Button>
+          <Button
+            onClick={() => setCheck(1)}
+            className={check === 1 ? "excludeActive" : "normal"}
+          >
+            Exclude
+          </Button>
+        </div>
+        {data.length > 0 && (
+          <div>
+            <Button className="clearButton" onClick={handleClear}>
+              Clear
+            </Button>
+            <div className="displayData">
+              {data.map((ele, index) => (
+                <span
+                  className={check === 0 ? "api-item" : "api-item-exclude"}
+                  key={index}
+                >
+                  <span className="x" onClick={() => clearById(index)}>
+                    x
+                  </span>
+                  {ele}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </Col>
+  </Row>
+);
+
+export const IncludeExcludeInput = ({
+  type,
+  name,
+  value,
+  onChange,
+  handleEnter,
+  ...rest
+}) => (
+  <div className="IncludeExcludeTypeInput">
+    <input
+      {...rest}
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      onKeyPress={(e) => {
+        if (e.key === "Enter") {
+          handleEnter();
+        }
+      }}
+    />
   </div>
 );
 

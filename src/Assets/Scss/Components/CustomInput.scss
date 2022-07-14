@@ -60,3 +60,64 @@
     box-shadow: 0 0 0 0.25rem rgba(255, 70, 81, 0.3);
   }
 }
+
+.IncludeExcludeInputModule {
+  .IncludeExcludeInputModuleLabel {
+    font-size: 1rem;
+  }
+  .radioButtonContainer {
+    margin-top: 10px;
+
+    .includeActive {
+      background: #28a745;
+      padding: 2px 10px;
+      font-size: 0.8125rem;
+      color: #fff;
+      transition: background 0.1s;
+      border: 2px solid #fff;
+      border-radius: 0;
+    }
+    .normal {
+      padding: 2px 10px;
+      font-size: 0.8125rem;
+      color: #fff;
+      cursor: pointer;
+      background: #12141d;
+      transition: background 0.1s;
+      border: 2px solid #fff;
+      border-radius: 0;
+    }
+
+    .excludeActive {
+      background: #dc143c;
+      padding: 2px 10px;
+      font-size: 0.8125rem;
+      color: #fff;
+      transition: background 0.1s;
+      border: 2px solid #fff;
+      border-radius: 0;
+    }
+  }
+  .clearButton {
+    font-size: 0.9rem;
+    background-color: $red;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .clearButton:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 70, 81, 0.3);
+  }
+}
+.IncludeExcludeTypeInput {
+  font-size: 0.8125rem;
+  input {
+    font-size: 0.8125rem;
+    width: 100% !important;
+    color: $white !important;
+    background: $blue3 !important;
+    border-radius: 0.25rem;
+    border: 1px solid $blue4;
+    padding: 6px 12px;
+  }
+}

@@ -36,7 +36,7 @@ const GlobalConditions = () => {
   const [macros, setMacros] = useState({
     meta_alternative: "",
     desktop_approved: "",
-    mobileApproved: "",
+    mobile_approved: "",
     intermediary_rejected: "",
   });
   const [inputs, setInputs] = useState({

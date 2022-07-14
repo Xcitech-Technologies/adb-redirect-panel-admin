@@ -40,5 +40,27 @@
         }
       }
     }
+
+    .trackingContainer {
+      .addConditionButton {
+        font-size: 0.8125rem;
+        background-color: $lightGreen;
+        border: none;
+      }
+      .addConditionButton:focus {
+        box-shadow: none;
+      }
+      .conditionHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .conditionText {
+          vertical-align: middle;
+        }
+        button {
+          margin-right: 5px;
+        }
+      }
+    }
   }
 }

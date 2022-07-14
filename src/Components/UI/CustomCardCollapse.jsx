@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Collapse } from "react-bootstrap";
-import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const CustomCardCollapse = ({
   header,
@@ -13,13 +13,13 @@ const CustomCardCollapse = ({
   return (
     <div className={`customCardCollapseContainer ${className || ""}`}>
       <div className="headerComponent">
-        <div>{header}</div>
+        <div className="w-100 ">{header}</div>
         <Button
           onClick={() => setOpen(!open)}
           aria-controls="collapse-text"
           className="arrowButton"
         >
-          {open ? <MdArrowDropUp /> : <MdArrowDropDown />}
+          {open ? <IoIosArrowUp /> : <IoIosArrowDown />}
         </Button>
       </div>
       <div className="cardBody">
