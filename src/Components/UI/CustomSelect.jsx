@@ -24,7 +24,14 @@ export const CustomSelectWithLabel = ({ label, name, options, ...rest }) => (
   </div>
 );
 
-export const CustomMultiSelect = ({ options }) => <Select options={options} />;
+export const CustomMultiSelect = ({ options, ...rest }) => (
+  <Select
+    options={options}
+    {...rest}
+    className="custom-select"
+    classNamePrefix="custom-select"
+  />
+);
 
 export const CustomMultiSelectWithLabel = ({
   label,

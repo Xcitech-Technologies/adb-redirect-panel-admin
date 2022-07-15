@@ -63,7 +63,19 @@
 
 .IncludeExcludeInputModule {
   .IncludeExcludeInputModuleLabel {
+    display: flex;
     font-size: 1rem;
+    .count {
+      margin-left: 10px;
+      .includeActive {
+        background: #28a745;
+        padding: 0 3px;
+      }
+      .excludeActive {
+        padding: 0 3px;
+        background: #dc143c;
+      }
+    }
   }
   .radioButtonContainer {
     margin-top: 10px;
@@ -98,6 +110,7 @@
       border-radius: 0;
     }
   }
+
   .clearButton {
     font-size: 0.9rem;
     background-color: $red;

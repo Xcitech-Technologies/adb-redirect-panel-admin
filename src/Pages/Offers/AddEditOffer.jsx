@@ -47,27 +47,27 @@ const initalADBFraudDetectionState = {
 };
 
 const trackingObj = {
-  // countryData: [],
-  // countryCondition: 0,
+  countryData: [],
+  countryCondition: 0,
   regionData: [],
   regionCondition: 0,
-  // citiesData: [],
-  // citiesCondition: 0,
-  // timezonesData: [],
-  // timezonesCondition: 0,
-  // languagesData: [],
-  // languagesCondition: 0,
-  // devices: [],
-  // weightage_urls: [
-  //   {
-  //     url: "",
-  //     weight_range: "",
-  //     cap: "",
-  //   },
-  // ],
-  // desktop_pt_url: "",
-  // mobile_pt_url: "",
-  // intermediary_url: "",
+  citiesData: [],
+  citiesCondition: 0,
+  timezonesData: [],
+  timezonesCondition: 0,
+  languagesData: [],
+  languagesCondition: 0,
+  devices: [],
+  weightage_urls: [
+    {
+      url: "",
+      weight_range: "",
+      cap: "",
+    },
+  ],
+  desktop_pt_url: "",
+  mobile_pt_url: "",
+  intermediary_url: "",
 };
 
 const AddEditOffer = () => {

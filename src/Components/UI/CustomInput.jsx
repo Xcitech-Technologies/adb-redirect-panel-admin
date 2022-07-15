@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Button, Form, Row } from "react-bootstrap";
 
-const CustomInput = ({ ...rest }) => (
-  <input className="customInput" {...rest} />
+const CustomInput = ({ className, ...rest }) => (
+  <input className={`customInput ${className || ""}`} {...rest} />
 );
 
 export const CustomInputWithLabel = ({ label, name, ...rest }) => (
@@ -101,10 +101,15 @@ export const IncludeExcludeInputModule = ({
   id,
 }) => (
   <Row className="IncludeExcludeInputModule">
-    <Col md={3} className="IncludeExcludeInputModuleLabel">
-      {label}
+    <Col md={4} className="IncludeExcludeInputModuleLabel">
+      {label}{" "}
+      <div className="count">
+        <div className={check === 0 ? "includeActive" : "excludeActive"}>
+          {data.length}
+        </div>
+      </div>
     </Col>
-    <Col md={9}>
+    <Col md={8}>
       <div className="d-flex flex-column">
         <IncludeExcludeInput
           type="text"
@@ -133,7 +138,7 @@ export const IncludeExcludeInputModule = ({
             <Button className="clearButton" onClick={handleClear}>
               Clear
             </Button>
-            <div className="displayData">
+            <div className="display-data">
               {data.map((ele, index) => (
                 <span
                   className={check === 0 ? "api-item" : "api-item-exclude"}

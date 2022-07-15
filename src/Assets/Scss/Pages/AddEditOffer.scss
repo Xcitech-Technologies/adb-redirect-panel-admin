@@ -50,6 +50,26 @@
       .addConditionButton:focus {
         box-shadow: none;
       }
+      .customInput {
+        font-size: 0.8125rem;
+        height: 33px;
+      }
+      .customInput::placeholder {
+        font-size: 0.8125rem;
+      }
+      .UrlsInputs {
+        display: flex;
+        align-items: center;
+        .inputsEnd {
+          width: 150px !important;
+          margin-left: 10px;
+        }
+      }
+      .buttonNoBackground {
+        background: transparent;
+        border: none;
+        color: $white;
+      }
       .conditionHead {
         display: flex;
         justify-content: space-between;
