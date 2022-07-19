@@ -135,6 +135,50 @@ const Conditions = ({
     );
   };
 
+  const handleDeviceChange = (e, v) => {
+    if (v.action === "select-option") {
+      setTrackingDetails((current) =>
+        current.map((obj, i) => {
+          if (i === id) {
+            return {
+              ...obj,
+              devices: [...obj.devices, v.option],
+            };
+          }
+          return obj;
+        })
+      );
+    }
+    if (v.action === "remove-value") {
+      setTrackingDetails((current) =>
+        current.map((obj, i) => {
+          if (i === id) {
+            return {
+              ...obj,
+              devices: obj.devices.filter(
+                (ele) => ele.value !== v.removedValue.label
+              ),
+            };
+          }
+          return obj;
+        })
+      );
+    }
+    if (v.action === "clear") {
+      setTrackingDetails((current) =>
+        current.map((obj, i) => {
+          if (i === id) {
+            return {
+              ...obj,
+              devices: [],
+            };
+          }
+          return obj;
+        })
+      );
+    }
+  };
+
   return (
     <div className="mt-4" key={id}>
       <CustomCardCollapse
@@ -177,7 +221,10 @@ const Conditions = ({
             />
           </Col>
           <Col md={6}>
-            <DeviceComponent />
+            <DeviceComponent
+              handleDeviceChange={handleDeviceChange}
+              trackingDetails={trackingDetails[id]}
+            />
           </Col>
         </Row>
         <Row>
@@ -379,14 +426,19 @@ const CountryComponentInput = ({
   </Row>
 );
 
-const DeviceComponent = () => (
+const DeviceComponent = ({ trackingDetails, handleDeviceChange }) => (
   <Row className="IncludeExcludeInputModule">
     <Col md={4} className="IncludeExcludeInputModuleLabel">
       Device
     </Col>
     <Col md={8}>
       <div className="d-flex flex-column">
-        <CustomMultiSelect isMulti options={DeviceOptions} />
+        <CustomMultiSelect
+          isMulti
+          options={DeviceOptions}
+          onChange={handleDeviceChange}
+          value={trackingDetails.devices}
+        />
       </div>
     </Col>
   </Row>

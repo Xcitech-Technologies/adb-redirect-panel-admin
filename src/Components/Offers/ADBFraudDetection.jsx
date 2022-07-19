@@ -72,13 +72,13 @@ const ADBFraudDetection = ({ adbFraudDetection, setAdbFraudDetection }) => {
     },
     {
       label: "Black Bot Detected",
-      value: adbFraudDetection.black_bot_detected,
-      name: "black_bot_detected",
+      value: adbFraudDetection.block_bot_detected,
+      name: "block_bot_detected",
     },
     {
       label: "Allow VPN",
       value: adbFraudDetection.allowVPN,
-      name: "black_bot_detected",
+      name: "allowVPN",
     },
     {
       label: "Lighter Penalties",
@@ -509,7 +509,7 @@ const OrganizationComponent = ({
             approvedOrganization: [
               ...current.approvedOrganization,
               ...inputs.approvedOrganization
-                .split("")
+                .split(",")
                 .map((e) => e.trim())
                 .filter((e) => e !== ""),
             ],
@@ -593,7 +593,7 @@ const AFFSUB2Component = ({
             approvedAffSub2: [
               ...current.approvedAffSub2,
               ...inputs.approvedAffSub2
-                .split("")
+                .split(",")
                 .map((e) => e.trim())
                 .filter((e) => e !== ""),
             ],

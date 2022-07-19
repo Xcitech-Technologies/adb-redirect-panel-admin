@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import General from "../../Components/Offers/General.jsx";
 import Head from "../../Components/Offers/Head.jsx";
 import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
-import { getOfferDetailsAction } from "../../Store/Offers/actions";
+import {
+  addOfferAction,
+  getOfferDetailsAction,
+} from "../../Store/Offers/actions";
 import ADBFraudDetection from "../../Components/Offers/ADBFraudDetection.jsx";
 import Tracking from "../../Components/Offers/Tracking.jsx";
 
@@ -17,7 +20,7 @@ const initalGeneralState = {
   network_id: "",
   has_offer: "",
   domain: [],
-  tags: "",
+  tags: [],
   link_description: "",
   destination: "",
   rejected: "",
@@ -84,15 +87,52 @@ const AddEditOffer = () => {
     initalADBFraudDetectionState
   );
   const [trackingDetails, setTrackingDetails] = useState([{ ...trackingObj }]);
-
   const handleAddConditionButton = () => {
     setTrackingDetails((current) => [...current, { ...trackingObj }]);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    const dataObj = {
+      ...generalDetails,
+      domain: generalDetails.domain.map((ele) => ele.value),
+      ...adbFraudDetection,
+      allowedAbuseVelocity: adbFraudDetection.allowedAbuseVelocity.map(
+        (ele) => ele.value
+      ),
+      conditions: trackingDetails.map((ele) => ({
+        country: {
+          data: ele.countryData,
+          condition: ele.countryCondition,
+        },
+        region: {
+          data: ele.regionData,
+          condition: ele.regionCondition,
+        },
+        cities: {
+          data: ele.citiesData,
+          condition: ele.citiesCondition,
+        },
+        timezones: {
+          data: ele.timezonesData,
+          condition: ele.timezonesCondition,
+        },
+        languages: {
+          data: ele.languagesData,
+          condition: ele.languagesCondition,
+        },
+        devices: ele.devices.map((e) => e.value),
+        weightage_urls: ele.weightage_urls,
+        desktop_pt_url: ele.desktop_pt_url,
+        mobile_pt_url: ele.mobile_pt_url,
+        intermediary_url: ele.intermediary_url,
+      })),
+    };
+
+    dispatch(addOfferAction(dataObj));
+  };
 
   useEffect(() => {
-    if (offerDetails.category) {
+    if (offerDetails.name) {
       setGeneralDetails({
         category: offerDetails.category,
         original: offerDetails.original,
@@ -100,15 +140,20 @@ const AddEditOffer = () => {
         type: offerDetails.type,
         network_id: offerDetails.network_id,
         has_offer: offerDetails.has_offer,
-        domain: offerDetails.domain ? offerDetails.domain : [],
+        domain: offerDetails.domain
+          ? offerDetails.domain.map((ele) => ({
+              value: ele,
+              label: ele,
+            }))
+          : [],
         tags: offerDetails.tags,
         link_description: offerDetails.link_description,
         destination: offerDetails.destination,
         rejected: offerDetails.rejected,
       });
       setAdbFraudDetection({
-        meta_ip_process: offerDetails.meta_ip_process,
-        s2s_ip_process: offerDetails.s2s_ip_process,
+        meta_ip_process: offerDetails.meta_ip_process.toString(),
+        s2s_ip_process: offerDetails.s2s_ip_process.toString(),
         ipqs: offerDetails.s2s_ip_process ? offerDetails.s2s_ip_process : "",
         strictness: offerDetails.strictness ? offerDetails.strictness : "",
         vpn: offerDetails.vpn,
@@ -127,7 +172,12 @@ const AddEditOffer = () => {
         blockedAffSub2: offerDetails.blockedAffSub2,
         approvedAffSub2: offerDetails.approvedAffSub2,
         allowRecentAbuse: offerDetails.allowRecentAbuse,
-        allowedAbuseVelocity: offerDetails.allowedAbuseVelocity,
+        allowedAbuseVelocity: offerDetails.allowedAbuseVelocity
+          ? offerDetails.allowedAbuseVelocity.map((ele) => ({
+              value: ele,
+              label: ele,
+            }))
+          : [],
       });
     }
   }, [offerDetails]);

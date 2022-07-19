@@ -65,7 +65,14 @@ const General = ({ generalDetails, setGeneralDetails }) => {
   };
   return (
     <div className="generalContainer">
-      <CustomCard header={<Header />}>
+      <CustomCard
+        header={
+          <Header
+            generalDetails={generalDetails}
+            handleInputChange={handleInputChange}
+          />
+        }
+      >
         <CardContent1
           tempTag={tempTag}
           setTempTag={setTempTag}
@@ -212,11 +219,16 @@ const CardContent1 = ({
   </>
 );
 
-const Header = () => (
+const Header = ({ generalDetails, handleInputChange }) => (
   <div className="d-flex align-items-center">
     Offer Details :
     <div style={{ marginLeft: "10px" }}>
-      <CustomSelect options={options} />
+      <CustomSelect
+        options={options}
+        name="category"
+        onChange={handleInputChange}
+        value={generalDetails.category}
+      />
     </div>
   </div>
 );

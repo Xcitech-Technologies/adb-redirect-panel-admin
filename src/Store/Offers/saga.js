@@ -7,8 +7,13 @@ function* getOffersSaga({ params }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
     const { data } = params
-      ? yield API.post("/searchLink", params)
-      : yield API.get("/links/true");
+      ? yield API.post(
+          "https://multihostingreviews.com/dashboard/api/searchLink",
+          params
+        )
+      : yield API.get(
+          "https://multihostingreviews.com/dashboard/api/links/true"
+        );
 
     if (data.success) {
       yield put({
@@ -33,7 +38,9 @@ function* getOffersSaga({ params }) {
 function* getOfferDetailsSaga({ id }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.get(`link/${id}`);
+    const { data } = yield API.get(
+      `https://multihostingreviews.com/dashboard/api/link/${id}`
+    );
 
     if (data.success) {
       yield put({
@@ -58,7 +65,9 @@ function* getOfferDetailsSaga({ id }) {
 function* cloneOfferSaga({ id }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.get(`/cloneLink/${id}`);
+    const { data } = yield API.get(
+      `https://multihostingreviews.com/dashboard/api/cloneLink/${id}`
+    );
 
     if (data.success) {
       toast.success("Link cloned successfully.");
@@ -86,7 +95,9 @@ function* cloneOfferSaga({ id }) {
 function* deleteOfferSaga({ id }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.post(`/deleteLink/${id}`);
+    const { data } = yield API.post(
+      `https://multihostingreviews.com/dashboard/api/deleteLink/${id}`
+    );
 
     if (data.success) {
       toast.success("Link deleted successfully.");
@@ -114,7 +125,10 @@ function* deleteOfferSaga({ id }) {
 function* deleteSelectedOffersSaga({ links }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.post(`/multiple/deleteLink`, links);
+    const { data } = yield API.post(
+      `https://multihostingreviews.com/dashboard/api/multiple/deleteLink`,
+      links
+    );
 
     if (data.success) {
       toast.success(data.data);
@@ -141,7 +155,10 @@ function* deleteSelectedOffersSaga({ links }) {
 function* pasueOfferSaga({ links }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.post(`/multiple/pauseLink`, links);
+    const { data } = yield API.post(
+      `https://multihostingreviews.com/dashboard/api/multiple/pauseLink`,
+      links
+    );
 
     if (data.success) {
       toast.success(data.data);
@@ -168,7 +185,10 @@ function* pasueOfferSaga({ links }) {
 function* resumeOfferSaga({ links }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.post(`/multiple/resumeLink`, links);
+    const { data } = yield API.post(
+      `https://multihostingreviews.com/dashboard/api/multiple/resumeLink`,
+      links
+    );
 
     if (data.success) {
       toast.success(data.data);
@@ -195,7 +215,10 @@ function* resumeOfferSaga({ links }) {
 function* toggleOfferSaga({ obj }) {
   try {
     yield put({ type: actionTypes.SET_OFFERS_LOADING });
-    const { data } = yield API.post(`/linkstatus/${obj.id}`, obj);
+    const { data } = yield API.post(
+      `https://multihostingreviews.com/dashboard/api/linkstatus/${obj.id}`,
+      obj
+    );
 
     if (data.success) {
       yield put({ type: actionTypes.GET_OFFERS });
@@ -219,6 +242,36 @@ function* toggleOfferSaga({ obj }) {
   }
 }
 
+function* addOfferSaga({ obj }) {
+  try {
+    yield put({ type: actionTypes.SET_OFFERS_LOADING });
+    const { data } = yield API.post(
+      "https://multihostingreviews.com/dashboard/api/link",
+      obj
+    );
+    console.log(data);
+    if (data.success) {
+      toast.success("Added offer successfully");
+      yield put({
+        type: actionTypes.ADD_OFFER_SUCCESS,
+        payload: data.data,
+      });
+    } else {
+      toast.error(data.data.message);
+      yield put({
+        type: actionTypes.ADD_OFFER_FAILURE,
+        errorMessage: data.data.message,
+      });
+    }
+  } catch (error) {
+    toast.error("Unable to add Offer.");
+    yield put({
+      type: actionTypes.ADD_OFFER_FAILURE,
+      errorMessage: "Unable to add Offer.",
+    });
+  }
+}
+
 function* OffersSaga() {
   yield all([
     takeLatest(actionTypes.GET_OFFERS, getOffersSaga),
@@ -229,6 +282,7 @@ function* OffersSaga() {
     takeLatest(actionTypes.PAUSE_OFFER, pasueOfferSaga),
     takeLatest(actionTypes.TOGGLE_OFFER, toggleOfferSaga),
     takeLatest(actionTypes.RESUME_OFFER, resumeOfferSaga),
+    takeLatest(actionTypes.ADD_OFFER, addOfferSaga),
   ]);
 }
 

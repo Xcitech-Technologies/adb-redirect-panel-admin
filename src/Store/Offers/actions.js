@@ -37,3 +37,8 @@ export const toggleOfferAction = (obj) => ({
   type: actionTypes.TOGGLE_OFFER,
   obj,
 });
+
+export const addOfferAction = (obj) => ({
+  type: actionTypes.ADD_OFFER,
+  obj,
+});

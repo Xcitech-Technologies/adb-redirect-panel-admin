@@ -14,7 +14,7 @@ const CustomSelect = ({ options, ...rest }) => (
 export const CustomSelectWithLabel = ({ label, name, options, ...rest }) => (
   <div className="customSelectWithLabel">
     {label && <label htmlFor={name}>{label}</label>}
-    <select {...rest}>
+    <select {...rest} name={name}>
       {options.map((ele, key) => (
         <option key={key} value={ele.value} disabled={ele.disabled}>
           {ele.name}

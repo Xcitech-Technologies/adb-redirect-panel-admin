@@ -36,6 +36,12 @@ const Offers = (state = initialState, action) => {
         loading: false,
         offerDetails: action.payload,
       };
+    case actionTypes.ADD_OFFER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        offerDetails: action.payload,
+      };
     case actionTypes.CLONE_OFFER_SUCCESS:
     case actionTypes.DELETE_OFFER_SUCCESS:
     case actionTypes.DELETE_SELECTED_OFFERS_SUCCESS:
@@ -54,6 +60,7 @@ const Offers = (state = initialState, action) => {
     case actionTypes.RESUME_OFFER_FAILURE:
     case actionTypes.DELETE_OFFER_FAILURE:
     case actionTypes.TOGGLE_OFFER_FAILURE:
+    case actionTypes.ADD_OFFER_FAILURE:
       return {
         ...state,
         loading: false,
