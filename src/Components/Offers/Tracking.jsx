@@ -37,7 +37,7 @@ const Tracking = ({
           Add Condition
         </Button>
       </div>
-      {trackingDetails.map((condition, key) => (
+      {trackingDetails?.map((condition, key) => (
         <Conditions
           key={key}
           id={key}

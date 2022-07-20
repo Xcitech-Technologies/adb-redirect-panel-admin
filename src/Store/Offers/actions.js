@@ -42,3 +42,13 @@ export const addOfferAction = (obj) => ({
   type: actionTypes.ADD_OFFER,
   obj,
 });
+
+export const editOfferAction = (obj, id) => ({
+  type: actionTypes.EDIT_OFFER,
+  obj,
+  id,
+});
+
+export const clearOfferDetails = () => ({
+  type:actionTypes.CLEAR_OFFER_DETAILS
+})

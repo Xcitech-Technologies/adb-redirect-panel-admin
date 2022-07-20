@@ -249,7 +249,7 @@ function* addOfferSaga({ obj }) {
       "https://multihostingreviews.com/dashboard/api/link",
       obj
     );
-    console.log(data);
+
     if (data.success) {
       toast.success("Added offer successfully");
       yield put({
@@ -271,6 +271,35 @@ function* addOfferSaga({ obj }) {
     });
   }
 }
+function* editOfferSaga({ obj, id }) {
+  try {
+    yield put({ type: actionTypes.SET_OFFERS_LOADING });
+    const { data } = yield API.post(
+      `https://multihostingreviews.com/dashboard/api/link/${id}`,
+      obj
+    );
+
+    if (data.success) {
+      toast.success("Edited offer successfully");
+      yield put({
+        type: actionTypes.EDIT_OFFER_SUCCESS,
+        payload: data.data,
+      });
+    } else {
+      toast.error(data.data.message);
+      yield put({
+        type: actionTypes.EDIT_OFFER_FAILURE,
+        errorMessage: data.data.message,
+      });
+    }
+  } catch (error) {
+    toast.error("Unable to edit Offer.");
+    yield put({
+      type: actionTypes.EDIT_OFFER_FAILURE,
+      errorMessage: "Unable to edit Offer.",
+    });
+  }
+}
 
 function* OffersSaga() {
   yield all([
@@ -283,6 +312,7 @@ function* OffersSaga() {
     takeLatest(actionTypes.TOGGLE_OFFER, toggleOfferSaga),
     takeLatest(actionTypes.RESUME_OFFER, resumeOfferSaga),
     takeLatest(actionTypes.ADD_OFFER, addOfferSaga),
+    takeLatest(actionTypes.EDIT_OFFER, editOfferSaga),
   ]);
 }
 

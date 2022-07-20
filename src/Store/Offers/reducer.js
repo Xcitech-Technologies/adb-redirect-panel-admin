@@ -37,6 +37,7 @@ const Offers = (state = initialState, action) => {
         offerDetails: action.payload,
       };
     case actionTypes.ADD_OFFER_SUCCESS:
+    case actionTypes.EDIT_OFFER_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -61,11 +62,17 @@ const Offers = (state = initialState, action) => {
     case actionTypes.DELETE_OFFER_FAILURE:
     case actionTypes.TOGGLE_OFFER_FAILURE:
     case actionTypes.ADD_OFFER_FAILURE:
+    case actionTypes.EDIT_OFFER_FAILURE:
       return {
         ...state,
         loading: false,
         error: true,
         errorMessage: action.errorMessage,
+      };
+    case actionTypes.CLEAR_OFFER_DETAILS:
+      return {
+        ...state,
+        offerDetails: {},
       };
     default:
       return state;

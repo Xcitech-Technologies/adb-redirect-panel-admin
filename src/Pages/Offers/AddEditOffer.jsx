@@ -6,6 +6,8 @@ import Head from "../../Components/Offers/Head.jsx";
 import CustomSpinner from "../../Components/UI/CustomSpinner.jsx";
 import {
   addOfferAction,
+  clearOfferDetails,
+  editOfferAction,
   getOfferDetailsAction,
 } from "../../Store/Offers/actions";
 import ADBFraudDetection from "../../Components/Offers/ADBFraudDetection.jsx";
@@ -128,7 +130,11 @@ const AddEditOffer = () => {
       })),
     };
 
-    dispatch(addOfferAction(dataObj));
+    if (id) {
+      dispatch(editOfferAction(dataObj, id));
+    } else {
+      dispatch(addOfferAction(dataObj));
+    }
   };
 
   useEffect(() => {
@@ -179,6 +185,26 @@ const AddEditOffer = () => {
             }))
           : [],
       });
+
+      setTrackingDetails(
+        offerDetails?.conditions?.map((ele) => ({
+          countryData: ele.country.data,
+          countryCondition: ele.country.condition,
+          regionData: ele.region.data,
+          regionCondition: ele.region.condition,
+          citiesData: ele.cities.data,
+          citiesCondition: ele.cities.condition,
+          timezonesData: ele.timezones.data,
+          timezonesCondition: ele.timezones.condition,
+          languagesData: ele.languages.data,
+          languagesCondition: ele.languages.condition,
+          devices: ele.devices.map((e) => ({ label: e, value: e })),
+          weightage_urls: ele.weightage_urls,
+          desktop_pt_url: ele.desktop_pt_url,
+          mobile_pt_url: ele.mobile_pt_url,
+          intermediary_url: ele.intermediary_url,
+        }))
+      );
     }
   }, [offerDetails]);
   useEffect(() => {
@@ -186,6 +212,8 @@ const AddEditOffer = () => {
       dispatch(getOfferDetailsAction(id));
     }
   }, [dispatch, id]);
+
+  useEffect(() => () => dispatch(clearOfferDetails()), [dispatch]);
 
   return (
     <div className="addEditOfferContainer">
