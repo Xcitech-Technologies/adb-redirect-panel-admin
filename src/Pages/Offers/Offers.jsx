@@ -408,6 +408,7 @@ const Header = ({
             >
               <CustomInput
                 type="text"
+                className="offersHeadInput"
                 style={{ marginRight: "10px" }}
                 placeholder="Search"
                 value={query.search}
@@ -423,6 +424,7 @@ const Header = ({
 
               <CustomInput
                 type="text"
+                className="offersHeadInput"
                 style={{ margin: "0 5px" }}
                 placeholder="Tags"
                 value={query.tags}
@@ -442,6 +444,7 @@ const Header = ({
             >
               <CustomSelect
                 style={{ margin: "0 5px" }}
+                className="offersHeadInput"
                 value={query?.status}
                 onChange={(e) => {
                   setQuery({ ...query, status: e.target.value });
@@ -458,6 +461,7 @@ const Header = ({
             <CustomSelect
               style={{ margin: "0 5px" }}
               value={query?.type}
+              className="offersHeadInput"
               onChange={(e) => {
                 setQuery({ ...query, type: e.target.value });
               }}

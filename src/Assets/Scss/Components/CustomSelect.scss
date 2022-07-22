@@ -1,7 +1,7 @@
 .customSelect {
   width: 100% !important;
   color: $white !important;
-  background: $blue3 !important;
+  background: $dark !important;
   border-radius: 0.25rem;
   border: 1px solid $blue4;
   padding: 6px 12px;
@@ -15,7 +15,7 @@
   select {
     width: 100% !important;
     color: $white !important;
-    background: $blue3 !important;
+    background: $dark !important;
     border-radius: 0.25rem;
     border: 1px solid $blue4;
     padding: 6px 12px;
@@ -31,7 +31,7 @@
     .multi-select__control {
       width: 100% !important;
       color: $white !important;
-      background: $blue3 !important;
+      background: $dark !important;
       border-radius: 0.25rem;
       border: 1px solid $blue4;
       .multi-select__value-container {
@@ -52,7 +52,10 @@
       }
     }
     .multi-select__menu {
-      background: $blue3 !important;
+      background: $dark !important;
+      .multi-select__option--is-focused {
+        background-color: $blue6;
+      }
     }
   }
 
@@ -63,7 +66,7 @@
   .custom-select__control {
     width: 100% !important;
     color: $white !important;
-    background: $blue3 !important;
+    background: $dark !important;
     border-radius: 0.25rem;
     border: 1px solid $blue4;
     .custom-select__value-container {
@@ -85,7 +88,7 @@
     }
   }
   .custom-select__menu {
-    background: $blue3 !important;
+    background: $dark !important;
     font-size: 0.8125rem;
     .custom-select__option--is-focused {
       background-color: $blue6;

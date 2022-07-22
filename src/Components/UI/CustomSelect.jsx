@@ -1,18 +1,24 @@
 import React from "react";
 import Select from "react-select";
 
-const CustomSelect = ({ options, ...rest }) => (
-  <select {...rest} className="customSelect">
+const CustomSelect = ({ options, className, ...rest }) => (
+  <select {...rest} className={`customSelect ${className}`}>
     {options.map((ele, key) => (
-      <option key={key} value={ele.value}>
+      <option key={key} value={ele.value} disabled={ele.disabled}>
         {ele.name}
       </option>
     ))}
   </select>
 );
 
-export const CustomSelectWithLabel = ({ label, name, options, ...rest }) => (
-  <div className="customSelectWithLabel">
+export const CustomSelectWithLabel = ({
+  label,
+  className,
+  name,
+  options,
+  ...rest
+}) => (
+  <div className={`customSelectWithLabel ${className}`}>
     {label && <label htmlFor={name}>{label}</label>}
     <select {...rest} name={name}>
       {options.map((ele, key) => (

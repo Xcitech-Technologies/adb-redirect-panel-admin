@@ -1,7 +1,7 @@
 .customInput {
   width: 100% !important;
   color: $white !important;
-  background: $blue3 !important;
+  background: $dark !important;
   border-radius: 0.25rem;
   border: 1px solid $blue4;
   padding: 6px 12px;
@@ -21,7 +21,7 @@
   input {
     width: 100% !important;
     color: $white !important;
-    background: $blue3 !important;
+    background: $dark !important;
     border-radius: 0.25rem;
     border: 1px solid $blue4;
     padding: 6px 12px;
@@ -37,7 +37,7 @@
     font-size: 0.8125rem;
     width: 100% !important;
     color: $white !important;
-    background: $blue3 !important;
+    background: $dark !important;
     border-radius: 0.25rem;
     border: 1px solid $blue4;
     padding: 6px 12px;
@@ -66,7 +66,7 @@
     display: flex;
     font-size: 1rem;
     .count {
-      margin-left: 10px;
+      margin-left: 20px;
       .includeActive {
         background: #28a745;
         padding: 0 3px;
@@ -128,7 +128,7 @@
     font-size: 0.8125rem;
     width: 100% !important;
     color: $white !important;
-    background: $blue3 !important;
+    background: $dark !important;
     border-radius: 0.25rem;
     border: 1px solid $blue4;
     padding: 6px 12px;

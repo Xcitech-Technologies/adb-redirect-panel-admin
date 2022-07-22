@@ -9,6 +9,7 @@ import CustomSelect, {
 import { CustomTextAreaWithLabel } from "../UI/CustomTextArea.jsx";
 
 const options = [
+  { name: "", value: undefined, disabled: true },
   { name: "Google Ads D2M", value: "Google Ads D2M" },
   { name: "Casino Offer", value: "Casino Offer" },
   { name: "Coupon Popup", value: "Coupon Popup" },

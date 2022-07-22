@@ -190,15 +190,18 @@ const Conditions = ({
         }
         defaultCollapse
       >
-        <Row>
-          <Col md={6}>
+        <Row
+          className="d-flex justify-content-between"
+          style={{ marginBottom: "15px" }}
+        >
+          <Col md={5}>
             <CountryComponent
               trackingDetails={trackingDetails[id]}
               id={id}
               setTrackingDetails={setTrackingDetails}
             />
           </Col>
-          <Col md={6}>
+          <Col md={5}>
             <RegionComponent
               input={inputs.region}
               handleChange={handleChange}
@@ -209,8 +212,11 @@ const Conditions = ({
             />
           </Col>
         </Row>
-        <Row>
-          <Col md={6}>
+        <Row
+          className="d-flex justify-content-between"
+          style={{ marginBottom: "15px" }}
+        >
+          <Col md={5}>
             <CitiesComponent
               input={inputs.cities}
               handleChange={handleChange}
@@ -220,14 +226,39 @@ const Conditions = ({
               setInputs={setInputs}
             />
           </Col>
-          <Col md={6}>
+          <Col md={5}>
             <DeviceComponent
               handleDeviceChange={handleDeviceChange}
               trackingDetails={trackingDetails[id]}
             />
           </Col>
         </Row>
-        <Row>
+        <Row
+          className="d-flex justify-content-between"
+          style={{ marginBottom: "15px" }}
+        >
+          <Col md={5}>
+            <TimeZoneComponent
+              input={inputs.timezones}
+              handleChange={handleChange}
+              trackingDetails={trackingDetails}
+              id={id}
+              setTrackingDetails={setTrackingDetails}
+              setInputs={setInputs}
+            />
+          </Col>
+          <Col md={5}>
+            <LanguagesComponent
+              input={inputs.languages}
+              handleChange={handleChange}
+              trackingDetails={trackingDetails}
+              id={id}
+              setTrackingDetails={setTrackingDetails}
+              setInputs={setInputs}
+            />
+          </Col>
+        </Row>
+        <Row style={{ marginBottom: "15px" }}>
           <URLSComponent
             handleUrlChange={handleUrlChange}
             trackingDetails={trackingDetails[id]}
@@ -240,28 +271,6 @@ const Conditions = ({
             handlePTURLChange={handlePTURLChange}
             trackingDetails={trackingDetails}
           />
-        </Row>
-        <Row>
-          <Col md={6}>
-            <TimeZoneComponent
-              input={inputs.timezones}
-              handleChange={handleChange}
-              trackingDetails={trackingDetails}
-              id={id}
-              setTrackingDetails={setTrackingDetails}
-              setInputs={setInputs}
-            />
-          </Col>
-          <Col md={6}>
-            <LanguagesComponent
-              input={inputs.languages}
-              handleChange={handleChange}
-              trackingDetails={trackingDetails}
-              id={id}
-              setTrackingDetails={setTrackingDetails}
-              setInputs={setInputs}
-            />
-          </Col>
         </Row>
       </CustomCardCollapse>
     </div>
