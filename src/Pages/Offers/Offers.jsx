@@ -171,186 +171,190 @@ const Offers = () => {
 
   return (
     <div className="offersContainer">
-      {loading ? (
-        <CustomSpinner />
-      ) : (
-        <CustomCard
-          header={
-            <Header
-              setQuery={setQuery}
-              query={query}
-              handleSearch={handleSearch}
-              handleExportOffers={handleExportOffers}
-              navigate={navigate}
-            />
-          }
-          className="offers"
-        >
-          <>
-            {selected.length > 0 && (
-              <div className="optionsBar">
-                <Button className="deleteAll" onClick={() => handleDeleteAll()}>
-                  Delete All
-                </Button>
-                <Button className="pause" onClick={() => handlePause()}>
-                  Pause
-                </Button>
-                <Button className="resume" onClick={() => handleResume()}>
-                  Resume
-                </Button>
-              </div>
-            )}
-            <Table responsive="xs">
-              <thead>
-                <tr>
-                  <th>
-                    <input
-                      type="checkbox"
-                      checked={isAllChecked()}
-                      onChange={() => handleAllCheck()}
-                    />
-                  </th>
-                  <th
-                    onClick={() =>
-                      setSortBy((current) => ({
-                        type: "type",
-                        asc: !current.asc,
-                      }))
-                    }
-                    style={{ cursor: "pointer" }}
-                  >
-                    Type
-                    <RiArrowUpDownFill />
-                  </th>
-                  <th
-                    onClick={() =>
-                      setSortBy((current) => ({
-                        type: "original",
-                        asc: !current.asc,
-                      }))
-                    }
-                    style={{ cursor: "pointer" }}
-                  >
-                    Offer Id <RiArrowUpDownFill />
-                  </th>
-                  <th
-                    onClick={() =>
-                      setSortBy((current) => ({
-                        type: "nickname",
-                        asc: !current.asc,
-                      }))
-                    }
-                    style={{ cursor: "pointer" }}
-                  >
-                    Offer Name <RiArrowUpDownFill />
-                  </th>
-                  <th
-                    onClick={() =>
-                      setSortBy((current) => ({
-                        type: "name",
-                        asc: !current.asc,
-                      }))
-                    }
-                    style={{ cursor: "pointer" }}
-                  >
-                    Assigned To <RiArrowUpDownFill />
-                  </th>
-                  <th
-                    onClick={() =>
-                      setSortBy((current) => ({
-                        type: "timestamp",
-                        asc: !current.asc,
-                      }))
-                    }
-                    style={{ cursor: "pointer" }}
-                  >
-                    Modify <RiArrowUpDownFill />
-                  </th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {getData.map((data, key) => (
-                  <tr key={key}>
-                    <td>
-                      <input
-                        id={`checheck${(page - 1) * DATA_PER_PAGE + key}`}
-                        type="checkbox"
-                        checked={selected.includes(
-                          (page - 1) * DATA_PER_PAGE + key
-                        )}
-                        onChange={() => {
-                          handleCheck((page - 1) * DATA_PER_PAGE + key);
-                        }}
-                      />
-                    </td>
-                    <td>{data.type}</td>
-                    <td>
-                      <div>
-                        <MdFiberManualRecord
-                          style={{
-                            color: data.status ? "#0CCE6B" : "#ff4651",
-                            fontSize: "15px",
-                            marginRight: "5px",
+      <CustomCard
+        header={
+          <Header
+            setQuery={setQuery}
+            query={query}
+            handleSearch={handleSearch}
+            handleExportOffers={handleExportOffers}
+            navigate={navigate}
+          />
+        }
+        className="offers"
+      >
+        <>
+          {selected.length > 0 && (
+            <div className="optionsBar">
+              <Button className="deleteAll" onClick={() => handleDeleteAll()}>
+                Delete All
+              </Button>
+              <Button className="pause" onClick={() => handlePause()}>
+                Pause
+              </Button>
+              <Button className="resume" onClick={() => handleResume()}>
+                Resume
+              </Button>
+            </div>
+          )}
+          <Table responsive="xs">
+            <thead>
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    checked={isAllChecked()}
+                    onChange={() => handleAllCheck()}
+                  />
+                </th>
+                <th
+                  onClick={() =>
+                    setSortBy((current) => ({
+                      type: "type",
+                      asc: !current.asc,
+                    }))
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  Type
+                  <RiArrowUpDownFill />
+                </th>
+                <th
+                  onClick={() =>
+                    setSortBy((current) => ({
+                      type: "original",
+                      asc: !current.asc,
+                    }))
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  Offer Id <RiArrowUpDownFill />
+                </th>
+                <th
+                  onClick={() =>
+                    setSortBy((current) => ({
+                      type: "nickname",
+                      asc: !current.asc,
+                    }))
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  Offer Name <RiArrowUpDownFill />
+                </th>
+                <th
+                  onClick={() =>
+                    setSortBy((current) => ({
+                      type: "name",
+                      asc: !current.asc,
+                    }))
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  Assigned To <RiArrowUpDownFill />
+                </th>
+                <th
+                  onClick={() =>
+                    setSortBy((current) => ({
+                      type: "timestamp",
+                      asc: !current.asc,
+                    }))
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  Modify <RiArrowUpDownFill />
+                </th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {!loading && (
+                <>
+                  {getData.map((data, key) => (
+                    <tr key={key}>
+                      <td>
+                        <input
+                          id={`checheck${(page - 1) * DATA_PER_PAGE + key}`}
+                          type="checkbox"
+                          checked={selected.includes(
+                            (page - 1) * DATA_PER_PAGE + key
+                          )}
+                          onChange={() => {
+                            handleCheck((page - 1) * DATA_PER_PAGE + key);
                           }}
                         />
-                        <FaClone
-                          style={{
-                            opacity: 0.7,
-                            marginRight: "5px",
-                            cursor: "pointer",
-                          }}
-                          onClick={() => handleCopy(data)}
-                        />
-                        {data.original}
-                      </div>
-                    </td>
-                    <td>{data.nickname}</td>
-                    <td>{data.name}</td>
-                    <td>
-                      {moment
-                        .unix(data.timestamp / 1000)
-                        .local()
-                        .format("DD MMM YYYY, hh:MM A")}
-                    </td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <Form.Check
-                          type="switch"
-                          checked={data.status}
-                          onChange={(e) =>
-                            handlePauseResume({
-                              id: data._id,
-                              status: e.target.checked,
-                            })
-                          }
-                        />
-                        <Button
-                          className="editButton"
-                          onClick={() =>
-                            navigate(`/admin/offer/edit/${data._id}`)
-                          }
-                        >
-                          Edit
-                        </Button>
-                        <Button
-                          className="copyButton"
-                          onClick={() => handleCloneOffer(data._id)}
-                        >
-                          <FaClone />
-                        </Button>
-                        <Button
-                          className="deleteButton"
-                          onClick={() => handleDeleteOffer(data._id)}
-                        >
-                          <FaTrash />
-                        </Button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+                      </td>
+                      <td>{data.type}</td>
+                      <td>
+                        <div>
+                          <MdFiberManualRecord
+                            style={{
+                              color: data.status ? "#0CCE6B" : "#ff4651",
+                              fontSize: "15px",
+                              marginRight: "5px",
+                            }}
+                          />
+                          <FaClone
+                            style={{
+                              opacity: 0.7,
+                              marginRight: "5px",
+                              cursor: "pointer",
+                            }}
+                            onClick={() => handleCopy(data)}
+                          />
+                          {data.original}
+                        </div>
+                      </td>
+                      <td>{data.nickname}</td>
+                      <td>{data.name}</td>
+                      <td>
+                        {moment
+                          .unix(data.timestamp / 1000)
+                          .local()
+                          .format("DD MMM YYYY, hh:MM A")}
+                      </td>
+                      <td>
+                        <div className="d-flex align-items-center">
+                          <Form.Check
+                            type="switch"
+                            checked={data.status}
+                            onChange={(e) =>
+                              handlePauseResume({
+                                id: data._id,
+                                status: e.target.checked,
+                              })
+                            }
+                          />
+                          <Button
+                            className="editButton"
+                            onClick={() =>
+                              navigate(`/admin/offer/edit/${data._id}`)
+                            }
+                          >
+                            Edit
+                          </Button>
+                          <Button
+                            className="copyButton"
+                            onClick={() => handleCloneOffer(data._id)}
+                          >
+                            <FaClone />
+                          </Button>
+                          <Button
+                            className="deleteButton"
+                            onClick={() => handleDeleteOffer(data._id)}
+                          >
+                            <FaTrash />
+                          </Button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </>
+              )}
+            </tbody>
+          </Table>
+          {loading ? (
+            <CustomSpinner />
+          ) : (
             <div className="d-flex justify-content-center mt-4">
               <ReactPaginate
                 breakLabel="..."
@@ -364,9 +368,9 @@ const Offers = () => {
                 renderOnZeroPageCount={null}
               />
             </div>
-          </>
-        </CustomCard>
-      )}
+          )}
+        </>
+      </CustomCard>
     </div>
   );
 };
