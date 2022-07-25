@@ -6,6 +6,7 @@ import CustomCardCollapse from "../UI/CustomCardCollapse.jsx";
 import CustomInput, { IncludeExcludeInputModule } from "../UI/CustomInput.jsx";
 import { CustomMultiSelect } from "../UI/CustomSelect.jsx";
 import Data from "../../data";
+import { CustomCheckbox } from "../UI/CustomCheckButton.jsx";
 
 const MainCountryData = Data.MasterData;
 const CountryOptions = MainCountryData.map((data) => ({
@@ -62,7 +63,26 @@ const Conditions = ({
     cities: "",
     timezones: "",
     languages: "",
+    referers: "",
   });
+
+  const checkBoxes = [
+    {
+      label: "Allow Exception",
+      value: trackingDetails[id].allow_exception,
+      name: "allow_exception",
+    },
+    {
+      label: "Allow Black Referer",
+      value: trackingDetails[id].allow_blank_referer,
+      name: "allow_blank_referer",
+    },
+    {
+      label: "Allow Non Unique Clicks",
+      value: trackingDetails[id].allow_non_unique_clicks,
+      name: "allow_non_unique_clicks",
+    },
+  ];
 
   const handleChange = (e) => {
     setInputs((current) => ({
@@ -128,6 +148,20 @@ const Conditions = ({
                 cap: "",
               },
             ],
+          };
+        }
+        return obj;
+      })
+    );
+  };
+
+  const handleSetCheckValue = (ele, val) => {
+    setTrackingDetails((current) =>
+      current.map((obj, i) => {
+        if (i === id) {
+          return {
+            ...obj,
+            [ele]: val,
           };
         }
         return obj;
@@ -227,9 +261,15 @@ const Conditions = ({
             />
           </Col>
           <Col md={5}>
-            <DeviceComponent
-              handleDeviceChange={handleDeviceChange}
+            <ReferersComponent
+              input={inputs.referers}
+              handleChange={handleChange}
               trackingDetails={trackingDetails[id]}
+              id={id}
+              setTrackingDetails={setTrackingDetails}
+              setInputs={setInputs}
+              checkBoxes={checkBoxes}
+              handleSetCheckValue={handleSetCheckValue}
             />
           </Col>
         </Row>
@@ -238,6 +278,13 @@ const Conditions = ({
           style={{ marginBottom: "15px" }}
         >
           <Col md={5}>
+            <DeviceComponent
+              handleDeviceChange={handleDeviceChange}
+              trackingDetails={trackingDetails[id]}
+            />
+          </Col>
+          <Col md={5}>
+            {" "}
             <TimeZoneComponent
               input={inputs.timezones}
               handleChange={handleChange}
@@ -247,6 +294,11 @@ const Conditions = ({
               setInputs={setInputs}
             />
           </Col>
+        </Row>
+        <Row
+          className="d-flex justify-content-between"
+          style={{ marginBottom: "15px" }}
+        >
           <Col md={5}>
             <LanguagesComponent
               input={inputs.languages}
@@ -257,6 +309,7 @@ const Conditions = ({
               setInputs={setInputs}
             />
           </Col>
+          <Col md={5}></Col>
         </Row>
         <Row style={{ marginBottom: "15px" }}>
           <URLSComponent
@@ -453,6 +506,98 @@ const DeviceComponent = ({ trackingDetails, handleDeviceChange }) => (
   </Row>
 );
 
+const ReferersComponent = ({
+  input,
+  handleChange,
+  trackingDetails,
+  id,
+  setTrackingDetails,
+  setInputs,
+  checkBoxes,
+  handleSetCheckValue,
+}) => (
+  <>
+    <IncludeExcludeInputModule
+      label="Referers"
+      name="referers"
+      value={input}
+      onChange={handleChange}
+      data={trackingDetails.referersData}
+      check={trackingDetails.referersCondition}
+      handleEnter={() => {
+        setTrackingDetails((current) =>
+          current.map((obj, i) => {
+            if (i === id) {
+              return {
+                ...obj,
+                referersData: [
+                  ...obj.referersData,
+                  ...input
+                    .split(",")
+                    .map((e) => e.trim())
+                    .filter((e) => e !== ""),
+                ],
+              };
+            }
+            return obj;
+          })
+        );
+        setInputs((current) => ({ ...current, referers: "" }));
+      }}
+      setCheck={(val) => {
+        setTrackingDetails((current) =>
+          current.map((obj, i) => {
+            if (i === id) {
+              return { ...obj, referersCondition: val };
+            }
+            return obj;
+          })
+        );
+      }}
+      handleClear={() => {
+        setTrackingDetails((current) =>
+          current.map((obj, i) => {
+            if (i === id) {
+              return { ...obj, referersData: [] };
+            }
+            return obj;
+          })
+        );
+      }}
+      clearById={(index) => {
+        setTrackingDetails((current) =>
+          current.map((obj, i) => {
+            if (i === id) {
+              return {
+                ...obj,
+                referersData: obj.referersData.filter((e, j) => j !== index),
+              };
+            }
+            return obj;
+          })
+        );
+      }}
+    />{" "}
+    <Row>
+      <Col md={4}></Col>
+      <Col md={8}>
+        <Row>
+          {checkBoxes.map((ele, key) => (
+            <Col md={6} key={key} style={{ marginTop: "7px" }}>
+              <CustomCheckbox
+                label={ele.label}
+                value={ele.value}
+                setValue={() => {
+                  handleSetCheckValue(ele.name, !ele.value);
+                }}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Col>
+    </Row>
+  </>
+);
 const RegionComponent = ({
   input,
   handleChange,

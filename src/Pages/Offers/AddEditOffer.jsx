@@ -62,6 +62,11 @@ const trackingObj = {
   timezonesCondition: 0,
   languagesData: [],
   languagesCondition: 0,
+  referersData: [],
+  referersCondition: 0,
+  allow_exception: false,
+  allow_blank_referer: false,
+  allow_non_unique_clicks: false,
   devices: [],
   weightage_urls: [
     {
@@ -109,6 +114,13 @@ const AddEditOffer = () => {
         region: {
           data: ele.regionData,
           condition: ele.regionCondition,
+        },
+        referers: {
+          data: ele.referersData,
+          condition: ele.referersCondition,
+          allow_exception: ele.allow_exception,
+          allow_blank_referer: ele.allow_blank_referer,
+          allow_non_unique_clicks: ele.allow_non_unique_clicks,
         },
         cities: {
           data: ele.citiesData,
@@ -192,6 +204,19 @@ const AddEditOffer = () => {
           countryCondition: ele.country.condition,
           regionData: ele.region.data,
           regionCondition: ele.region.condition,
+          referersData: ele.referers?.data || [],
+          referersCondition: ele.referers?.condition
+            ? ele.referers.condition
+            : 0,
+          allow_exception: ele.referers?.allow_exception
+            ? ele.referers.allow_exception
+            : false,
+          allow_blank_referer: ele.referers?.allow_blank_referer
+            ? ele.referers.allow_blank_referer
+            : false,
+          allow_non_unique_clicks: ele.referers?.allow_non_unique_clicks
+            ? ele.referers.allow_non_unique_clicks
+            : false,
           citiesData: ele.cities.data,
           citiesCondition: ele.cities.condition,
           timezonesData: ele.timezones.data,
