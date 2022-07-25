@@ -94,12 +94,14 @@ const AddEditOffer = () => {
     initalADBFraudDetectionState
   );
   const [trackingDetails, setTrackingDetails] = useState([{ ...trackingObj }]);
+  const [linkDesciption, setLinkDescription] = useState("");
   const handleAddConditionButton = () => {
     setTrackingDetails((current) => [...current, { ...trackingObj }]);
   };
 
   const handleSubmit = () => {
     const dataObj = {
+      link_description: linkDesciption,
       ...generalDetails,
       domain: generalDetails.domain.map((ele) => ele.value),
       ...adbFraudDetection,
@@ -151,6 +153,7 @@ const AddEditOffer = () => {
 
   useEffect(() => {
     if (offerDetails.name) {
+      setLinkDescription(offerDetails.link_description);
       setGeneralDetails({
         category: offerDetails.category,
         original: offerDetails.original,
@@ -270,6 +273,8 @@ const AddEditOffer = () => {
             {selectedTab === tabs[2] && (
               <Tracking
                 setTrackingDetails={setTrackingDetails}
+                linkDesciption={linkDesciption}
+                setLinkDescription={setLinkDescription}
                 trackingDetails={trackingDetails}
                 handleAddConditionButton={handleAddConditionButton}
               />

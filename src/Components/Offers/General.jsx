@@ -6,7 +6,6 @@ import CustomSelect, {
   CustomMultiSelectWithLabel,
   CustomSelectWithLabel,
 } from "../UI/CustomSelect.jsx";
-import { CustomTextAreaWithLabel } from "../UI/CustomTextArea.jsx";
 
 const options = [
   { name: "", value: undefined, disabled: true },
@@ -208,14 +207,6 @@ const CardContent1 = ({
           }}
         />
       </Col>
-    </Row>
-    <Row>
-      <CustomTextAreaWithLabel
-        label="Link Description:"
-        name="link_description"
-        onChange={handleInputChange}
-        value={generalDetails.link_description}
-      />
     </Row>
   </>
 );

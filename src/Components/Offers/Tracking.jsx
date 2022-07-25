@@ -7,6 +7,7 @@ import CustomInput, { IncludeExcludeInputModule } from "../UI/CustomInput.jsx";
 import { CustomMultiSelect } from "../UI/CustomSelect.jsx";
 import Data from "../../data";
 import { CustomCheckbox } from "../UI/CustomCheckButton.jsx";
+import { CustomTextAreaWithLabel } from "../UI/CustomTextArea.jsx";
 
 const MainCountryData = Data.MasterData;
 const CountryOptions = MainCountryData.map((data) => ({
@@ -23,6 +24,8 @@ const Tracking = ({
   trackingDetails,
   setTrackingDetails,
   handleAddConditionButton,
+  linkDesciption,
+  setLinkDescription,
 }) => {
   const handleRemoveCondition = (key) => {
     setTrackingDetails((current) => current.filter((e, id) => id !== key));
@@ -30,13 +33,24 @@ const Tracking = ({
 
   return (
     <div className="trackingContainer">
-      <div className="d-flex justify-content-end">
-        <Button
-          className="addConditionButton"
-          onClick={handleAddConditionButton}
-        >
-          Add Condition
-        </Button>
+      <div className="d-flex">
+        <div style={{ flexGrow: "1", marginRight: "15px" }}>
+          <CustomTextAreaWithLabel
+            label="Link Description:"
+            name="link_description"
+            rows="2"
+            onChange={(e) => setLinkDescription(e.target.value)}
+            value={linkDesciption}
+          />
+        </div>
+        <div>
+          <Button
+            className="addConditionButton"
+            onClick={handleAddConditionButton}
+          >
+            Add Condition
+          </Button>
+        </div>
       </div>
       {trackingDetails?.map((condition, key) => (
         <Conditions
