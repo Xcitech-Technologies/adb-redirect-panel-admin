@@ -59,6 +59,7 @@ const Conditions = ({
   trackingDetails,
 }) => {
   const [inputs, setInputs] = useState({
+    countries: "",
     region: "",
     cities: "",
     timezones: "",
@@ -213,6 +214,47 @@ const Conditions = ({
     }
   };
 
+  const handleCountryEnterPress = () => {
+    const InputCountryCodes = inputs.countries
+      .split(",")
+      .map((e) => e.toLowerCase().trim())
+      .filter((e) => e !== "");
+
+    const selectedData = MainCountryData.filter((e) =>
+      InputCountryCodes.includes(e.CountryCode.toLowerCase())
+    );
+
+    setTrackingDetails((current) =>
+      current.map((obj, i) => {
+        if (i === id) {
+          return {
+            ...obj,
+            countryData: [
+              ...obj.countryData,
+              ...selectedData.map((e) => e.CountryName),
+            ],
+            timezonesData: [
+              ...obj.timezonesData,
+              ...selectedData.map((e) => e.Timezones.split(",")).flat(),
+            ],
+            languagesData: [
+              ...obj.languagesData,
+              ...selectedData
+                .map((e) => e.CountryLanguagecode.split(","))
+                .flat(),
+            ],
+          };
+        }
+        return obj;
+      })
+    );
+    setInputs((current) => ({ ...current, countries: "" }));
+    const next = document.querySelector("#nextImpBtn");
+    if (next !== null) {
+      next.focus();
+    }
+  };
+
   return (
     <div className="mt-4" key={id}>
       <CustomCardCollapse
@@ -233,6 +275,11 @@ const Conditions = ({
               trackingDetails={trackingDetails[id]}
               id={id}
               setTrackingDetails={setTrackingDetails}
+              inputValue={inputs.countries}
+              handleCountryEnterPress={handleCountryEnterPress}
+              onInputChange={(e) => {
+                setInputs((current) => ({ ...current, countries: e }));
+              }}
             />
           </Col>
           <Col md={5}>
@@ -338,10 +385,20 @@ const ConditionsHead = ({ id, handleRemoveCondition }) => (
   </div>
 );
 
-const CountryComponent = ({ trackingDetails, id, setTrackingDetails }) => (
+const CountryComponent = ({
+  trackingDetails,
+  id,
+  setTrackingDetails,
+  inputValue,
+  onInputChange,
+  handleCountryEnterPress,
+}) => (
   <CountryComponentInput
     check={trackingDetails.countryCondition}
     data={trackingDetails.countryData}
+    inputValue={inputValue}
+    onInputChange={onInputChange}
+    handleCountryEnterPress={handleCountryEnterPress}
     handleAddCountry={(e) => {
       const countryDetails = MainCountryData.filter(
         (data) => data.CountryName === e.value
@@ -429,6 +486,9 @@ const CountryComponentInput = ({
   handleClear,
   clearById,
   setCheck,
+  inputValue,
+  onInputChange,
+  handleCountryEnterPress,
 }) => (
   <Row className="IncludeExcludeInputModule">
     <Col md={4} className="IncludeExcludeInputModuleLabel">
@@ -443,6 +503,13 @@ const CountryComponentInput = ({
       <div className="d-flex flex-column">
         <CustomMultiSelect
           options={CountryOptions}
+          inputValue={inputValue}
+          onInputChange={onInputChange}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleCountryEnterPress();
+            }
+          }}
           onChange={(e, v) => {
             if (v.action === "select-option") {
               handleAddCountry(e);
@@ -453,6 +520,7 @@ const CountryComponentInput = ({
           <Button
             onClick={() => setCheck(0)}
             className={check === 0 ? "includeActive" : "normal"}
+            id={"nextImpBtn"}
           >
             Include
           </Button>
@@ -786,6 +854,7 @@ const URLSComponent = ({
             />
             <button
               className="buttonNoBackground"
+              disabled={key === 0}
               onClick={() => handleRemoveUrl(key)}
             >
               <AiOutlineMinusCircle />

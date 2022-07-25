@@ -69,9 +69,13 @@
     background: $dark !important;
     border-radius: 0.25rem;
     border: 1px solid $blue4;
+
     .custom-select__value-container {
       .custom-select__input-container {
         color: $white;
+      }
+      .custom-select__single-value {
+        color: $dark;
       }
       .custom-select__multi-value {
         background: transparent;
